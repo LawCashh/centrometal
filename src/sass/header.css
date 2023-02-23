@@ -197,11 +197,12 @@
 }
 
 .nav3_item:nth-child(11) {
+  width: 15%;
+}
+.nav3_item:nth-child(11) a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  width: 15%;
 }
 .nav3_item:nth-child(11) #nav3lastblue {
   color: #185574;
