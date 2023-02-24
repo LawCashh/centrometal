@@ -8,16 +8,63 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 220px;
-  background: linear-gradient(to bottom, #3cadef 80%, #185574 20%);
+  height: 350px;
+  background: linear-gradient(to bottom, white 40%, #3cadef 40% 90%, #185574 90%);
   background-color: #3cadef;
+}
+
+.topfooter {
+  height: 40%;
+  width: 65%;
+  margin: 0 auto;
+  padding-top: 45px;
+}
+.topfooter .footer_slide_item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topfooter .footer_slide_item a img {
+  height: 50px;
+  width: 80%;
+}
+
+.slick-arrow {
+  height: 56px !important;
+  width: 56px !important;
+}
+
+.slick-prev.slick-arrow::before {
+  margin-right: 20px;
+  height: 56px !important;
+}
+
+.slick-next:before {
+  content: url("https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTOK1EpsxG3I2Nc2tN-jrVDMUFVK0DNS0YAnBcOThWzqr8fat70pWSMD_e8-qB6NIdHOsZqhoibvK9Q2oqkPwVH2o4NgA=w3584-h1904") !important;
+  position: absolute;
+  left: 40px;
+  bottom: -3px;
+}
+
+.slick-prev:before {
+  content: url("https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTHinbAHqr5YFQtN1yVdHJfRs_MTEoeivanxjw9hZ6_lG52PzaD1odo6sD-D84sJ-s8XA0l_4V5TYeqWkbFrFa1buE=w3584-h1904") !important;
+  position: absolute;
+  right: 20px;
+  bottom: -3px;
+}
+
+.slick-next:before, .slick-prev:before {
+  font-family: slick;
+  color: lightgray !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .midfooter {
   margin: 0 auto;
   width: 65%;
   font-size: 0.9em;
-  height: 80%;
+  height: 50%;
   display: flex;
   margin: 0;
   justify-content: center;
@@ -76,7 +123,7 @@ footer {
   font-size: 0.8vw;
   font-weight: 100;
   width: 65%;
-  height: 20%;
+  height: 10%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
