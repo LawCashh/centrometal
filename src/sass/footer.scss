@@ -5,12 +5,13 @@ footer{
     align-items: center;
     font-size: 18px;
     font-weight: 600;
-    position: absolute;
-    bottom: 0;
+    /*position: absolute;
+    bottom: 0;*/
     width: 100%;
     height: 350px;
     background: linear-gradient(to bottom, white 40%, #3cadef 40% 90%, #185574 90%);
     background-color: #3cadef;
+    border-top: 1px solid lightgray;
 }
 .topfooter{
     height: 40%;
