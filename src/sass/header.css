@@ -7,7 +7,7 @@
 .nav1_itemi {
   margin: 0 auto;
   width: 65%;
-  font-size: 0.9em;
+  font-size: 0.9vw;
   height: 40px;
   display: flex;
   margin: 0;
@@ -50,24 +50,24 @@
 
 .nav1_item:nth-child(2) {
   position: absolute;
-  left: 70px;
+  left: 6%;
 }
 
 .nav1_item:nth-child(3) {
   position: absolute;
-  left: 180px;
+  left: 16%;
   padding-right: 6%;
 }
 
 .nav1_item:nth-child(4) {
   position: absolute;
-  right: 180px;
+  right: 16%;
   padding-left: 6%;
 }
 
 .nav1_item:nth-child(5) {
   position: absolute;
-  right: 70px;
+  right: 6%;
   padding-left: 6%;
 }
 
@@ -89,7 +89,7 @@
   position: relative;
 }
 .nav2 .centro {
-  font-size: 50px;
+  font-size: 3vw;
   color: white;
 }
 .nav2 #centroplava {
@@ -101,21 +101,27 @@
   display: flex;
   align-items: center;
   position: absolute;
-  left: 375px;
+  left: 33%;
 }
 .nav2 .searchdiv #searchform {
   border: none;
-  padding: 12px;
+  padding: 2%;
   width: 70%;
 }
+.nav2 .searchdiv #searchform::-moz-placeholder {
+  font-size: 0.8vw;
+}
+.nav2 .searchdiv #searchform::placeholder {
+  font-size: 0.8vw;
+}
 .nav2 .searchdiv #lupaicon {
-  width: 30px;
+  width: 6%;
   height: 80%;
   position: absolute;
   right: 27%;
 }
 .nav2 .searchdiv #fbicon {
-  width: 42px;
+  width: 7.5%;
   max-height: 100%;
   padding-left: 10px;
 }
@@ -125,7 +131,7 @@
   align-items: center;
   width: 15%;
   height: 40px;
-  font-size: 0.9em;
+  font-size: 0.8vw;
   position: relative;
 }
 .nav2 .korpadiv a {
@@ -137,7 +143,7 @@
 }
 .nav2 .korpadiv #korpaicon {
   max-height: 100%;
-  width: 42px;
+  width: 24%;
   position: absolute;
   right: 0;
 }
@@ -146,7 +152,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 1vw;
   font-weight: 600;
 }
 
@@ -227,4 +233,157 @@
   height: 0;
   width: 80px;
   z-index: -1;
+}
+
+@media (orientation: portrait) {
+  .nav1 {
+    background-color: #cccccc;
+    display: flex;
+    justify-content: center;
+  }
+  .nav1_itemi {
+    font-size: 2vw;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav1_itemi .nav1_item {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .nav1_item:first-child {
+    justify-self: center;
+  }
+  .nav1_item:first-child a {
+    color: black;
+    text-decoration: underline;
+  }
+  .nav1_item:nth-child(2) {
+    position: static;
+    left: 0;
+  }
+  .nav1_item:nth-child(3) {
+    position: static;
+    left: 0;
+    padding-right: 0;
+  }
+  .nav1_item:nth-child(4) {
+    position: static;
+    right: 0;
+    padding-left: 0;
+  }
+  .nav1_item:nth-child(5) {
+    position: static;
+    right: 0;
+    padding-left: 0;
+  }
+  .nav2big {
+    background-color: #005574;
+    display: flex;
+    justify-content: center;
+  }
+  .nav2 {
+    width: 65%;
+    margin: 0 auto;
+    height: 200px;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nav2 .centro {
+    margin: 0 auto;
+    padding: 0;
+    font-size: 5vw;
+  }
+  .nav2 .searchdiv {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 0;
+  }
+  .nav2 .searchdiv #searchform {
+    border: none;
+    padding: 12px;
+    width: 70%;
+  }
+  .nav2 .searchdiv #searchform::-moz-placeholder {
+    font-size: 1.8vw;
+  }
+  .nav2 .searchdiv #searchform::placeholder {
+    font-size: 1.8vw;
+  }
+  .nav2 .searchdiv #lupaicon {
+    width: 30px;
+    height: 80%;
+    position: absolute;
+    right: 20%;
+  }
+  .nav2 .korpadiv {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 30%;
+    height: 40px;
+    font-size: 0.9em;
+    position: static;
+  }
+  .nav2 .korpadiv a {
+    padding-right: 5px;
+  }
+  .nav2 .korpadiv #korpaicon {
+    padding-left: 5px;
+    max-height: 100%;
+    width: 42px;
+    position: static;
+  }
+  .nav3_itemi {
+    width: 100%;
+    height: 500px;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    position: relative;
+  }
+  .nav3_itemi .nav3_item {
+    font-size: 4vw;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    height: 100%;
+    padding: 0;
+    width: 70%;
+  }
+  .nav3_item:nth-child(11) {
+    width: auto;
+  }
+  .nav3_item:nth-child(11) a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav3_item:nth-child(11) #nav3lastblue {
+    color: #185574;
+    font-weight: 100;
+  }
+  .right_trap {
+    display: none;
+  }
+  .left_trap {
+    display: none;
+  }
 }/*# sourceMappingURL=header.css.map */
