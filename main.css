@@ -1192,6 +1192,10 @@ body {
 .proizvod * {
   margin: 0;
 }
+.proizvod a {
+  text-decoration: none;
+  color: black;
+}
 .proizvod .proizvod_h4 {
   margin-top: 10px;
   font-size: 1vw;

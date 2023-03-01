@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example app</title>
+
+    <!-- app:css -->
+    <link rel="stylesheet" href="/src/sass/open-product.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+    <!-- endinject -->
+
+</head>
+<body>
+    <header>
+        <nav class="nav1">
+            <ul class="nav1_itemi">
+                <li class="nav1_item"><a>Engleski</a></li>
+                <li class="nav1_item"><a>Crnogorski</a></li>
+                <li class="nav1_item"><a>Svakog dana od 08:00 do 21:00 h, osim nedjeljom Tel: +382 20 656 772</a></li>
+                <li class="nav1_item"><a>On-line podrška</a></li>
+                <li class="nav1_item"><a>Registracija</a></li>
+                <li class="nav1_item"><a>Prijava</a></li>
+            </ul>
+        </nav>
+        <div class="nav2big">
+        <div class="nav2">
+            <div class="centro">
+                <a><span id="centroplava">CENTRO</span>METAL</a>
+            </div>
+            <div class="searchdiv">
+                <input id="searchform" type="text" placeholder="Unesite šifru ili pojam pretraživanja"/>
+                <img id="lupaicon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSkRu5TlCwGRu_ycZyODg3UFbiZ90gkFTig_kujNWQ1zXcn8nADpP2x2iOaL7m1mFlgBZUlRHn020Ee8kbOGzmbXkHE=w3584-h1904"/>
+                <img id="fbicon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOToGVw7lYT1oZBLYsWnR9qyjI6d625side0JwhWlVm1YEyTaT7tJJsLE5VbfDWMrpJK5ObC46AbIpgENAI0d2c7esLZ0Q=w3584-h1904"/>
+            </div>
+            <div class="korpadiv">
+                <a>MOJA KORPA</a>
+                <span>0.00 €</span>
+                <img id="korpaicon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOQoknob0oh0eGgTiFewO-WquX3CZmf0LyCAAZ01WzcXG4p-bpJ-f-lt5KP3WQ7bjj33BI4p7hS3-YbXVV0235YTd1q6Hg=w3584-h1904"/>
+            </div>
+        </div>
+        </div>
+        <nav class="nav3">
+        <ul class="nav3_itemi">
+            <div class="left_trap"></div>
+            <li class="nav3_item"><a id="ahome"><img id="homeicon" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEORWS678gKvupMokColPuP8ehExfCsqwJMzwJW8MXHWIJJB4C5Jg3xcW2BU6oL57z4la19ZUB2tu29WKeEB5Cb7kcnwabw=w3584-h1904"/></a></li>
+            <li class="nav3_item"><a>Akcija</a></li>
+            <li class="nav3_item"><a>Rasprodaja</a></li>
+            <li class="nav3_item"><a>Katalozi</a></li>
+            <li class="nav3_item"><a>Novosti</a></li>
+            <li class="nav3_item"><a>O nama</a></li>
+            <li class="nav3_item"><a>Uradi sam</a></li>
+            <li class="nav3_item"><a>Vip kartica</a></li>
+            <li class="nav3_item"><a>Kontakt</a></li>
+            <li class="nav3_item"><a><span id="nav3lastblue">Informacije</span><span>tel: 020 123 456</span></a></li>
+            <div class="right_trap"></div>
+        </ul>
+    </nav>
+    </header>
+
+    <div class="mainflex">
+        <div class="leftside_mainflex">
+            <div class="leftside_naslovna">
+                <h5>NASLOVNA / PROIZVODI / <span>GRUPA ROBE</span></h5>
+            </div>
+            <div class="leftside_mainflex_part1">
+                <div class="leftside_mainflex_part1_left">
+                    <div class="leftside_mainflex_part1_left_imgdiv">
+                        <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTmoH5OtYPjr3em_cjoQNBw0EbCjIie6zSbsa_GQaB3cx5tSZOxQ6Xb7S48rvTuAkBFAACUTh_zZ8rNELv2IBxbwFpkCQ=w3584-h1904">
+                    </div>
+                    <div class="leftside_mainflex_part1_footer">
+                        <div class="footer_slide_item"><a><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEORXLaMt5ksjHGPnDV79UvYBrdikVCDNJRGJkd0f6gduhIP2MRvHBY8DnhC9hwCC5kSxIJXjsCucNxhghLJPqmYVVEh-BQ=w3584-h1904"></a></div>
+                        <div class="footer_slide_item"><a><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEORAhfaeCKnDLcPGuChg-xrwWT86u-T2bUspQhmJu_D8i7I-UMFpq4iiI0HcELQ9ud57Utn6V9m1auz80O2WS8j_Hc86pw=w3584-h1904"></a></div>
+                        <div class="footer_slide_item"><a><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSMB5F6jtfvkMtNcHf7FbrAHnml2Z9sbzLRIXbiW9kYp_IrUXfDvLGjeQxkQAtRcrkWYvGxqMr6z7x6KCvUj3onnksyXw=w3584-h1904"></a></div>
+                        <div class="footer_slide_item"><a><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEORAhfaeCKnDLcPGuChg-xrwWT86u-T2bUspQhmJu_D8i7I-UMFpq4iiI0HcELQ9ud57Utn6V9m1auz80O2WS8j_Hc86pw=w3584-h1904"></a></div>
+                    </div>
+                </div>
+                <div class="leftside_mainflex_part1_right">
+                        <h1>Gorenje WD 95140 Mašina za pranje i sušenje</h1>
+                        <div class="cijena_i_sifra">
+                            <h2>554€</h2>
+                            <h2><span>123 476 889</span><span>Šifra artikla</span></h2>
+                        </div>
+                        <h5>Šifra artikla: 7248</h5>
+                        <p>
+                            Broj okretaja centrifuge: 1400,00 okr/min <br>
+                            Elektronsko upravljanje: DA <br>
+                            Samostojeci: DA <br>
+                            Punjenje sprijeda: DA <br>
+                            Kapacitet pranja: 9 kg <br>
+                            Kapacitet susenja: 7kg <br>
+                            Kapacitet neceg: 7kg
+                        </p>
+                        <div class="kolicina_i_share">
+                            <p>Količina : </p>
+                            <input type="text" placeholder="01"/>
+                            <button class="btnplus" id="btnplus1">+</button>
+                            <button class="btnplus" id="btnplus2">+</button>
+                            <p id="kolicina_p2">Share : </p>
+                            <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSAktyNlsJRNkEGXx18UPRAcLleSY_JBLxuY5e6FyJQu0s7AHzOqHv6r1PhjNjQY2pTNgEWKOWmnXU0ffvA1zXDg0Jj=w3584-h1904"/>
+                            <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOQ7OuZPWdR2poEOnRWDcNoGgabDhfHKlQqwBqdpLKbVz1Mdo5c41tw7zRldVdzNZFNaNHdj1SK5GsXsagqD8Ci9GWQN-Q=w3584-h1904"/>
+                            <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOT8ccbMO71sajyqDl_0N5DgFuFaz918JMBkGlfvIoa8Khvx14womWfY6l-AnnUOydm1CF7FGszdvQLZmcjgl3tqQJ6BlQ=w3584-h1904"/>
+                            <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSC1vMq34-W-z2Hd_6t6ZJ-W4W2_t0V_8bACZDqRIhn21TZn7PCnLLP_PtSThdqGZpWotXCNHHzlFJPxY5kggASUi0xmw=w3584-h1904"/>
+                        </div>
+                        <div class="dodajukorpu_dugmad">
+                            <button class="btnkorpa" id="btnkorpa1"><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEORpd8iYE5_uIU9-CVygsyLnakl4RkHVb6eyM70KvlUOR6u4grd-iobDQ_RU0mA19kXkam0Zm02TMBJ_2r_VIPJxLwk4sQ=w3584-h1904">Dodaj u korpu</button>
+                            <button class="btnkorpa" id="btnkorpa2">provjeri korpu</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightside_mainflex">
+            <div class="rightside_videi">
+                <div class="rightside_video1">
+                    <video controls="" muted="" id="video1" onclick="playpause1()">
+                        <source src="/src/mp4/washing-machine.mp4" type="video/mp4">
+                    </video>
+                    <img onclick="playpause1_img()" id="playpause1_img" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTLfglDcIiL4rmIkN_FH761s0ZPNoxZgAOEJ7Sig7RKh3yrnL_3s-i3l7srtCKCcmZHo8XZW2-b8pPB7mxKcjLW1bgCBQ=w3584-h1904">
+                </div>
+                <div class="rightside_video2">
+                    <video controls="" muted="" id="video2" onclick="playpause2()">
+                        <source src="/src/mp4/washing-machine.mp4" type="video/mp4">
+                    </video>
+                    <img onclick="playpause2_img()" id="playpause2_img" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTLfglDcIiL4rmIkN_FH761s0ZPNoxZgAOEJ7Sig7RKh3yrnL_3s-i3l7srtCKCcmZHo8XZW2-b8pPB7mxKcjLW1bgCBQ=w3584-h1904">
+                </div>
+            </div>
+
+            <div class="rightside_newsletter">
+                <div class="rightside_newsletter_naslov">
+                    <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEORBKUPy6ccR-uEOWyjAYm9jZk16JjE-lfZFyvJzt4235qVDakgpU2aB-zR2yPA6bpDAkqT0fd9SJiWU4sYvlCXY5-6_LQ=w3584-h1904"/>
+                    <h3>PRIJAVI SE NA NEWSLETTER</h3>
+                </div>
+                <div class="rightside_newsletter_input">
+                    <input type="text" placeholder="E mail"/>
+                </div>
+                <div class="rightside_newsletter_input">
+                    <input type="text" placeholder="Ime i prezime"/>
+                </div>
+                <div class="rightside_newsletter_button">
+                    <button>PRIJAVI SE</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="topfooter" >
+            <div class="footer_slide_item"><a><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOROZp4levNBm0ty_6KXshKJC_dOQOlgaKgAh6HdvwYt1uMVUbCMOA6owjZOSyQ416XLhMTBrQNTzS8U22yGlQrzXEMl=w3584-h1904"></a></div>
+            <div class="footer_slide_item"><a><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSKT8in0N4dtZqsf1FBArJ_AdhiyII1IoncZljxA0j7YaG4AmsHLkcvPX0Id6ZwxX5Wzxqf6U2oj-ybAYIoZQhYIMqWfQ=w3584-h1904"></a></div>
+            <div class="footer_slide_item"><a><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOQOs7gB42N1jxAlP-hOTHlrTtlbV-ShgCcjkcecl7Ah6t7Nh_ObJq4dxOCWXnS2NSvVX1YLyYv017Y1iU7hpE30uYpX9Q=w3584-h1904"></a></div>
+            <div class="footer_slide_item"><a><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOQmU8lBCHug0ib3PMxLKe1rUxLqREqzeezzBlxmq5dRCcoP6LXtdA4dFfTIEDMXtn2O5rakpJcjtM8sqPWpZau5BHYOpQ=w3584-h1904"></a></div>
+            <div class="footer_slide_item"><a><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOR8unRthDcyBt4wvS1TLwD8Ohok4QS4VfdFcWBpK-ekui3Jlyp2nhqnLOqNyTmgs5tfe9qzWwPFeHELJnjKj0bCVDSj=w3584-h1904"></a></div>
+            <div class="footer_slide_item"><a><img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOROZp4levNBm0ty_6KXshKJC_dOQOlgaKgAh6HdvwYt1uMVUbCMOA6owjZOSyQ416XLhMTBrQNTzS8U22yGlQrzXEMl=w3584-h1904"></a></div>
+        </div>
+        <div class="midfooter">
+            <div class="midfooter_item">
+                <h3>Informacije</h3>
+                <ul>
+                    <li><a>O nama</a></li>
+                    <li><a>Gdje kupiti</a></li>
+                    <li><a>Zapošljenje</a></li>
+                    <li><a>Aktivnosti</a></li>
+                </ul>
+            </div>
+            <div class="midfooter_item">
+                <h3>Aktivnosti</h3>
+                <ul>
+                    <li><a>Akcije</a></li>
+                    <li><a>Noviteti</a></li>
+                    <li><a>Rasprodaja</a></li>
+                    <li><a>Marketing</a></li>
+                </ul>
+            </div>
+            <div class="midfooter_item">
+                <h3>Moja strana</h3>
+                <ul>
+                    <li><a>Registracija</a></li>
+                    <li><a>Prijava</a></li>
+                    <li><a>Korisnička strana</a></li>
+                    <li><a>Korpa</a></li>
+                </ul>
+            </div>
+            <div class="midfooter_item">
+                <h3>Plaćanje i dostava</h3>
+                <ul>
+                    <li><a>Načini plaćanja</a></li>
+                    <li><a>Sigurnost plaćanja</a></li>
+                    <li><a>Brza i pouzdana dostava</a></li>
+                    <li><a>Odaberite datum dostave</a></li>
+                </ul>
+            </div>
+            <div class="midfooter_item">
+                <h3>Povrat i zamjena</h3>
+                <ul>
+                    <li><a>Servis</a></li>
+                    <li><a>Reklamacije</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="botfooter">
+            <p>&copy; 2016 Copyright by <a>centrometal.me</a> All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $('.topfooter').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
+</script>
+<script>
+    $('.leftside_mainflex_part1_footer').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
+</script>
+<script>
+    var myVideo1 = document.getElementById("video1");
+    var myVideo2 = document.getElementById("video2");
+    function playpause1(){
+        myVideo1.load();
+        document.getElementById("playpause1_img").style.display = "inline-block";
+    }
+    function playpause2(){
+        myVideo2.load();
+        document.getElementById("playpause2_img").style.display = "inline-block";
+    }
+    function playpause1_img(){
+        document.getElementById("playpause1_img").style.display = "none";
+        myVideo1.play();
+    }
+    function playpause2_img(){
+        document.getElementById("playpause2_img").style.display = "none";
+        myVideo2.play();
+    }
+</script>
+<!-- vendor:js -->
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.js?v=1548800917235"></script>
+<!-- endinject -->
+</body>
+</html>
