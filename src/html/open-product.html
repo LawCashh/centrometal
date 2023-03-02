@@ -109,6 +109,72 @@
                         </div>
                 </div>
             </div>
+            <div class="leftside_content_change">
+                <div class="leftside_content_change_dugmad">
+                    <button class="leftside_content_change_button" id="leftside_content_change_button1" onclick="leftsideButtonContentChange1()">PROIZVODNA LISTA</button>
+                    <button class="leftside_content_change_button" id="leftside_content_change_button2" onclick="leftsideButtonContentChange2()">UPUTSTVO ZA RUKOVANJE</button>
+                    <button class="leftside_content_change_button" id="leftside_content_change_button3" onclick="leftsideButtonContentChange3()">OCJENA</button>
+                    <button class="leftside_content_change_button" id="leftside_content_change_button4" onclick="leftsideButtonContentChange4()">E-MAIL</button>
+                </div>
+                <div class="leftside_content_change_p">
+                    <p id="leftside_content_change_p1">
+                        Samostojeci: DA<br>
+                        Punjenje sprijeda: DA<br>
+                        Elektronsko upravljanje: DA<br>
+                        Kapacitet pranja: 9kg<br>
+                        Kapacitet susenja: 7kg<br>
+                        Broj okretaja centrifuge: 1400,00 okr/min<br>
+                        Podesavanje centrifuge: DA<br>
+                        Iskljucivanje centrifugiranja: DA<br>
+                        Fuzzy logic: DA<br>
+                        Automatsko prilagod. potrosnje vode: DA<br>
+                        Senzorsko susenje: DA
+                    </p>
+                    <p id="leftside_content_change_p2">
+                        Odgoda pocetka rada: DA<br>
+                        Rucni program: DA<br>
+                        Brzi program: DA<br>
+                        Energetski razred: A<br>
+                        Ucinkovitost pranja: A<br>
+                        Ucinkovitost centrifugiranja: A<br>
+                        Potrosnja vode za susenje i pranje: 148,00 l<br>
+                        Razina buke: 41,00 db(re 1pW)<br>
+                        Razina buke centrifuge: 64,00dB(re 1pW)<br>
+                        Visina: 85,00cm<br>
+                        Sirina: 60,00cm
+                    </p>
+                </div>
+            </div>
+            <div class="leftside_proizvodi_naslov">
+                <h4>SLIČNI PROIZVODI</h4>
+                <div></div>
+            </div>
+            <div class="proizvodi_flex">
+                <div class="proizvod">
+                    <img class="proizvod_img" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTzpEZPeBs3Qx5-tI3Ys1hmWX1jID06SadGoz_t4j535GXoMw_WmVLVdSN3REXgTjNavKXL049-nqBgj3nIceo2Qu6Jtg=w3584-h1904"/>
+                    <h4 class="proizvod_h4">Ugradn set frižider gorenje</h4>
+                    <p class="proizvod_p1">10 dan 6 sat 15 min 10 sek</p>
+                    <p class="proizvod_p2"><span>€135.00</span> €90.00</p>
+                </div>
+                <div class="proizvod">
+                    <img class="proizvod_img" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTKoyB2hmDYOM-9uCrIF5N9ouvBUr94_flYIYQwFn1Tk_E3EcDr1aLfNNrs1pNt0HtRP9xzmK1moj_xAdhA5Q6alIqw=w3584-h1904"/>
+                    <h4 class="proizvod_h4">Ugradn set frižider gorenje</h4>
+                    <p class="proizvod_p1">10 dan 6 sat 15 min 10 sek</p>
+                    <p class="proizvod_p2"><span>€135.00</span> €90.00</p>
+                </div>
+                <div class="proizvod">
+                    <img class="proizvod_img" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEORMXl6cC-Tn5ar1CiMJwsmr0-uUtxUMkoUmnfRpkPoOdMow_4LO5j0RcC4rHPfwdGpMrl3z1Topcq5fK4gmH7_h9G52XA=w3584-h1904"/>
+                    <h4 class="proizvod_h4">Ugradn set frižider gorenje</h4>
+                    <p class="proizvod_p1">10 dan 6 sat 15 min 10 sek</p>
+                    <p class="proizvod_p2"><span>€135.00</span> €90.00</p>
+                </div>
+                <div class="proizvod">
+                    <img class="proizvod_img" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTf7fvtAXKjAS0ugkxNu9rRa2OlS_OEuFYbsCDFCC769sTY5xduPVgrZNNhGC9IoPusBgpoNCrmsmrqMP0jObsLM_3F=w3584-h1904"/>
+                    <h4 class="proizvod_h4">Ugradn set frižider gorenje</h4>
+                    <p class="proizvod_p1">10 dan 6 sat 15 min 10 sek</p>
+                    <p class="proizvod_p2"><span>€135.00</span> €90.00</p>
+                </div>
+            </div>
         </div>
         <div class="rightside_mainflex">
             <div class="rightside_videi">
@@ -240,6 +306,124 @@
     function playpause2_img(){
         document.getElementById("playpause2_img").style.display = "none";
         myVideo2.play();
+    }
+</script>
+<script>
+    function leftsideButtonContentChange1(){
+        document.getElementById("leftside_content_change_button1").style.backgroundColor = "#00adef";
+        document.getElementById("leftside_content_change_button2").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_button3").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_button4").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_p1").innerHTML = 
+                        "Samostojeci: DA<br>Punjenje sprijeda: DA<br>" +
+                        "Elektronsko upravljanje: DA<br>" +
+                        "Kapacitet pranja: 9kg<br>" +
+                        "Kapacitet susenja: 7kg<br>" +
+                        "Broj okretaja centrifuge: 1400,00 okr/min<br>" +
+                        "Podesavanje centrifuge: DA<br>" +
+                        "Iskljucivanje centrifugiranja: DA<br>" +
+                        "Fuzzy logic: DA<br>" +
+                        "Automatsko prilagod. potrosnje vode: DA<br>" +
+                        "Senzorsko susenje: DA";
+        document.getElementById("leftside_content_change_p2").innerHTML = 
+                        "Odgoda pocetka rada: DA<br>" +
+                        "Rucni program: DA<br>" +
+                        "Brzi program: DA<br>" +
+                        "Energetski razred: A<br>" +
+                        "Ucinkovitost pranja: A<br>" +
+                        "Ucinkovitost centrifugiranja: A<br>" +
+                        "Potrosnja vode za susenje i pranje: 148,00 l<br>" +
+                        "Razina buke: 41,00 db(re 1pW)<br>" +
+                        "Razina buke centrifuge: 64,00dB(re 1pW)<br>" +
+                        "Visina: 85,00cm<br>" +
+                        "Sirina: 60,00cm";
+    }
+    function leftsideButtonContentChange2(){
+        document.getElementById("leftside_content_change_button2").style.backgroundColor = "#00adef";
+        document.getElementById("leftside_content_change_button1").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_button3").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_button4").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_p1").innerHTML = 
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2";
+        document.getElementById("leftside_content_change_p2").innerHTML = 
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2<br>" +
+                        "Lorem ipsum Lorem ipsum 2";
+    }
+    function leftsideButtonContentChange3(){
+        document.getElementById("leftside_content_change_button3").style.backgroundColor = "#00adef";
+        document.getElementById("leftside_content_change_button2").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_button1").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_button4").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_p1").innerHTML = 
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3";
+        document.getElementById("leftside_content_change_p2").innerHTML = 
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3<br>" +
+                        "Lorem ipsum Lorem ipsum 3";
+    }
+    function leftsideButtonContentChange4(){
+        document.getElementById("leftside_content_change_button4").style.backgroundColor = "#00adef";
+        document.getElementById("leftside_content_change_button2").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_button3").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_button1").style.backgroundColor = "#333333";
+        document.getElementById("leftside_content_change_p1").innerHTML = 
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4";
+        document.getElementById("leftside_content_change_p2").innerHTML = 
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4<br>" +
+                        "Lorem ipsum Lorem ipsum 4";
     }
 </script>
 <!-- vendor:js -->
