@@ -162,7 +162,7 @@
 
                     <div class="slider_opis">
                         <h2>Motorna</h2>
-                        <h2>Šega</h2>
+                        <h2 id="sega_h2">Šega</h2>
                         <div>
                             <button>VIDI PROIZVOD</button>
                         </div>
@@ -455,11 +455,31 @@
         autoplay: true,
         autoplaySpeed: 2000,
     });
+    /*let portrait = window.matchMedia("(orientation: portrait)");
+
+    portrait.addEventListener("change", function(e) {
+        if(e.matches) {
+            $('.topfooter').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        } else {
+            $('.topfooter').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        }
+    })*/
 </script>
 <script type="text/javascript">
     var counter = 1;
     setInterval(function(){
         document.getElementById('slide-radio-' + counter).checked = true;
+        document.getElementById('sega_h2').innerText = "Šega " + counter;
         counter++;
         if (counter > 4){
             counter = 1;

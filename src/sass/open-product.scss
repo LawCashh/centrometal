@@ -1,6 +1,8 @@
 @import "./header.scss";
 @import "./footer.scss";
 
+$lightgray_slider: #f2f2f2;
+
 body{
     margin: 0;
     padding: 0;
@@ -118,7 +120,7 @@ body{
         }
         .cijena_i_sifra{
             display: flex;
-            font-size: 20px;
+            font-size: 1.7vw;
             h2{
                 margin-top: 20px;
                 margin-bottom: 20px;
@@ -224,6 +226,9 @@ body{
                 }
             }
             #btnkorpa2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 background-color: #999999;
                 padding: 10px 30px;
             }
@@ -442,4 +447,287 @@ body{
         height: 0;
         border: 1px solid lightgray;
     }
+}
+
+@media (orientation: portrait) {
+    .mainflex{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .leftside_naslovna{
+        font-size: 5vw;
+        height: 150px; 
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .leftside_mainflex_part1 {
+        flex-direction: column;
+        .leftside_mainflex_part1_left{
+            width: 100%;
+            .leftside_mainflex_part1_footer{
+                width: 95%;
+                margin-top: 10px;
+                .footer_slide_item{
+                    a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        img{
+                            height: 150px;
+                            width: 100%;
+                        }
+                    }
+                }
+                .slick-next:before{
+                    position: absolute;
+                    left: 31px;
+                    bottom: -48px;
+                    border: 1px solid lightgray;
+                    border-top: 41px solid $lightgray_slider;
+                    border-bottom: 41px solid $lightgray_slider;
+                    border-left: none;
+                }
+                
+                .slick-prev:before {
+                    position: absolute;
+                    right: 10px;
+                    bottom: -48px;
+                    border: 1px solid lightgray;
+                    border-top: 41px solid $lightgray_slider;
+                    border-bottom: 41px solid $lightgray_slider;
+                }
+            }
+        }
+        
+    
+        .leftside_mainflex_part1_right{
+            width: 100%;
+            margin-top: 10px;
+            h1{
+                font-size: 5vw;
+                width: 100%;
+            }
+            .cijena_i_sifra{
+                align-self: center;
+                display: flex;
+                font-size: 5vw;
+                h2{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    &:first-child{
+                        height: 90px;
+                        display: flex;
+                        align-items: center;
+                        color:#00adef;
+                        padding-right: 15px;
+                        border-right: 1px solid lightgray;
+                    }
+                    &:last-child{
+                        height: 90px;
+                        font-size: 50px;
+                        display: flex;
+                        span{
+                            &:last-child{
+                                font-size: 30px;
+                            }
+                        }
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        border-right: 1px solid lightgray;
+                    }
+                }
+            }
+            h5{
+                font-size: 4vw;
+                margin-top: 10px;
+                align-self: center;
+            }
+            p{
+                align-self: center;
+                text-align: center;
+                font-size: 3vw;
+            }
+            .kolicina_i_share{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                p{
+                    padding-right: 7px;
+                    margin: 0;
+                    font-size: 4vw;
+                }
+                input{
+                    border: 1px solid lightgray;
+                    width: 12%;
+                    &::placeholder{
+                        text-align: center;
+                    }
+                }
+                #btnplus1{
+                    margin-right: 2%;
+                }
+                #btnplus2{
+                    margin-right: 2%;
+                }
+                img{
+                    height: 80%;
+                    margin-left: 0.5%;
+                    margin-right: 0.5%;
+                }
+            }
+            .dodajukorpu_dugmad{
+                align-self: center;
+                margin-top: 20px;
+                height: 100px;
+                width: auto;
+                .btnkorpa{
+                    font-size: 3vw;
+                    height: 80%;
+                    padding: 10px 20px;
+                    margin: 4px 2px;
+                    border-radius: 30px;
+                }
+                #btnkorpa1{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 3%;
+                    img{
+                        width: 20%;
+                    }
+                }
+                #btnkorpa2{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    .leftside_content_change{
+        .leftside_content_change_dugmad{
+            height: 40px;
+            .leftside_content_change_button{
+                font-size: 2vw;
+            }
+        }
+        .leftside_content_change_p{
+            p{
+                font-size: 1.7vw;
+            }
+        }
+    }
+    .leftside_proizvodi_naslov{
+        height: 80px;
+        margin-top: 20px;
+        h4{
+            font-size: 3.5vw;
+        }
+        div{
+            width: 70%;
+        }
+    }
+
+    .proizvodi_flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+        margin: 0 auto;
+        height: auto;
+    }
+      .proizvod{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+        .proizvod_h4{
+          margin-top: 10px;
+          font-size: 5vw !important;
+          text-align: center;
+        }
+        .proizvod_p1{
+          margin-top:5px;
+          margin-bottom: 5px;
+          font-size: 4vw;
+          text-align: center;
+        }
+        .proizvod_p2{
+          width: 100%;
+          text-align: center;
+          font-size: 5vw !important;
+        }
+    }
+   
+    .rightside_mainflex {
+        width: 100%;
+        height: auto;
+    }
+    .rightside_videi{
+        display: flex;
+    }
+    .rightside_video1, .rightside_video2 {
+        margin: 80px 40px;
+        transform: scaleX(2);
+        transform: scaleY(1.1);
+        height: 400px;
+    }
+    
+    #playpause1_img, #playpause2_img{
+        height: 100%;
+        width: 100%;
+    }
+    
+    .rightside_newsletter{
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+        .rightside_newsletter_naslov{
+          width: 100%;
+          height: 35%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 10%;
+          font-size: 4vw;
+          img{
+            width: 60px;
+          }
+        }
+        .rightside_newsletter_input{
+          width: 90%;
+          height: 40%;
+          display: flex;
+          input{
+            &::placeholder{
+                font-size: 4vw;
+              }
+          }
+        }
+        .rightside_newsletter_button{
+          height: 25%;
+          width: 90%;
+          display: flex;
+          justify-content: center;
+          button{
+            font-size: 4vw;
+            padding-top: 4%;
+            padding-bottom: 4%;
+          }
+        }
+    }
+
 }

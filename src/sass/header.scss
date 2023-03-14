@@ -81,8 +81,11 @@
     padding: 0px;
     position: relative;
     .centro{
-        font-size: 3vw;
+        font-size: 2.8vw;
+        transform: scale(1, 1.3);
         color: white;
+        font-family: 'Times New Roman', Times, serif;
+        letter-spacing: 0.001em;
     }
     #centroplava{
         color: #01adf0;
