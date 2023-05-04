@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "naziv": "BIJELA TEHNIKA",
+        "plus": true
+    },
+    {
+        "id": 2,
+        "naziv": "UGRADNA TEHNIKA",
+        "plus": true
+    },
+    {
+        "id": 3,
+        "naziv": "KLIMATIZACIJA I GRIJANJE",
+        "plus": false
+    },
+    {
+        "id": 4,
+        "naziv": "MALI KUCNI APARATI",
+        "plus": true
+    },
+    {
+        "id": 5,
+        "naziv": "TV I VIDEO",
+        "plus": true
+    },
+    {
+        "id": 6,
+        "naziv": "AUDIO",
+        "plus": true
+    },
+    {
+        "id": 7,
+        "naziv": "TELEFONIJA",
+        "plus": false
+    },
+    {
+        "id": 8,
+        "naziv": "KAMERE I FOTO APARATI",
+        "plus": false
+    },
+    {
+        "id": 9,
+        "naziv": "AUTO TEHNIKA",
+        "plus": false
+    },
+    {
+        "id": 10,
+        "naziv": "RACUNARI I PERIFERIJE",
+        "plus": false
+    },
+    {
+        "id": 11,
+        "naziv": "KONZOLE I IGRICE",
+        "plus": false
+    },
+    {
+        "id": 12,
+        "naziv": "POSTELJINE",
+        "plus": false
+    },
+    {
+        "id": 13,
+        "naziv": "KUPOVINA PREKO T-COMA",
+        "plus": false
+    }
+]

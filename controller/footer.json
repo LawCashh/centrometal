@@ -1,0 +1,57 @@
+{
+    "foot1": [
+        {
+            "id": 1,
+            "url": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEORDaAKKJR_Lj--HJQ3Z0sVVywL7J-GUvimt-vWn_rUFfphuW6KShQXQHVS778HmoC1miZajIyBmMLE8ExM76lRgaozgRQ=w3584-h1904"
+        },
+        {
+            "id": 2,
+            "url": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTb2ENra2XMQium7_YvRutMI-jM3DNBHtMhlUG7r_q5KfpdcCJ9WxP0TE7rQYeZTLA3_AsdicwiSJOppsMHQbSYnrgqCg=w3584-h1904"
+        },
+        {
+            "id": 3,
+            "url": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOR4GYJoVOFYabsPL-YLIPtHwF5B_XSBfqPIkssNa46wy7T4J4tZqWim9JJfqLdhtRKH4kAMBNwQsHH0MEozTR1WxCU8=w3584-h1904"
+        },
+        {
+            "id": 4,
+            "url": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOR1-VSmMfwPz9OBgGlXpqNsnwFVD-SH890iqYIbMgFhNO8zyOszHlHXYnc3D7qB1FkKBSk-xAeCB3AK96DJ-ZlXRgyTxw=w3584-h1904"
+        },
+        {
+            "id": 5,
+            "url": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOQAONq0WwYt4broecrjWe5xSeGdrxZAgPLbUl20W24Ihb0o26cXQYgcAqaJH5T0TVEDHMSWMdNkeiuFM0f2pB5McPxe=w3584-h1904"
+        }
+    ],
+    "foot2": [
+        {
+            "id": 1,
+            "naziv": "Informacije",
+            "elementi": ["O nama", "Gdje kupiti", "Zaposljenje", "Aktivnosti"]
+        },
+        {
+            "id": 2,
+            "naziv": "Aktivnosti",
+            "elementi": ["Akcije", "Noviteti", "Rasprodaja", "Marketing"]
+        },
+        {
+            "id": 3,
+            "naziv": "Moja strana",
+            "elementi": ["Registracija", "Prijava", "Korisnicka strana", "Korpa"]
+        },
+        {
+            "id": 4,
+            "naziv": "Placanje i dostava",
+            "elementi": ["Nacini placanja", "Sigurnost placanja", "Brza i pouzdana dostava", "Odaberite datum dostave"]
+        },
+        {
+            "id": 5,
+            "naziv": "Povrat i zamjena",
+            "elementi": ["Servis", "Reklamacije"]
+        }
+    ],
+    "foot3": [
+        {
+            "id": 1,
+            "naziv": "© 2016 Copyright by centrometal.me All Rights Reserved."
+        }
+    ]
+}
