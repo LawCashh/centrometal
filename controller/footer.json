@@ -51,7 +51,15 @@
     "foot3": [
         {
             "id": 1,
-            "naziv": "© 2016 Copyright by centrometal.me All Rights Reserved."
+            "naziv": "2016 Copyright by"
+        },
+        {
+            "id": 2,
+            "naziv": "centrometal.me"
+        },
+        {
+            "id": 3,
+            "naziv": "All Rights Reserved."
         }
     ]
 }
