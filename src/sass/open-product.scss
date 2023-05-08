@@ -10,6 +10,28 @@ body{
     font-weight: 100;
 }
   
+.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+.skeleton_mainflex_part1{
+    animation: skeleton-loading 1s linear infinite alternate;
+    min-height: 400px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+  
+@keyframes skeleton-loading {
+    0% {
+      background-color: hsl(200, 20%, 80%);
+    }
+    100% {
+      background-color: hsl(200, 20%, 95%);
+    }
+}
+
 .mainflex{
     display: flex;
     justify-content: space-between;
