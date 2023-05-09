@@ -1,11 +1,11 @@
-const proizvodi = require('./proizvodi.json');
-const footer = require('./footer.json');
-const header = require('./header.json');
-const mainlistleft = require('./mainlistleft.json');
-const proizvod = require('./proizvod.json');
-const reklamemain = require('./reklamemain.json');
-const testere = require('./testere.json');
-const videos = require('./videos.json');
+const proizvodi = require('../data/proizvodi.json');
+const footer = require('../data/footer.json');
+const header = require('../data/header.json');
+const mainlistleft = require('../data/mainlistleft.json');
+const proizvod = require('../data/proizvod.json');
+const reklamemain = require('../data/reklamemain.json');
+const testere = require('../data/testere.json');
+const videos = require('../data/videos.json');
 
 module.exports = () => ({
   proizvodi: proizvodi,
