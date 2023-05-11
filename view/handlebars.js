@@ -20,17 +20,43 @@ let leftSideContainerTemplate = document.getElementById("leftsideContainerTempla
 let compiledLeftSideContainerTemplate = Handlebars.compile(leftSideContainerTemplate);
 let slikaTestereTemplate = document.getElementById("slikaTestereTemplate").innerHTML;
 let compiledSlikaTestereTemplate = Handlebars.compile(slikaTestereTemplate);
-getAll().then(res=>{
+getIndex().then(res=>{
     setTimeout(() => {
-        for (let i = 0; i < 24; i+=4){
-            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrProizvodi[0].naziv, vrijeme: res.arrProizvodi[0].vrijeme, cijena1: res.arrProizvodi[0].cijena1, cijena2: res.arrProizvodi[0].cijena2,url: res.arrProizvodi[0].url});
+        let i = 0;
+        let reset = 0;
+        while (i < 4){
+            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[reset].naziv, vrijeme: res.arrVruciProizvodi[reset].vrijeme, cijena1: res.arrVruciProizvodi[reset].cijena1, cijena2: res.arrVruciProizvodi[reset].cijena2,url: res.arrVruciProizvodi[reset].url, id: res.arrProizvod.id});
             document.getElementsByClassName("proizvod")[i].classList.remove("skeleton");
-            document.getElementsByClassName("proizvod")[i+1].innerHTML = compiledProizvodiTemplate({naziv: res.arrProizvodi[1].naziv, vrijeme: res.arrProizvodi[1].vrijeme, cijena1: res.arrProizvodi[1].cijena1, cijena2: res.arrProizvodi[1].cijena2,url: res.arrProizvodi[1].url});
-            document.getElementsByClassName("proizvod")[i+1].classList.remove("skeleton");
-            document.getElementsByClassName("proizvod")[i+2].innerHTML = compiledProizvodiTemplate({naziv: res.arrProizvodi[2].naziv, vrijeme: res.arrProizvodi[2].vrijeme, cijena1: res.arrProizvodi[2].cijena1, cijena2: res.arrProizvodi[2].cijena2,url: res.arrProizvodi[2].url});
-            document.getElementsByClassName("proizvod")[i+2].classList.remove("skeleton");
-            document.getElementsByClassName("proizvod")[i+3].innerHTML = compiledProizvodiTemplate({naziv: res.arrProizvodi[3].naziv, vrijeme: res.arrProizvodi[3].vrijeme, cijena1: res.arrProizvodi[3].cijena1, cijena2: res.arrProizvodi[3].cijena2,url: res.arrProizvodi[3].url});
-            document.getElementsByClassName("proizvod")[i+3].classList.remove("skeleton");
+            i++;
+            reset++;
+        }
+        reset = 0;
+        while (i < 12) {
+            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrAkcijaProizvodi[reset].naziv, vrijeme: res.arrAkcijaProizvodi[reset].vrijeme, cijena1: res.arrAkcijaProizvodi[reset].cijena1, cijena2: res.arrAkcijaProizvodi[reset].cijena2,url: res.arrAkcijaProizvodi[reset].url});
+            document.getElementsByClassName("proizvod")[i].classList.remove("skeleton");
+            i++;
+            reset++;
+        }
+        reset = 0;
+        while (i < 16) {
+            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrPreporucujemoProizvodi[reset].naziv, vrijeme: res.arrPreporucujemoProizvodi[reset].vrijeme, cijena1: res.arrPreporucujemoProizvodi[reset].cijena1, cijena2: res.arrPreporucujemoProizvodi[reset].cijena2,url: res.arrPreporucujemoProizvodi[reset].url});
+            document.getElementsByClassName("proizvod")[i].classList.remove("skeleton");
+            i++;
+            reset++;
+        }
+        reset = 0;
+        while (i < 20) {
+            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrNovoProizvodi[reset].naziv, vrijeme: res.arrNovoProizvodi[reset].vrijeme, cijena1: res.arrNovoProizvodi[reset].cijena1, cijena2: res.arrNovoProizvodi[reset].cijena2,url: res.arrNovoProizvodi[reset].url});
+            document.getElementsByClassName("proizvod")[i].classList.remove("skeleton");
+            i++;
+            reset++;
+        }
+        reset = 0;
+        while (i < 24) {
+            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrRasprodajaProizvodi[reset].naziv, vrijeme: res.arrRasprodajaProizvodi[reset].vrijeme, cijena1: res.arrRasprodajaProizvodi[reset].cijena1, cijena2: res.arrRasprodajaProizvodi[reset].cijena2,url: res.arrRasprodajaProizvodi[reset].url});
+            document.getElementsByClassName("proizvod")[i].classList.remove("skeleton");
+            i++;
+            reset++;
         }
         document.getElementsByClassName("nav1_itemi")[0].innerHTML = compiledHead1Template({arrNav1:res.arrNav1});
         document.getElementsByClassName("nav1_itemi")[0].classList.remove("skeleton");
@@ -45,6 +71,7 @@ getAll().then(res=>{
         }
         document.getElementsByClassName("botfooter")[0].innerHTML = compiledFoot3Template({naziv1: res.arrFoot3[0].naziv, naziv2: res.arrFoot3[1].naziv,naziv3: res.arrFoot3[2].naziv});
         document.getElementsByClassName("botfooter")[0].classList.remove("skeleton");
+        Handlebars.registerPartial( "child", $( "#leftside_nav_list_partial" ).html() );
         document.getElementsByClassName("leftside_nav_list")[0].innerHTML = compiledLeftSideListTemplate({arrMainListLeft: res.arrMainListLeft});
         document.getElementsByClassName("leftside_nav_list")[0].classList.remove("skeleton");
         document.getElementsByClassName("leftside_img")[0].innerHTML = compiledLeftSideImgTemplate({imgurl: res.arrReklameMain[0].url});
