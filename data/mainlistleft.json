@@ -14,7 +14,13 @@
                     },
                     {
                         "id": 2,
-                        "naziv": "sub12"
+                        "naziv": "sub12",
+                        "children": [
+                            {
+                                "id": 1,
+                                "naziv": "sub121"
+                            }
+                        ]
                     }
                 ]
             },
@@ -60,31 +66,7 @@
     {
         "id": 3,
         "naziv": "KLIMATIZACIJA I GRIJANJE",
-        "root": true,
-        "children": [
-            {
-                "id": 1,
-                "naziv": "sub1",
-                "children": [
-                    {
-                        "id": 1,
-                        "naziv": "sub11"
-                    },
-                    {
-                        "id": 2,
-                        "naziv": "sub12"
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "naziv": "sub2"
-            },
-            {
-                "id": 3,
-                "naziv": "sub3"
-            }
-        ]
+        "root": false
     },
     {
         "id": 4,
@@ -177,6 +159,30 @@
         "id": 7,
         "naziv": "TELEFONIJA",
         "plus": false,
+        "children": [
+            {
+                "id": 1,
+                "naziv": "sub1",
+                "children": [
+                    {
+                        "id": 1,
+                        "naziv": "sub11"
+                    },
+                    {
+                        "id": 2,
+                        "naziv": "sub12"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "naziv": "sub2"
+            },
+            {
+                "id": 3,
+                "naziv": "sub3"
+            }
+        ],
         "root": true
     },
     {

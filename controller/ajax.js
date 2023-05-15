@@ -1,4 +1,4 @@
-let arrVruciProizvodi, arrAkcijaProizvodi, arrPreporucujemoProizvodi, arrRasprodajaProizvodi, arrNovoProizvodi, arrProizvod, arrFoot1, arrFoot2, arrFoot3, arrNav1, arrNav2, arrNav3;
+let arrVruciProizvodi, arrAkcijaProizvodi, arrPreporucujemoProizvodi, arrRasprodajaProizvodi, arrNovoProizvodi, arrProizvod1, arrProizvod2, arrProizvod3, arrProizvod4, arrFoot1, arrFoot2, arrFoot3, arrNav1, arrNav2, arrNav3;
 let arrMainListLeft, arrReklameMain, arrTestere, arrVideos;
 
 async function getAllVruciProizvodi() {
@@ -21,9 +21,21 @@ async function getAllNovoProizvodi() {
     let res = await axios.get('http://localhost:3000/novoproizvodi');
     arrNovoProizvodi = res.data;
 }
-async function getAllProizvod() {
-    let res = await axios.get('http://localhost:3000/proizvod');
-    arrProizvod = res.data[0];
+async function getAllProizvod1() {
+    let res = await axios.get('http://localhost:3000/proizvod1');
+    arrProizvod1 = res.data[0];
+}
+async function getAllProizvod2() {
+    let res = await axios.get('http://localhost:3000/proizvod2');
+    arrProizvod2 = res.data[0];
+}
+async function getAllProizvod3() {
+    let res = await axios.get('http://localhost:3000/proizvod3');
+    arrProizvod3 = res.data[0];
+}
+async function getAllProizvod4() {
+    let res = await axios.get('http://localhost:3000/proizvod4');
+    arrProizvod4 = res.data[0];
 }
 async function getAllFooter() {
     let res = await axios.get('http://localhost:3000/footer');
@@ -59,7 +71,10 @@ async function getAll() {
     await getAllPreporucujemoProizvodi();
     await getAllRasprodajaProizvodi();
     await getAllNovoProizvodi();
-    await getAllProizvod();
+    await getAllProizvod1();
+    await getAllProizvod2();
+    await getAllProizvod3();
+    await getAllProizvod4();
     await getAllFooter();
     await getAllHeader();
     await getAllMainListLeft();
@@ -71,7 +86,10 @@ async function getAll() {
         arrPreporucujemoProizvodi:arrPreporucujemoProizvodi,
         arrRasprodajaProizvodi:arrRasprodajaProizvodi,
         arrNovoProizvodi:arrNovoProizvodi,
-        arrProizvod: arrProizvod,
+        arrProizvod1: arrProizvod1,
+        arrProizvod2: arrProizvod2,
+        arrProizvod3: arrProizvod3,
+        arrProizvod4: arrProizvod4,
         arrFoot1: arrFoot1,
         arrFoot2: arrFoot2,
         arrFoot3: arrFoot3,
@@ -85,7 +103,10 @@ async function getAll() {
     return sve;
 }
 async function getIndex() {
-    await getAllProizvod();
+    await getAllProizvod1();
+    await getAllProizvod2();
+    await getAllProizvod3();
+    await getAllProizvod4();
     await getAllVruciProizvodi();
     await getAllAkcijaProizvodi();
     await getAllPreporucujemoProizvodi();
@@ -96,7 +117,10 @@ async function getIndex() {
     await getAllMainListLeft();
     await getAllReklameMain();
     await getAllTestere();
-    let sve = {arrProizvod: arrProizvod,
+    let sve = {arrProizvod1: arrProizvod1,
+        arrProizvod2: arrProizvod2,
+        arrProizvod3: arrProizvod3,
+        arrProizvod4: arrProizvod4,
         arrVruciProizvodi: arrVruciProizvodi,
         arrAkcijaProizvodi:arrAkcijaProizvodi,
         arrPreporucujemoProizvodi:arrPreporucujemoProizvodi,
@@ -113,15 +137,15 @@ async function getIndex() {
         arrTestere: arrTestere};
     return sve;
 }
-async function getOpenProduct() {
+async function getOpenProduct1() {
     await getAllVruciProizvodi();
-    await getAllProizvod();
+    await getAllProizvod1();
     await getAllFooter();
     await getAllHeader();
     await getAllVideos();
     let sve = {
         arrVruciProizvodi:arrVruciProizvodi,
-        arrProizvod: arrProizvod,
+        arrProizvod1: arrProizvod1,
         arrFoot1: arrFoot1,
         arrFoot2: arrFoot2,
         arrFoot3: arrFoot3,
@@ -131,7 +155,60 @@ async function getOpenProduct() {
         arrVideos: arrVideos};
     return sve;
 }
-
+async function getOpenProduct2() {
+    await getAllVruciProizvodi();
+    await getAllProizvod2();
+    await getAllFooter();
+    await getAllHeader();
+    await getAllVideos();
+    let sve = {
+        arrVruciProizvodi:arrVruciProizvodi,
+        arrProizvod2: arrProizvod2,
+        arrFoot1: arrFoot1,
+        arrFoot2: arrFoot2,
+        arrFoot3: arrFoot3,
+        arrNav1: arrNav1,
+        arrNav2: arrNav2,
+        arrNav3: arrNav3,
+        arrVideos: arrVideos};
+    return sve;
+}
+async function getOpenProduct3() {
+    await getAllVruciProizvodi();
+    await getAllProizvod3();
+    await getAllFooter();
+    await getAllHeader();
+    await getAllVideos();
+    let sve = {
+        arrVruciProizvodi:arrVruciProizvodi,
+        arrProizvod3: arrProizvod3,
+        arrFoot1: arrFoot1,
+        arrFoot2: arrFoot2,
+        arrFoot3: arrFoot3,
+        arrNav1: arrNav1,
+        arrNav2: arrNav2,
+        arrNav3: arrNav3,
+        arrVideos: arrVideos};
+    return sve;
+}
+async function getOpenProduct4() {
+    await getAllVruciProizvodi();
+    await getAllProizvod4();
+    await getAllFooter();
+    await getAllHeader();
+    await getAllVideos();
+    let sve = {
+        arrVruciProizvodi:arrVruciProizvodi,
+        arrProizvod4: arrProizvod4,
+        arrFoot1: arrFoot1,
+        arrFoot2: arrFoot2,
+        arrFoot3: arrFoot3,
+        arrNav1: arrNav1,
+        arrNav2: arrNav2,
+        arrNav3: arrNav3,
+        arrVideos: arrVideos};
+    return sve;
+}
 /*axios.get('http://localhost:3000/proizvodi')
 .then((res) => {
     console.log(res.data);

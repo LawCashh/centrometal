@@ -15,7 +15,10 @@ let compiledFoot2Template = Handlebars.compile(foot2Template);
 let foot3Template = document.getElementById("foot3-template").innerHTML;
 let compiledFoot3Template = Handlebars.compile(foot3Template);
 
-getOpenProduct().then(res=>{
+let id = window.location.href.slice(-1);
+console.log(id);
+
+getOpenProduct1().then(res=>{
     console.log(res);
     setTimeout(() => {
     document.getElementsByClassName("proizvod")[0].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[0].naziv, vrijeme: res.arrVruciProizvodi[0].vrijeme, cijena1: res.arrVruciProizvodi[0].cijena1, cijena2: res.arrVruciProizvodi[0].cijena2,url: res.arrVruciProizvodi[0].url});
@@ -39,7 +42,7 @@ getOpenProduct().then(res=>{
     }
     document.getElementsByClassName("botfooter")[0].innerHTML = compiledFoot3Template({naziv1: res.arrFoot3[0].naziv, naziv2: res.arrFoot3[1].naziv,naziv3: res.arrFoot3[2].naziv});
     document.getElementsByClassName("botfooter")[0].classList.remove("skeleton");
-    document.getElementsByClassName("leftside_mainflex_part1")[0].innerHTML = compiledProizvodTemplate({main_img_url: res.arrProizvod.url, slideArr: res.arrProizvod.slideurls, naziv: res.arrProizvod.naziv, cijena: res.arrProizvod.cijena, sifra1: res.arrProizvod.sifra1, sifra2: res.arrProizvod.sifra2, opisArr: res.arrProizvod.opis});
+    document.getElementsByClassName("leftside_mainflex_part1")[0].innerHTML = compiledProizvodTemplate({main_img_url: res.arrProizvod1.url, slideArr: res.arrProizvod1.slideurls, naziv: res.arrProizvod1.naziv, cijena: res.arrProizvod1.cijena, sifra1: res.arrProizvod1.sifra1, sifra2: res.arrProizvod1.sifra2, opisArr: res.arrProizvod1.opis});
     document.getElementsByClassName("leftside_mainflex_part1")[0].classList.remove("skeleton_mainflex_part1");
     }, 2000);
 });

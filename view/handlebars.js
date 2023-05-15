@@ -24,39 +24,65 @@ getIndex().then(res=>{
     setTimeout(() => {
         let i = 0;
         let reset = 0;
+        let miniReset = 0;
+        let ids = [res.arrProizvod1.id, res.arrProizvod2.id, res.arrProizvod3.id, res.arrProizvod4.id];
         while (i < 4){
-            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[reset].naziv, vrijeme: res.arrVruciProizvodi[reset].vrijeme, cijena1: res.arrVruciProizvodi[reset].cijena1, cijena2: res.arrVruciProizvodi[reset].cijena2,url: res.arrVruciProizvodi[reset].url, id: res.arrProizvod.id});
+            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[reset].naziv, vrijeme: res.arrVruciProizvodi[reset].vrijeme, cijena1: res.arrVruciProizvodi[reset].cijena1, cijena2: res.arrVruciProizvodi[reset].cijena2,url: res.arrVruciProizvodi[reset].url, id: ids[miniReset]});
             document.getElementsByClassName("proizvod")[i].classList.remove("skeleton");
             i++;
             reset++;
+            miniReset++;
+            if(miniReset == 5) {
+                miniReset = 0;
+            }
         }
         reset = 0;
+        miniReset = 0;
         while (i < 12) {
-            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrAkcijaProizvodi[reset].naziv, vrijeme: res.arrAkcijaProizvodi[reset].vrijeme, cijena1: res.arrAkcijaProizvodi[reset].cijena1, cijena2: res.arrAkcijaProizvodi[reset].cijena2,url: res.arrAkcijaProizvodi[reset].url});
+            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrAkcijaProizvodi[reset].naziv, vrijeme: res.arrAkcijaProizvodi[reset].vrijeme, cijena1: res.arrAkcijaProizvodi[reset].cijena1, cijena2: res.arrAkcijaProizvodi[reset].cijena2,url: res.arrAkcijaProizvodi[reset].url, id: ids[miniReset]});
             document.getElementsByClassName("proizvod")[i].classList.remove("skeleton");
             i++;
             reset++;
+            miniReset++;
+            if(miniReset == 5) {
+                miniReset = 0;
+            }
         }
         reset = 0;
+        miniReset = 0;
         while (i < 16) {
-            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrPreporucujemoProizvodi[reset].naziv, vrijeme: res.arrPreporucujemoProizvodi[reset].vrijeme, cijena1: res.arrPreporucujemoProizvodi[reset].cijena1, cijena2: res.arrPreporucujemoProizvodi[reset].cijena2,url: res.arrPreporucujemoProizvodi[reset].url});
+            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrPreporucujemoProizvodi[reset].naziv, vrijeme: res.arrPreporucujemoProizvodi[reset].vrijeme, cijena1: res.arrPreporucujemoProizvodi[reset].cijena1, cijena2: res.arrPreporucujemoProizvodi[reset].cijena2,url: res.arrPreporucujemoProizvodi[reset].url, id: ids[miniReset]});
             document.getElementsByClassName("proizvod")[i].classList.remove("skeleton");
             i++;
             reset++;
+            miniReset++;
+            if(miniReset == 5) {
+                miniReset = 0;
+            }
         }
         reset = 0;
+        miniReset = 0;
         while (i < 20) {
-            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrNovoProizvodi[reset].naziv, vrijeme: res.arrNovoProizvodi[reset].vrijeme, cijena1: res.arrNovoProizvodi[reset].cijena1, cijena2: res.arrNovoProizvodi[reset].cijena2,url: res.arrNovoProizvodi[reset].url});
+            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrNovoProizvodi[reset].naziv, vrijeme: res.arrNovoProizvodi[reset].vrijeme, cijena1: res.arrNovoProizvodi[reset].cijena1, cijena2: res.arrNovoProizvodi[reset].cijena2,url: res.arrNovoProizvodi[reset].url, id: ids[miniReset]});
             document.getElementsByClassName("proizvod")[i].classList.remove("skeleton");
             i++;
             reset++;
+            miniReset++;
+            if(miniReset == 5) {
+                miniReset = 0;
+            }
         }
         reset = 0;
+        miniReset = 0;
         while (i < 24) {
-            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrRasprodajaProizvodi[reset].naziv, vrijeme: res.arrRasprodajaProizvodi[reset].vrijeme, cijena1: res.arrRasprodajaProizvodi[reset].cijena1, cijena2: res.arrRasprodajaProizvodi[reset].cijena2,url: res.arrRasprodajaProizvodi[reset].url});
+            document.getElementsByClassName("proizvod")[i].innerHTML = compiledProizvodiTemplate({naziv: res.arrRasprodajaProizvodi[reset].naziv, vrijeme: res.arrRasprodajaProizvodi[reset].vrijeme, cijena1: res.arrRasprodajaProizvodi[reset].cijena1, cijena2: res.arrRasprodajaProizvodi[reset].cijena2,url: res.arrRasprodajaProizvodi[reset].url, id: ids[miniReset]});
             document.getElementsByClassName("proizvod")[i].classList.remove("skeleton");
             i++;
             reset++;
+            miniReset++;
+            if(miniReset == 5) {
+                miniReset = 0;
+            }
         }
         document.getElementsByClassName("nav1_itemi")[0].innerHTML = compiledHead1Template({arrNav1:res.arrNav1});
         document.getElementsByClassName("nav1_itemi")[0].classList.remove("skeleton");

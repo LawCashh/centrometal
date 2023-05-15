@@ -1,0 +1,24 @@
+[
+    {
+      "id": 4,
+      "naziv": "Cetvrta masina",
+      "sifra1": "123 476 889",
+      "sifra2": "7248",
+      "cijena": "554€",
+      "url": "https://lh3.googleusercontent.com/u/0/drive-viewer/AFGJ81oghBio-dpXJfxrVtTWDHQnKm24_Y6MBWxqLWDEXkbvAFqdyfiKpxGyltCD36FCAJMHwla53O4u1CvZqP4Bym0iiW66oA=w3584-h2018",
+      "slideurls": [
+        "https://lh3.googleusercontent.com/u/0/drive-viewer/AFGJ81pl17acOX9Xxmaw0Oix_A6sPnOjZ6ptrBDU2SBECEVxDFSLb-FCI2iVv5H9PfVaejb2UJK0kY5T-7eLQ_PGMNENw1dXxw=w3584-h2018",
+        "https://lh3.googleusercontent.com/u/0/drive-viewer/AFGJ81pKjLeGaCoEJbtOxuwRFpC9KUc62PWUQcywXyIwPYbPIuSWmoDoA4g0IqnJUrBy1d0o4KbbNMMCl2nWZbHdl4-MS2FFKw=w3584-h2018",
+        "https://lh3.googleusercontent.com/u/0/drive-viewer/AFGJ81r-SS6XR0frqJ64kZjAYjiJMojXGF_hwqvtttGSsWTsTF7Plk_LFU8MUEHzlBwgY9N9QPtGnqzdaTG2A1YiZHc7DMsoiA=w3584-h2018"
+      ],
+      "opis": [
+        "Broj okretaja centrifuge: 1400,00 okr/min",
+        "Elektronsko upravljanje: DA",
+        "Samostojeci: DA",
+        "Punjenje sprijeda: DA",
+        "Kapacitet pranja: 9 kg",
+        "Kapacitet susenja: 7kg",
+        "Kapacitet neceg: 7kg"
+      ]
+    }
+]
