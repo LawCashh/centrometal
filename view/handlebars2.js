@@ -18,31 +18,123 @@ let compiledFoot3Template = Handlebars.compile(foot3Template);
 let id = window.location.href.slice(-1);
 console.log(id);
 
-getOpenProduct1().then(res=>{
-    console.log(res);
-    setTimeout(() => {
-    document.getElementsByClassName("proizvod")[0].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[0].naziv, vrijeme: res.arrVruciProizvodi[0].vrijeme, cijena1: res.arrVruciProizvodi[0].cijena1, cijena2: res.arrVruciProizvodi[0].cijena2,url: res.arrVruciProizvodi[0].url});
-    document.getElementsByClassName("proizvod")[0].classList.remove("skeleton");
-    document.getElementsByClassName("proizvod")[1].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[1].naziv, vrijeme: res.arrVruciProizvodi[1].vrijeme, cijena1: res.arrVruciProizvodi[1].cijena1, cijena2: res.arrVruciProizvodi[1].cijena2,url: res.arrVruciProizvodi[1].url});
-    document.getElementsByClassName("proizvod")[1].classList.remove("skeleton");
-    document.getElementsByClassName("proizvod")[2].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[2].naziv, vrijeme: res.arrVruciProizvodi[2].vrijeme, cijena1: res.arrVruciProizvodi[2].cijena1, cijena2: res.arrVruciProizvodi[2].cijena2,url: res.arrVruciProizvodi[2].url});
-    document.getElementsByClassName("proizvod")[2].classList.remove("skeleton");
-    document.getElementsByClassName("proizvod")[3].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[3].naziv, vrijeme: res.arrVruciProizvodi[3].vrijeme, cijena1: res.arrVruciProizvodi[3].cijena1, cijena2: res.arrVruciProizvodi[3].cijena2,url: res.arrVruciProizvodi[3].url});
-    document.getElementsByClassName("proizvod")[3].classList.remove("skeleton");
-    document.getElementsByClassName("nav1_itemi")[0].innerHTML = compiledHead1Template({arrNav1:res.arrNav1});
-    document.getElementsByClassName("nav1_itemi")[0].classList.remove("skeleton");
-    document.getElementsByClassName("nav2")[0].innerHTML = compiledHead2Template({naziv1: res.arrNav2[0].naziv, naziv2: res.arrNav2[1].naziv, fbicon_url: res.arrNav2[2].url, mojakorpa_naziv: res.arrNav2[3].naziv, vrijednostkorpe: res.arrNav2[4].naziv, korpaicon_url: res.arrNav2[5].url});
-    document.getElementsByClassName("nav2")[0].classList.remove("skeleton");
-    document.getElementsByClassName("nav3_itemi")[0].innerHTML = compiledHead3Template({homeicon_url: res.arrNav3[0].url, arrNav3: res.arrNav3.splice(1,res.arrNav3.length-3), informacije: res.arrNav3[res.arrNav3.length-2].naziv, brtel: res.arrNav3[res.arrNav3.length-1].naziv});
-    document.getElementsByClassName("nav3_itemi")[0].classList.remove("skeleton");
-    //document.getElementsByClassName("topfooter")[0].innerHTML = compiledFoot1Template({arrFoot1: res.arrFoot1});
-    for (let i = 0; i < res.arrFoot2.length;i++){
-        document.getElementsByClassName("midfooter_item")[i].innerHTML = compiledFoot2Template({naziv: res.arrFoot2[i].naziv, elementi: res.arrFoot2[i].elementi});
-        document.getElementsByClassName("midfooter_item")[i].classList.remove("skeleton");
-    }
-    document.getElementsByClassName("botfooter")[0].innerHTML = compiledFoot3Template({naziv1: res.arrFoot3[0].naziv, naziv2: res.arrFoot3[1].naziv,naziv3: res.arrFoot3[2].naziv});
-    document.getElementsByClassName("botfooter")[0].classList.remove("skeleton");
-    document.getElementsByClassName("leftside_mainflex_part1")[0].innerHTML = compiledProizvodTemplate({main_img_url: res.arrProizvod1.url, slideArr: res.arrProizvod1.slideurls, naziv: res.arrProizvod1.naziv, cijena: res.arrProizvod1.cijena, sifra1: res.arrProizvod1.sifra1, sifra2: res.arrProizvod1.sifra2, opisArr: res.arrProizvod1.opis});
-    document.getElementsByClassName("leftside_mainflex_part1")[0].classList.remove("skeleton_mainflex_part1");
-    }, 2000);
-});
+if (id == 1) {
+    getOpenProduct1().then(res=>{
+        console.log(res);
+        setTimeout(() => {
+        document.getElementsByClassName("proizvod")[0].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[0].naziv, vrijeme: res.arrVruciProizvodi[0].vrijeme, cijena1: res.arrVruciProizvodi[0].cijena1, cijena2: res.arrVruciProizvodi[0].cijena2,url: res.arrVruciProizvodi[0].url});
+        document.getElementsByClassName("proizvod")[0].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[1].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[1].naziv, vrijeme: res.arrVruciProizvodi[1].vrijeme, cijena1: res.arrVruciProizvodi[1].cijena1, cijena2: res.arrVruciProizvodi[1].cijena2,url: res.arrVruciProizvodi[1].url});
+        document.getElementsByClassName("proizvod")[1].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[2].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[2].naziv, vrijeme: res.arrVruciProizvodi[2].vrijeme, cijena1: res.arrVruciProizvodi[2].cijena1, cijena2: res.arrVruciProizvodi[2].cijena2,url: res.arrVruciProizvodi[2].url});
+        document.getElementsByClassName("proizvod")[2].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[3].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[3].naziv, vrijeme: res.arrVruciProizvodi[3].vrijeme, cijena1: res.arrVruciProizvodi[3].cijena1, cijena2: res.arrVruciProizvodi[3].cijena2,url: res.arrVruciProizvodi[3].url});
+        document.getElementsByClassName("proizvod")[3].classList.remove("skeleton");
+        document.getElementsByClassName("nav1_itemi")[0].innerHTML = compiledHead1Template({arrNav1:res.arrNav1});
+        document.getElementsByClassName("nav1_itemi")[0].classList.remove("skeleton");
+        document.getElementsByClassName("nav2")[0].innerHTML = compiledHead2Template({naziv1: res.arrNav2[0].naziv, naziv2: res.arrNav2[1].naziv, fbicon_url: res.arrNav2[2].url, mojakorpa_naziv: res.arrNav2[3].naziv, vrijednostkorpe: res.arrNav2[4].naziv, korpaicon_url: res.arrNav2[5].url});
+        document.getElementsByClassName("nav2")[0].classList.remove("skeleton");
+        document.getElementsByClassName("nav3_itemi")[0].innerHTML = compiledHead3Template({homeicon_url: res.arrNav3[0].url, arrNav3: res.arrNav3.splice(1,res.arrNav3.length-3), informacije: res.arrNav3[res.arrNav3.length-2].naziv, brtel: res.arrNav3[res.arrNav3.length-1].naziv});
+        document.getElementsByClassName("nav3_itemi")[0].classList.remove("skeleton");
+        //document.getElementsByClassName("topfooter")[0].innerHTML = compiledFoot1Template({arrFoot1: res.arrFoot1});
+        for (let i = 0; i < res.arrFoot2.length;i++){
+            document.getElementsByClassName("midfooter_item")[i].innerHTML = compiledFoot2Template({naziv: res.arrFoot2[i].naziv, elementi: res.arrFoot2[i].elementi});
+            document.getElementsByClassName("midfooter_item")[i].classList.remove("skeleton");
+        }
+        document.getElementsByClassName("botfooter")[0].innerHTML = compiledFoot3Template({naziv1: res.arrFoot3[0].naziv, naziv2: res.arrFoot3[1].naziv,naziv3: res.arrFoot3[2].naziv});
+        document.getElementsByClassName("botfooter")[0].classList.remove("skeleton");
+        document.getElementsByClassName("leftside_mainflex_part1")[0].innerHTML = compiledProizvodTemplate({main_img_url: res.arrProizvod1.url, slideArr: res.arrProizvod1.slideurls, naziv: res.arrProizvod1.naziv, cijena: res.arrProizvod1.cijena, sifra1: res.arrProizvod1.sifra1, sifra2: res.arrProizvod1.sifra2, opisArr: res.arrProizvod1.opis});
+        document.getElementsByClassName("leftside_mainflex_part1")[0].classList.remove("skeleton_mainflex_part1");
+        }, 2000);
+    });
+}
+else if (id == 2) {
+    getOpenProduct2().then(res=>{
+        console.log(res);
+        setTimeout(() => {
+        document.getElementsByClassName("proizvod")[0].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[0].naziv, vrijeme: res.arrVruciProizvodi[0].vrijeme, cijena1: res.arrVruciProizvodi[0].cijena1, cijena2: res.arrVruciProizvodi[0].cijena2,url: res.arrVruciProizvodi[0].url});
+        document.getElementsByClassName("proizvod")[0].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[1].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[1].naziv, vrijeme: res.arrVruciProizvodi[1].vrijeme, cijena1: res.arrVruciProizvodi[1].cijena1, cijena2: res.arrVruciProizvodi[1].cijena2,url: res.arrVruciProizvodi[1].url});
+        document.getElementsByClassName("proizvod")[1].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[2].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[2].naziv, vrijeme: res.arrVruciProizvodi[2].vrijeme, cijena1: res.arrVruciProizvodi[2].cijena1, cijena2: res.arrVruciProizvodi[2].cijena2,url: res.arrVruciProizvodi[2].url});
+        document.getElementsByClassName("proizvod")[2].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[3].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[3].naziv, vrijeme: res.arrVruciProizvodi[3].vrijeme, cijena1: res.arrVruciProizvodi[3].cijena1, cijena2: res.arrVruciProizvodi[3].cijena2,url: res.arrVruciProizvodi[3].url});
+        document.getElementsByClassName("proizvod")[3].classList.remove("skeleton");
+        document.getElementsByClassName("nav1_itemi")[0].innerHTML = compiledHead1Template({arrNav1:res.arrNav1});
+        document.getElementsByClassName("nav1_itemi")[0].classList.remove("skeleton");
+        document.getElementsByClassName("nav2")[0].innerHTML = compiledHead2Template({naziv1: res.arrNav2[0].naziv, naziv2: res.arrNav2[1].naziv, fbicon_url: res.arrNav2[2].url, mojakorpa_naziv: res.arrNav2[3].naziv, vrijednostkorpe: res.arrNav2[4].naziv, korpaicon_url: res.arrNav2[5].url});
+        document.getElementsByClassName("nav2")[0].classList.remove("skeleton");
+        document.getElementsByClassName("nav3_itemi")[0].innerHTML = compiledHead3Template({homeicon_url: res.arrNav3[0].url, arrNav3: res.arrNav3.splice(1,res.arrNav3.length-3), informacije: res.arrNav3[res.arrNav3.length-2].naziv, brtel: res.arrNav3[res.arrNav3.length-1].naziv});
+        document.getElementsByClassName("nav3_itemi")[0].classList.remove("skeleton");
+        //document.getElementsByClassName("topfooter")[0].innerHTML = compiledFoot1Template({arrFoot1: res.arrFoot1});
+        for (let i = 0; i < res.arrFoot2.length;i++){
+            document.getElementsByClassName("midfooter_item")[i].innerHTML = compiledFoot2Template({naziv: res.arrFoot2[i].naziv, elementi: res.arrFoot2[i].elementi});
+            document.getElementsByClassName("midfooter_item")[i].classList.remove("skeleton");
+        }
+        document.getElementsByClassName("botfooter")[0].innerHTML = compiledFoot3Template({naziv1: res.arrFoot3[0].naziv, naziv2: res.arrFoot3[1].naziv,naziv3: res.arrFoot3[2].naziv});
+        document.getElementsByClassName("botfooter")[0].classList.remove("skeleton");
+        document.getElementsByClassName("leftside_mainflex_part1")[0].innerHTML = compiledProizvodTemplate({main_img_url: res.arrProizvod2.url, slideArr: res.arrProizvod2.slideurls, naziv: res.arrProizvod2.naziv, cijena: res.arrProizvod2.cijena, sifra1: res.arrProizvod2.sifra1, sifra2: res.arrProizvod2.sifra2, opisArr: res.arrProizvod2.opis});
+        document.getElementsByClassName("leftside_mainflex_part1")[0].classList.remove("skeleton_mainflex_part1");
+        }, 2000);
+    });
+}
+else if (id == 3) {
+    getOpenProduct3().then(res=>{
+        console.log(res);
+        setTimeout(() => {
+        document.getElementsByClassName("proizvod")[0].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[0].naziv, vrijeme: res.arrVruciProizvodi[0].vrijeme, cijena1: res.arrVruciProizvodi[0].cijena1, cijena2: res.arrVruciProizvodi[0].cijena2,url: res.arrVruciProizvodi[0].url});
+        document.getElementsByClassName("proizvod")[0].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[1].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[1].naziv, vrijeme: res.arrVruciProizvodi[1].vrijeme, cijena1: res.arrVruciProizvodi[1].cijena1, cijena2: res.arrVruciProizvodi[1].cijena2,url: res.arrVruciProizvodi[1].url});
+        document.getElementsByClassName("proizvod")[1].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[2].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[2].naziv, vrijeme: res.arrVruciProizvodi[2].vrijeme, cijena1: res.arrVruciProizvodi[2].cijena1, cijena2: res.arrVruciProizvodi[2].cijena2,url: res.arrVruciProizvodi[2].url});
+        document.getElementsByClassName("proizvod")[2].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[3].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[3].naziv, vrijeme: res.arrVruciProizvodi[3].vrijeme, cijena1: res.arrVruciProizvodi[3].cijena1, cijena2: res.arrVruciProizvodi[3].cijena2,url: res.arrVruciProizvodi[3].url});
+        document.getElementsByClassName("proizvod")[3].classList.remove("skeleton");
+        document.getElementsByClassName("nav1_itemi")[0].innerHTML = compiledHead1Template({arrNav1:res.arrNav1});
+        document.getElementsByClassName("nav1_itemi")[0].classList.remove("skeleton");
+        document.getElementsByClassName("nav2")[0].innerHTML = compiledHead2Template({naziv1: res.arrNav2[0].naziv, naziv2: res.arrNav2[1].naziv, fbicon_url: res.arrNav2[2].url, mojakorpa_naziv: res.arrNav2[3].naziv, vrijednostkorpe: res.arrNav2[4].naziv, korpaicon_url: res.arrNav2[5].url});
+        document.getElementsByClassName("nav2")[0].classList.remove("skeleton");
+        document.getElementsByClassName("nav3_itemi")[0].innerHTML = compiledHead3Template({homeicon_url: res.arrNav3[0].url, arrNav3: res.arrNav3.splice(1,res.arrNav3.length-3), informacije: res.arrNav3[res.arrNav3.length-2].naziv, brtel: res.arrNav3[res.arrNav3.length-1].naziv});
+        document.getElementsByClassName("nav3_itemi")[0].classList.remove("skeleton");
+        //document.getElementsByClassName("topfooter")[0].innerHTML = compiledFoot1Template({arrFoot1: res.arrFoot1});
+        for (let i = 0; i < res.arrFoot2.length;i++){
+            document.getElementsByClassName("midfooter_item")[i].innerHTML = compiledFoot2Template({naziv: res.arrFoot2[i].naziv, elementi: res.arrFoot2[i].elementi});
+            document.getElementsByClassName("midfooter_item")[i].classList.remove("skeleton");
+        }
+        document.getElementsByClassName("botfooter")[0].innerHTML = compiledFoot3Template({naziv1: res.arrFoot3[0].naziv, naziv2: res.arrFoot3[1].naziv,naziv3: res.arrFoot3[2].naziv});
+        document.getElementsByClassName("botfooter")[0].classList.remove("skeleton");
+        document.getElementsByClassName("leftside_mainflex_part1")[0].innerHTML = compiledProizvodTemplate({main_img_url: res.arrProizvod3.url, slideArr: res.arrProizvod3.slideurls, naziv: res.arrProizvod3.naziv, cijena: res.arrProizvod3.cijena, sifra1: res.arrProizvod3.sifra1, sifra2: res.arrProizvod3.sifra2, opisArr: res.arrProizvod3.opis});
+        document.getElementsByClassName("leftside_mainflex_part1")[0].classList.remove("skeleton_mainflex_part1");
+        }, 2000);
+    });
+}
+else if (id == 4) {
+    getOpenProduct4().then(res=>{
+        console.log(res);
+        setTimeout(() => {
+        document.getElementsByClassName("proizvod")[0].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[0].naziv, vrijeme: res.arrVruciProizvodi[0].vrijeme, cijena1: res.arrVruciProizvodi[0].cijena1, cijena2: res.arrVruciProizvodi[0].cijena2,url: res.arrVruciProizvodi[0].url});
+        document.getElementsByClassName("proizvod")[0].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[1].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[1].naziv, vrijeme: res.arrVruciProizvodi[1].vrijeme, cijena1: res.arrVruciProizvodi[1].cijena1, cijena2: res.arrVruciProizvodi[1].cijena2,url: res.arrVruciProizvodi[1].url});
+        document.getElementsByClassName("proizvod")[1].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[2].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[2].naziv, vrijeme: res.arrVruciProizvodi[2].vrijeme, cijena1: res.arrVruciProizvodi[2].cijena1, cijena2: res.arrVruciProizvodi[2].cijena2,url: res.arrVruciProizvodi[2].url});
+        document.getElementsByClassName("proizvod")[2].classList.remove("skeleton");
+        document.getElementsByClassName("proizvod")[3].innerHTML = compiledProizvodiTemplate({naziv: res.arrVruciProizvodi[3].naziv, vrijeme: res.arrVruciProizvodi[3].vrijeme, cijena1: res.arrVruciProizvodi[3].cijena1, cijena2: res.arrVruciProizvodi[3].cijena2,url: res.arrVruciProizvodi[3].url});
+        document.getElementsByClassName("proizvod")[3].classList.remove("skeleton");
+        document.getElementsByClassName("nav1_itemi")[0].innerHTML = compiledHead1Template({arrNav1:res.arrNav1});
+        document.getElementsByClassName("nav1_itemi")[0].classList.remove("skeleton");
+        document.getElementsByClassName("nav2")[0].innerHTML = compiledHead2Template({naziv1: res.arrNav2[0].naziv, naziv2: res.arrNav2[1].naziv, fbicon_url: res.arrNav2[2].url, mojakorpa_naziv: res.arrNav2[3].naziv, vrijednostkorpe: res.arrNav2[4].naziv, korpaicon_url: res.arrNav2[5].url});
+        document.getElementsByClassName("nav2")[0].classList.remove("skeleton");
+        document.getElementsByClassName("nav3_itemi")[0].innerHTML = compiledHead3Template({homeicon_url: res.arrNav3[0].url, arrNav3: res.arrNav3.splice(1,res.arrNav3.length-3), informacije: res.arrNav3[res.arrNav3.length-2].naziv, brtel: res.arrNav3[res.arrNav3.length-1].naziv});
+        document.getElementsByClassName("nav3_itemi")[0].classList.remove("skeleton");
+        //document.getElementsByClassName("topfooter")[0].innerHTML = compiledFoot1Template({arrFoot1: res.arrFoot1});
+        for (let i = 0; i < res.arrFoot2.length;i++){
+            document.getElementsByClassName("midfooter_item")[i].innerHTML = compiledFoot2Template({naziv: res.arrFoot2[i].naziv, elementi: res.arrFoot2[i].elementi});
+            document.getElementsByClassName("midfooter_item")[i].classList.remove("skeleton");
+        }
+        document.getElementsByClassName("botfooter")[0].innerHTML = compiledFoot3Template({naziv1: res.arrFoot3[0].naziv, naziv2: res.arrFoot3[1].naziv,naziv3: res.arrFoot3[2].naziv});
+        document.getElementsByClassName("botfooter")[0].classList.remove("skeleton");
+        document.getElementsByClassName("leftside_mainflex_part1")[0].innerHTML = compiledProizvodTemplate({main_img_url: res.arrProizvod4.url, slideArr: res.arrProizvod4.slideurls, naziv: res.arrProizvod4.naziv, cijena: res.arrProizvod4.cijena, sifra1: res.arrProizvod4.sifra1, sifra2: res.arrProizvod4.sifra2, opisArr: res.arrProizvod4.opis});
+        document.getElementsByClassName("leftside_mainflex_part1")[0].classList.remove("skeleton_mainflex_part1");
+        }, 2000);
+    });
+}
