@@ -1,0 +1,224 @@
+[
+    {
+        "id": 1,
+        "naziv": "BIJELA TEHNIKA",
+        "root": true,
+        "children": [
+            {
+                "id": 1,
+                "naziv": "sub1",
+                "children": [
+                    {
+                        "id": 1,
+                        "naziv": "sub11"
+                    },
+                    {
+                        "id": 2,
+                        "naziv": "sub12",
+                        "children": [
+                            {
+                                "id": 1,
+                                "naziv": "sub121"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "naziv": "sub2"
+            },
+            {
+                "id": 3,
+                "naziv": "sub3"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "naziv": "UGRADNA TEHNIKA",
+        "root": true,
+        "children": [
+            {
+                "id": 1,
+                "naziv": "sub1",
+                "children": [
+                    {
+                        "id": 1,
+                        "naziv": "sub11"
+                    },
+                    {
+                        "id": 2,
+                        "naziv": "sub12"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "naziv": "sub2"
+            },
+            {
+                "id": 3,
+                "naziv": "sub3"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "naziv": "KLIMATIZACIJA I GRIJANJE",
+        "root": false
+    },
+    {
+        "id": 4,
+        "naziv": "MALI KUCNI APARATI",
+        "root": true,
+        "children": [
+            {
+                "id": 1,
+                "naziv": "sub1",
+                "children": [
+                    {
+                        "id": 1,
+                        "naziv": "sub11"
+                    },
+                    {
+                        "id": 2,
+                        "naziv": "sub12"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "naziv": "sub2"
+            },
+            {
+                "id": 3,
+                "naziv": "sub3"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "naziv": "TV I VIDEO",
+        "root": true,
+        "children": [
+            {
+                "id": 1,
+                "naziv": "sub1",
+                "children": [
+                    {
+                        "id": 1,
+                        "naziv": "sub11"
+                    },
+                    {
+                        "id": 2,
+                        "naziv": "sub12"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "naziv": "sub2"
+            },
+            {
+                "id": 3,
+                "naziv": "sub3"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "naziv": "AUDIO",
+        "root": true,
+        "children": [
+            {
+                "id": 1,
+                "naziv": "sub1",
+                "children": [
+                    {
+                        "id": 1,
+                        "naziv": "sub11"
+                    },
+                    {
+                        "id": 2,
+                        "naziv": "sub12"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "naziv": "sub2"
+            },
+            {
+                "id": 3,
+                "naziv": "sub3"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "naziv": "TELEFONIJA",
+        "plus": false,
+        "children": [
+            {
+                "id": 1,
+                "naziv": "sub1",
+                "children": [
+                    {
+                        "id": 1,
+                        "naziv": "sub11"
+                    },
+                    {
+                        "id": 2,
+                        "naziv": "sub12"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "naziv": "sub2"
+            },
+            {
+                "id": 3,
+                "naziv": "sub3"
+            }
+        ],
+        "root": true
+    },
+    {
+        "id": 8,
+        "naziv": "KAMERE I FOTO APARATI",
+        "plus": false,
+        "root": true
+    },
+    {
+        "id": 9,
+        "naziv": "AUTO TEHNIKA",
+        "plus": false,
+        "root": true
+    },
+    {
+        "id": 10,
+        "naziv": "RACUNARI I PERIFERIJE",
+        "plus": false,
+        "root": true
+    },
+    {
+        "id": 11,
+        "naziv": "KONZOLE I IGRICE",
+        "plus": false,
+        "root": true
+    },
+    {
+        "id": 12,
+        "naziv": "POSTELJINE",
+        "plus": false,
+        "root": true
+    },
+    {
+        "id": 13,
+        "naziv": "KUPOVINA PREKO T-COMA",
+        "plus": false,
+        "root": true
+    }
+]

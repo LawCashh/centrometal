@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "naziv": "Ugradn set frižider gorenje",
+    "vrijeme": "10 dan 6 sat 15 min 10 sek",
+    "cijena1": "€135.00",
+    "cijena2": " €90.00",
+    "url": "../../assets/images/home/rightside/masina-1.png"
+  },
+  {
+    "id": 2,
+    "naziv": "Ugradn set frižider gorenje",
+    "vrijeme": "10 dan 6 sat 15 min 10 sek",
+    "cijena1": "€135.00",
+    "cijena2": " €90.00",
+    "url": "../../assets/images/home/rightside/masina-2.png"
+  },
+  {
+    "id": 3,
+    "naziv": "Ugradn set frižider gorenje",
+    "vrijeme": "10 dan 6 sat 15 min 10 sek",
+    "cijena1": "€135.00",
+    "cijena2": " €90.00",
+    "url": "../../assets/images/home/rightside/masina-3.png"
+  },
+  {
+    "id": 4,
+    "naziv": "Ugradn set frižider gorenje",
+    "vrijeme": "10 dan 6 sat 15 min 10 sek",
+    "cijena1": "€135.00",
+    "cijena2": " €90.00",
+    "url": "../../assets/images/home/rightside/masina-4.png"
+  },
+  {
+    "id": 5,
+    "naziv": "Ugradn set frižider gorenje",
+    "vrijeme": "10 dan 6 sat 15 min 10 sek",
+    "cijena1": "€135.00",
+    "cijena2": " €90.00",
+    "url": "../../assets/images/home/rightside/masina-1.png"
+  },
+  {
+    "id": 6,
+    "naziv": "Ugradn set frižider gorenje",
+    "vrijeme": "10 dan 6 sat 15 min 10 sek",
+    "cijena1": "€135.00",
+    "cijena2": " €90.00",
+    "url": "../../assets/images/home/rightside/masina-2.png"
+  },
+  {
+    "id": 7,
+    "naziv": "Ugradn set frižider gorenje",
+    "vrijeme": "10 dan 6 sat 15 min 10 sek",
+    "cijena1": "€135.00",
+    "cijena2": " €90.00",
+    "url": "../../assets/images/home/rightside/masina-3.png"
+  },
+  {
+    "id": 8,
+    "naziv": "Ugradn set frižider gorenje",
+    "vrijeme": "10 dan 6 sat 15 min 10 sek",
+    "cijena1": "€135.00",
+    "cijena2": " €90.00",
+    "url": "../../assets/images/home/rightside/masina-4.png"
+  },
+  {
+    "id": 9,
+    "naziv": "Ugradn set frižider gorenje",
+    "vrijeme": "10 dan 6 sat 15 min 10 sek",
+    "cijena1": "€135.00",
+    "cijena2": " €90.00",
+    "url": "../../assets/images/home/rightside/masina-1.png"
+  }
+]

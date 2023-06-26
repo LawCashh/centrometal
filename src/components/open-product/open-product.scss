@@ -1,16 +1,6 @@
-@import "../styles/header";
-@import "../../styles/footer";
-
 $lightgray_slider: #f2f2f2;
-
-body{
-    margin: 0;
-    padding: 0;
-    font-family: "Arial Narrow";
-    font-weight: 100;
-}
   
-.mainflex{
+.mainflex-op{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -21,7 +11,7 @@ body{
     margin-bottom: 25px;
 }
   
-.leftside_mainflex {
+.leftside_mainflex-op {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -29,7 +19,7 @@ body{
     width: 75%;
 }
 
-.leftside_naslovna{
+.leftside_naslovna-op{
     color: gray;
     width: 100%;
     height: 30px;
@@ -41,7 +31,7 @@ body{
     }
 }
 
-.leftside_mainflex_part1 {
+.leftside_mainflex_part1-op {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -237,7 +227,7 @@ body{
 }
 
 
-.rightside_mainflex {
+.rightside_mainflex-op {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -273,7 +263,7 @@ body{
     margin: auto;
 }
 
-.rightside_newsletter{
+.rightside_newsletter-op{
     margin-top: 0;
     margin-bottom: 20px;
     height: 220px;
@@ -378,7 +368,7 @@ body{
         }
     }
 }
-.proizvodi_flex{
+.proizvodi_flex-op{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -430,7 +420,7 @@ body{
     }
 }
 
-.leftside_proizvodi_naslov{
+.leftside_proizvodi_naslov-op{
     margin-top: 20px;
     width: 100%;
     height: 30px;
@@ -450,7 +440,7 @@ body{
 }
 
 @media (orientation: portrait) {
-    .mainflex{
+    .mainflex-op{
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -460,14 +450,14 @@ body{
         margin-bottom: 25px;
     }
     
-    .leftside_naslovna{
+    .leftside_naslovna-op{
         font-size: 5vw;
         height: 150px; 
         display: flex;
         justify-content: center;
         text-align: center;
     }
-    .leftside_mainflex_part1 {
+    .leftside_mainflex_part1-op {
         flex-direction: column;
         .leftside_mainflex_part1_left{
             width: 100%;
@@ -627,7 +617,7 @@ body{
             }
         }
     }
-    .leftside_proizvodi_naslov{
+    .leftside_proizvodi_naslov-op{
         height: 80px;
         margin-top: 20px;
         h4{
@@ -638,7 +628,7 @@ body{
         }
     }
 
-    .proizvodi_flex{
+    .proizvodi_flex-op{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -672,7 +662,7 @@ body{
         }
     }
    
-    .rightside_mainflex {
+    .rightside_mainflex-op {
         width: 100%;
         height: auto;
     }
@@ -691,7 +681,7 @@ body{
         width: 100%;
     }
     
-    .rightside_newsletter{
+    .rightside_newsletter-op{
         height: 400px;
         justify-content: center;
         align-items: center;

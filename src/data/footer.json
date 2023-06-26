@@ -1,0 +1,65 @@
+{
+    "foot1": [
+        {
+            "id": 1,
+            "url": "../../assets/images/footer/logo-gorenje.png"
+        },
+        {
+            "id": 2,
+            "url": "../../assets/images/footer/logo-indesit.png"
+        },
+        {
+            "id": 3,
+            "url": "../../assets/images/footer/logo-panasonic.png"
+        },
+        {
+            "id": 4,
+            "url": "../../assets/images/footer/logo-samsung.png"
+        },
+        {
+            "id": 5,
+            "url": "../../assets/images/footer/logo-sony.png"
+        }
+    ],
+    "foot2": [
+        {
+            "id": 1,
+            "naziv": "Informacije",
+            "elementi": ["O nama", "Gdje kupiti", "Zaposljenje", "Aktivnosti"]
+        },
+        {
+            "id": 2,
+            "naziv": "Aktivnosti",
+            "elementi": ["Akcije", "Noviteti", "Rasprodaja", "Marketing"]
+        },
+        {
+            "id": 3,
+            "naziv": "Moja strana",
+            "elementi": ["Registracija", "Prijava", "Korisnicka strana", "Korpa"]
+        },
+        {
+            "id": 4,
+            "naziv": "Placanje i dostava",
+            "elementi": ["Nacini placanja", "Sigurnost placanja", "Brza i pouzdana dostava", "Odaberite datum dostave"]
+        },
+        {
+            "id": 5,
+            "naziv": "Povrat i zamjena",
+            "elementi": ["Servis", "Reklamacije"]
+        }
+    ],
+    "foot3": [
+        {
+            "id": 1,
+            "naziv": "2016 Copyright by"
+        },
+        {
+            "id": 2,
+            "naziv": "centrometal.me"
+        },
+        {
+            "id": 3,
+            "naziv": "All Rights Reserved."
+        }
+    ]
+}

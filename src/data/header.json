@@ -1,0 +1,108 @@
+{
+    "nav1": [
+        {
+            "id": 1,
+            "naziv": "Engleski"
+        },
+        {
+            "id": 2,
+            "naziv": "Crnogorski"
+        },
+        {
+            "id": 3,
+            "naziv": "Svakog dana od 08:00 do 21:00 h, osim nedjeljom Tel: +382 20 656 772"
+        },
+        {
+            "id": 4,
+            "naziv": "On-line podrška"
+        },
+        {
+            "id": 5,
+            "naziv": "Registracija"
+        },
+        {
+            "id": 6,
+            "naziv": "Prijava"
+        }
+    ],
+    "nav2": [
+        {
+            "id": 1,
+            "naziv": "CENTRO"
+        },
+        {
+            "id": 2,
+            "naziv": "METAL"
+        },
+        {
+            "id": 3,
+            "naziv": "fbicon",
+            "url": "../../assets/images/header/fbico.png"
+        },
+        {
+            "id": 4,
+            "naziv": "lupaicon",
+            "url": "../../assets/images/header/lupaicon.png"
+        },
+        {
+            "id": 5,
+            "naziv": "MOJA KORPA"
+        },
+        {
+            "id": 6,
+            "naziv": "0.00 €"
+        },
+        {
+            "id": 7,
+            "naziv": "korpaicon",
+            "url": "../../assets/images/header/cartico.png"
+        }
+    ],
+    "nav3": [
+        {
+            "id": 1,
+            "naziv": "homeicon",
+            "url": "../../assets/images/header/homeicon.png"
+        },
+        {
+            "id": 2,
+            "naziv": "Akcija"
+        },
+        {
+            "id": 3,
+            "naziv": "Rasprodaja"
+        },
+        {
+            "id": 4,
+            "naziv": "Katalozi"
+        },
+        {
+            "id": 5,
+            "naziv": "Novosti"
+        },
+        {
+            "id": 6,
+            "naziv": "O nama"
+        },
+        {
+            "id": 7,
+            "naziv": "Uradi sam"
+        },
+        {
+            "id": 6,
+            "naziv": "Vip kartica"
+        },
+        {
+            "id": 6,
+            "naziv": "Kontakt"
+        },
+        {
+            "id": 6,
+            "naziv": "Informacije"
+        },
+        {
+            "id": 7,
+            "naziv": "tel: 020 123 456"
+        }
+    ]
+}

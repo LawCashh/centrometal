@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "naziv": "Motorna Sega 1",
+        "url": "../../assets/images/home/rightside/saw.png"
+    },
+    {
+        "id": 2,
+        "naziv": "Motorna Sega 2",
+        "url": "../../assets/images/home/rightside/saw.png"
+    },
+    {
+        "id": 3,
+        "naziv": "Motorna Sega 3",
+        "url": "../../assets/images/home/rightside/saw.png"
+    },
+    {
+        "id": 4,
+        "naziv": "Motorna Sega 4",
+        "url": "../../assets/images/home/rightside/saw.png"
+    }
+]
