@@ -49,10 +49,10 @@
             </div>
             <div class="leftside_content_change">
                 <div class="leftside_content_change_dugmad">
-                    <button class="leftside_content_change_button" id="leftside_content_change_button1" ng-click="vm.leftsideButtonContentChange1()">PROIZVODNA LISTA</button>
-                    <button class="leftside_content_change_button" id="leftside_content_change_button2" ng-click="vm.leftsideButtonContentChange2()">UPUTSTVO ZA RUKOVANJE</button>
-                    <button class="leftside_content_change_button" id="leftside_content_change_button3" ng-click="vm.leftsideButtonContentChange3()">OCJENA</button>
-                    <button class="leftside_content_change_button" id="leftside_content_change_button4" ng-click="vm.leftsideButtonContentChange4()">E-MAIL</button>
+                    <button class="leftside_content_change_button" id="leftside_content_change_button1" >PROIZVODNA LISTA</button>
+                    <button class="leftside_content_change_button" id="leftside_content_change_button2" >UPUTSTVO ZA RUKOVANJE</button>
+                    <button class="leftside_content_change_button" id="leftside_content_change_button3" >OCJENA</button>
+                    <button class="leftside_content_change_button" id="leftside_content_change_button4" >E-MAIL</button>
                 </div>
                 <div class="leftside_content_change_p">
                     <p id="leftside_content_change_p1">
@@ -96,26 +96,25 @@
                 </div>
             </div>
         </div>
-        <!--TODO:prebaci playpause u controller  -->
         <div class="rightside_mainflex-op">
             <div class="rightside_videi">
                 <div class="rightside_video1">
-                    <video controls="" muted="" id="video1" onclick="playpause1()">
-                        <source src="/src/mp4/washing-machine.mp4" type="video/mp4">
+                    <video controls="" muted="" id="video1" onclick="">
+                        <source src="{{vm.videosData[0].url}}" type="video/mp4">
                     </video>
-                    <img onclick="playpause1_img()" id="playpause1_img" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTLfglDcIiL4rmIkN_FH761s0ZPNoxZgAOEJ7Sig7RKh3yrnL_3s-i3l7srtCKCcmZHo8XZW2-b8pPB7mxKcjLW1bgCBQ=w3584-h1904">
+                    <img id="playpause1_img" ng-src="{{vm.videosData[0].imgurl}}">
                 </div>
                 <div class="rightside_video2">
-                    <video controls="" muted="" id="video2" onclick="playpause2()">
+                    <video controls="" muted="" id="video2" onclick="">
                         <source src="/src/mp4/washing-machine.mp4" type="video/mp4">
                     </video>
-                    <img onclick="playpause2_img()" id="playpause2_img" src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTLfglDcIiL4rmIkN_FH761s0ZPNoxZgAOEJ7Sig7RKh3yrnL_3s-i3l7srtCKCcmZHo8XZW2-b8pPB7mxKcjLW1bgCBQ=w3584-h1904">
+                    <img id="playpause2_img" ng-src="{{vm.videosData[0].imgurl}}">
                 </div>
             </div>
 
             <div class="rightside_newsletter-op">
                 <div class="rightside_newsletter_naslov">
-                    <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEORBKUPy6ccR-uEOWyjAYm9jZk16JjE-lfZFyvJzt4235qVDakgpU2aB-zR2yPA6bpDAkqT0fd9SJiWU4sYvlCXY5-6_LQ=w3584-h1904"/>
+                    <img src="../../assets/images/home/leftside/search/email-square.png"/>
                     <h3>PRIJAVI SE NA NEWSLETTER</h3>
                 </div>
                 <div class="rightside_newsletter_input">
@@ -131,42 +130,3 @@
 
         </div>
     </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script>
-    $('.topfooter').slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-    });
-</script>
-<script>
-    $('.leftside_mainflex_part1_footer').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-    });
-</script>
-<script>
-    var myVideo1 = document.getElementById("video1");
-    var myVideo2 = document.getElementById("video2");
-    function playpause1(){
-        myVideo1.load();
-        document.getElementById("playpause1_img").style.display = "inline-block";
-    }
-    function playpause2(){
-        myVideo2.load();
-        document.getElementById("playpause2_img").style.display = "inline-block";
-    }
-    function playpause1_img(){
-        document.getElementById("playpause1_img").style.display = "none";
-        myVideo1.play();
-    }
-    function playpause2_img(){
-        document.getElementById("playpause2_img").style.display = "none";
-        myVideo2.play();
-    }
-</script>

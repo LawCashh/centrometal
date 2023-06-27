@@ -13,6 +13,7 @@ const paths = {
     js: [
         "./src/scripts/angular/*.js",
         "./src/scripts/custom/*.js",
+        "./src/components/**/*.js"
     ],
     distjs: "./dist/js",
     target: "./index.html",

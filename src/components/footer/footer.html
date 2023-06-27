@@ -1,0 +1,14 @@
+<div class="topfooter" >
+    <div class="footer_slide_item" ng-repeat="foot1item in vm.footerData.foot1"><a><img ng-src="foot1item.url"></a></div>
+</div>
+<div class="midfooter">
+    <div class="midfooter_item" ng-repeat="foot2block in vm.footerData.foot2">
+        <h3>{{foot2block.naziv}}</h3>
+        <ul>
+            <li ng-repeat="foot2blockelement in foot2block.elementi" ><a>{{foot2blockelement}}</a></li>
+        </ul>
+    </div>
+</div>
+<div class="botfooter">
+    <p>&copy; {{vm.footerData.foot3[0].naziv}} <a>{{vm.footerData.foot3[1].naziv}}</a> {{vm.footerData.foot3[2].naziv}}</p>
+</div>
