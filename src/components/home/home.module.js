@@ -1,8 +1,8 @@
-angular.module("centrometalApp").config(function($routeProvider){
+angular.module("centrometalApp").config(['$routeProvider', function($routeProvider){
     $routeProvider
-        .when('/home', {
+        .when('/', {
         templateUrl: './src/components/home/home.html',
         controller: 'homeController',
         controllerAs: 'vm'
-    });
-});
+    })
+}]);

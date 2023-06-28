@@ -1,4 +1,4 @@
-angular.module('centrometalApp').service('openProductService', function($http, $routeParams) {
+angular.module('centrometalApp').service('openProductService', ['openProductService', function($http, $routeParams) {
     let productId = $routeParams.productId;
     this.getproductData = function() {
         return $http.get('http://localhost:3000/' + productId);
@@ -9,4 +9,4 @@ angular.module('centrometalApp').service('openProductService', function($http, $
     this.getvideosData = function() {
         return $http.get('http:/localhost:3000/videos')
     }
-});
+}]);

@@ -1,7 +1,7 @@
-angular.module('centrometalApp').controller('footer', function(footerService) {
-    let vm = this;
+angular.module('centrometalApp').controller('footerController',['footerService', '$interval', function(footerService, $interval) {
+    var vm = this;
     footerService.getfooterData().then(function(response){
         vm.footerData = response.data;
     });
 
-});
+}]);

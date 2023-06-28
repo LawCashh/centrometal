@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "url": "../../assets/videos/washing-machine.mp4",
-        "imgurl": "../../assets/images/open-product/rightside/videocover.png"
+        "url": "src/assets/videos/washing-machine.mp4",
+        "imgurl": "src/assets/images/open-product/rightside/videocover.png"
     }
 ]

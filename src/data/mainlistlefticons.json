@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "url": "../../assets/images/home/leftside/nav/dotmatrix.png"
+    "url": "src/assets/images/home/leftside/nav/dotmatrix.png"
   },
   {
     "id": 2,
-    "url": "../../assets/images/home/leftside/nav/plusicon.png"
+    "url": "src/assets/images/home/leftside/nav/plusicon.png"
   }
 ]

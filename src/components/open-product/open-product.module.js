@@ -1,11 +1,11 @@
-angular.module("centrometalApp").config(function ($routeProvider) {
+angular.module("centrometalApp").config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-        .when("/open-product/:productId", {
-            templateUrl: "./open-product.html",
+        .when("/openproduct/:productId", {
+            templateUrl: "./src/components/open-product/open-product.html",
             controller: "openProductController",
             controllerAs: "vm"
         })
         .otherwise({
-            redirectTo: "/home"
+            redirectTo: "/"
         })
-});
+}]);

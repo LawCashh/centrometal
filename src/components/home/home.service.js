@@ -1,4 +1,4 @@
-angular.module('centrometalApp').service('homeService', function($http) {
+angular.module('centrometalApp').service('homeService',['$http', function($http) {
     this.getakcijaproizvodiData = function() {
         return $http.get('http://localhost:3000/akcijaproizvodi');
     };
@@ -18,7 +18,7 @@ angular.module('centrometalApp').service('homeService', function($http) {
         return $http.get('http://localhost:3000/rasprodajaproizvodi');
     };
     this.getvruciproizvodiData = function() {
-        return $http.get('http://localhost:3000/vruciproivodi');
+        return $http.get('http://localhost:3000/vruciproizvodi');
     };
     this.getreklamemainData = function() {
         return $http.get('http://localhost:3000/reklamemain');
@@ -27,4 +27,4 @@ angular.module('centrometalApp').service('homeService', function($http) {
         return $http.get('http://localhost:3000/testere');
     };
 
-});
+}]);

@@ -1,9 +1,9 @@
-<nav class="nav1">
+<nav class="nav1" ng-controller="headerController as vm">
     <ul class="nav1_itemi">
         <li class="nav1_item" ng-repeat="nav1item in vm.headerData.nav1"><a>{{nav1item.naziv}}</a></li>
     </ul>
 </nav>
-<div class="nav2big">
+<div class="nav2big" ng-controller="headerController as vm">
     <div class="nav2">
         <div class="centro">
             <a><span id="centroplava">{{vm.headerData.nav2[0].naziv}}</span>{{vm.headerData.nav2[1].naziv}}</a>
@@ -20,7 +20,7 @@
         </div>
     </div>
 </div>
-<nav class="nav3">
+<nav class="nav3" ng-controller="headerController as vm">
     <ul class="nav3_itemi">
         <div class="left_trap"></div>
         <li class="nav3_item"><a id="ahome"><img id="homeicon" ng-src="{{vm.headerData.nav3[0].url}}"/></a></li>

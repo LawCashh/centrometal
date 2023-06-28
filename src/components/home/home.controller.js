@@ -1,5 +1,5 @@
-angular.module('centrometalApp').controller('homeController', function(homeService) {
-    let vm = this;
+angular.module('centrometalApp').controller('homeController',['homeService', function(homeService) {
+    var vm = this;
     homeService.getakcijaproizvodiData().then(function(response){
         vm.akcijaproizvodiData = response.data;
     });
@@ -28,4 +28,4 @@ angular.module('centrometalApp').controller('homeController', function(homeServi
         vm.testereData = response.data;
     });
 
-});
+}]);

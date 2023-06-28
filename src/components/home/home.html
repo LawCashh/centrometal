@@ -3,17 +3,17 @@
     <div class="leftside_nav-home">
       <ul class="leftside_nav_list">
         <li class="leftside_nav_listitem"><img ng-src="{{vm.mainlistlefticonsData[0].url}}"/>Kupuj po kategoriji</li>
-        <li ng-repeat="listitem in vm.mainlistleftData" class="leftside_nav_listitem"><a>{{listitem.naziv}}</a><button ng-if="showplusbutton"><img ng-src="{{vm.mainlistlefticonsData[1].url}}"></button></li>
+        <li ng-repeat="listitem in vm.mainlistleftData" class="leftside_nav_listitem"><a>{{listitem.naziv}}</a><button ng-if="$index < 7 && $index != 2"><img ng-src="{{vm.mainlistlefticonsData[1].url}}"></button></li>
       </ul>
     </div>
     <div class="leftside_search-home">
       <div class="leftside_search_naslov">
-        <img src="../../assets/images/home/leftside/search/email-square.png"/>
+        <img src="src/assets/images/home/leftside/search/email-square.png"/>
         <h3>PRETRAGA PO BRENDU</h3>
       </div>
       <div class="leftside_search_forma">
         <input type="text" placeholder="Unesite naziv brenda"/>
-        <img src="../../assets/images/header/lupaico.png"/>
+        <img src="src/assets/images/header/lupaico.png"/>
       </div>
     </div>
     <div class="leftside_img-home">
@@ -21,7 +21,7 @@
     </div>
     <div class="leftside_newsletter-home">
       <div class="leftside_newsletter_naslov">
-        <img src="../../assets/images/home/leftside/search/email-square.png"/>
+        <img src="src/assets/images/home/leftside/search/email-square.png"/>
         <h3>PRIJAVI SE NA NEWSLETTER</h3>
       </div>
       <div class="leftside_newsletter_input">
@@ -85,13 +85,13 @@
     <div class="mainflex_proizvodi-home" id="mainflex_proizvod1">
       <div id="mainflex_proizvodi_naslov1">
         <div class="bijeli_left"></div>
-        <img src="../../assets/images/home/rightside/vruca-icon.png"/>
+        <img src="src/assets/images/home/rightside/vruca-icon.png"/>
         <h4>VRUĆA PONUDA</h4>
         <div class="bijeli_right"></div>
       </div>
       <div class="proizvodi_flex-home">
         <div class="proizvod-home" ng-repeat="proizvod in vm.vruciproizvodiData">
-          <img class="proizvod_img" ng-src="proizvod.url"/>
+          <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
           <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
@@ -105,21 +105,21 @@
     <div id="mainflex_proizvod2-home">
       <div id="mainflex_proizvodi_naslov2">
         <div class="bijeli_left"></div>
-        <img src="../../assets/images/home/rightside/akcija-icon.png"/>
+        <img src="src/assets/images/home/rightside/akcija-icon.png"/>
         <h4>AKCIJA - POPUSTI</h4>
         <div class="bijeli_right"></div>
       </div>
       <div class="proizvodi_flex-home">
         <div class="proizvod-home" ng-repeat="proizvod in vm.akcijaproizvodiData">
-          <img class="proizvod_img" ng-src="proizvod.url"/>
-          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{proizvod.naziv}}</a></h4>
+          <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
+          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
       </div>
       <div class="proizvodi_flex-home">
         <div class="proizvod-home" ng-repeat="proizvod in vm.akcijaproizvodiData">
-          <img class="proizvod_img" ng-src="proizvod.url"/>
+          <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
           <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
@@ -133,13 +133,13 @@
     <div class="mainflex_proizvodi-home" id="mainflex_proizvod3">
       <div id="mainflex_proizvodi_naslov3">
         <div class="bijeli_left"></div>
-        <img src="../../assets/images/home/rightside/preporucujemo-icon.png"/>
+        <img src="src/assets/images/home/rightside/preporucujemo-icon.png"/>
         <h4>PREPORUČUJEMO</h4>
         <div class="bijeli_right"></div>
       </div>
       <div class="proizvodi_flex-home">
         <div class="proizvod-home" ng-repeat="proizvod in vm.preporucujemoproizvodiData">
-          <img class="proizvod_img" ng-src="proizvod.url"/>
+          <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
           <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
@@ -153,13 +153,13 @@
     <div class="mainflex_proizvodi-home" id="mainflex_proizvod4">
       <div id="mainflex_proizvodi_naslov4">
         <div class="bijeli_left"></div>
-        <img src="../../assets/images/home/rightside/novo-icon.png"/>
+        <img src="src/assets/images/home/rightside/novo-icon.png"/>
         <h4>NOVO U PONUDI</h4>
         <div class="bijeli_right"></div>
       </div>
       <div class="proizvodi_flex-home">
         <div class="proizvod-home" ng-repeat="proizvod in vm.novoproizvodiData">
-          <img class="proizvod_img" ng-src="proizvod.url"/>
+          <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
           <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
@@ -172,13 +172,13 @@
     <div class="mainflex_proizvodi-home" id="mainflex_proizvod5">
       <div id="mainflex_proizvodi_naslov5">
         <div class="bijeli_left"></div>
-        <img src="../../assets/images/home/rightside/rasprodaja-icon.png"/>
+        <img src="src/assets/images/home/rightside/rasprodaja-icon.png"/>
         <h4>RASPRODAJA</h4>
         <div class="bijeli_right"></div>
       </div>
       <div class="proizvodi_flex-home">
         <div class="proizvod-home" ng-repeat="proizvod in vm.rasprodajaproizvodiData">
-          <img class="proizvod_img" ng-src="proizvod.url"/>
+          <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
           <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>

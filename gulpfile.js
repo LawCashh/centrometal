@@ -6,17 +6,31 @@ const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const inject = require('gulp-inject');
 const jsonconcat = require("gulp-json-concat");
+const minify = require("gulp-minify");
+const connect = require("gulp-connect");
 
 const paths = {
     sass: "./src/**/*.scss",
     css: "./dist/styles",
-    js: [
-        "./src/scripts/angular/*.js",
-        "./src/scripts/custom/*.js",
-        "./src/components/**/*.js"
+    angjs: [
+        "./src/scripts/angular/angular.min.js",
+        "./src/scripts/angular/angular-route.min.js",
+        "./src/scripts/other/*.js"
+        //"./src/scripts/custom/*.js"
     ],
-    distjs: "./dist/js",
+    js: [
+        "./src/app.js",
+        "./src/components/**/*.module.js",
+        "./src/components/**/*.service.js",
+        "./src/components/**/*.controller.js",
+        "./src/components/**/*.filter.js"
+
+    ],
+    distjs: [
+        "./dist/js"
+    ],
     target: "./index.html",
+    templates: "./src/components/**/*.html",
     // jsonhome: [
     //     "./src/data/header.json",
     //     "./src/data/footer.json",
@@ -43,7 +57,8 @@ const paths = {
 function sassTask () {
     return gulp.src(paths.sass)
         .pipe(gulpsass().on("sass task greska:", gulpsass.logError))
-        .pipe(gulp.dest(paths.css));
+        .pipe(gulp.dest(paths.css))
+        .pipe(connect.reload());
 }
 
 // function jsonHomeTask () {
@@ -61,28 +76,44 @@ function sassTask () {
 //         }))
 //         .pipe(gulp.dest(paths.jsonopenproductdest));
 // }
+function angScriptsTask() {
+    return gulp.src(paths.angjs)
+        .pipe(concat("ang.min.js"))
+        //.pipe(rename({suffix: ".min"}))
+        .pipe(gulp.dest(paths.distjs))
+        .pipe(connect.reload());
+}
 
 function scriptsTask() {
     return gulp.src(paths.js)
         .pipe(concat("scripts.js"))
-        .pipe(uglify())
-        .pipe(rename({suffix: ".min"}))
-        .pipe(gulp.dest(paths.distjs));
+        .pipe(minify())
+        //.pipe(rename({suffix: ".min"}))
+        .pipe(gulp.dest(paths.distjs))
+        .pipe(connect.reload());
 }
 
 function injectScripts() {
     const target = gulp.src(paths.target);
-    const sources = gulp.src(paths.distjs + "/*.js", {read: false});
+    const sources = gulp.src([paths.distjs + "/ang.min.js", paths.distjs + "/scripts-min.js", paths.css + "/**/*.css"], {read: false});
     return target
-        .pipe(inject(sources, {relative: true}))
-        .pipe(gulp.dest("./src"))
+        .pipe(inject(sources))
+        .pipe(gulp.dest("./"))
+        .pipe(connect.reload());
+}
+
+function server() {
+    connect.server({
+        livereload: true
+    })
 }
 
 function watch () {
     gulp.watch(paths.sass, sassTask);
-    gulp.watch(paths.js, gulp.series(scriptsTask, injectScripts));
+    gulp.watch(paths.js, gulp.series(angScriptsTask, scriptsTask, injectScripts));
+    gulp.watch(paths.templates, injectScripts);
     // gulp.watch(paths.jsonhome, jsonHomeTask);
     // gulp.watch(paths.jsonopenproduct, jsonOpenProductTask);
 }
 
-exports.default = gulp.series(gulp.parallel(sassTask, scriptsTask), injectScripts, watch);
+exports.default = gulp.series(gulp.parallel(sassTask, angScriptsTask, scriptsTask), injectScripts, gulp.parallel(watch, server));

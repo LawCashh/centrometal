@@ -5,11 +5,11 @@
       "sifra1": "123 476 889",
       "sifra2": "7248",
       "cijena": "554€",
-      "url": "../../assets/images/open-product/leftside/main-machine.png",
+      "url": "src/assets/images/open-product/leftside/main-machine.png",
       "slideurls": [
-        "../../assets/images/open-product/leftside/small-machine-1.png",
-        "../../assets/images/open-product/leftside/small-machine-2.png",
-        "../../assets/images/open-product/leftside/small-machine-3.png"
+        "src/assets/images/open-product/leftside/small-machine-1.png",
+        "src/assets/images/open-product/leftside/small-machine-2.png",
+        "src/assets/images/open-product/leftside/small-machine-3.png"
       ],
       "opis": [
         "Broj okretaja centrifuge: 1400,00 okr/min",

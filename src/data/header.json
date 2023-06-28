@@ -37,12 +37,12 @@
         {
             "id": 3,
             "naziv": "fbicon",
-            "url": "../../assets/images/header/fbico.png"
+            "url": "src/assets/images/header/fbico.png"
         },
         {
             "id": 4,
             "naziv": "lupaicon",
-            "url": "../../assets/images/header/lupaicon.png"
+            "url": "src/assets/images/header/lupaico.png"
         },
         {
             "id": 5,
@@ -55,14 +55,14 @@
         {
             "id": 7,
             "naziv": "korpaicon",
-            "url": "../../assets/images/header/cartico.png"
+            "url": "src/assets/images/header/cartico.png"
         }
     ],
     "nav3": [
         {
             "id": 1,
             "naziv": "homeicon",
-            "url": "../../assets/images/header/homeicon.png"
+            "url": "src/assets/images/header/homeicon.png"
         },
         {
             "id": 2,

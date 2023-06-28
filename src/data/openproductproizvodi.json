@@ -5,7 +5,7 @@
     "vrijeme": "10 dan 6 sat 15 min 10 sek",
     "cijena1": "€135.00",
     "cijena2": " €90.00",
-    "url": "../../assets/images/home/rightside/masina-1.png"
+    "url": "src/assets/images/home/rightside/masina-1.png"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "vrijeme": "10 dan 6 sat 15 min 10 sek",
     "cijena1": "€135.00",
     "cijena2": " €90.00",
-    "url": "../../assets/images/home/rightside/masina-2.png"
+    "url": "src/assets/images/home/rightside/masina-2.png"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "vrijeme": "10 dan 6 sat 15 min 10 sek",
     "cijena1": "€135.00",
     "cijena2": " €90.00",
-    "url": "../../assets/images/home/rightside/masina-3.png"
+    "url": "src/assets/images/home/rightside/masina-3.png"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "vrijeme": "10 dan 6 sat 15 min 10 sek",
     "cijena1": "€135.00",
     "cijena2": " €90.00",
-    "url": "../../assets/images/home/rightside/masina-4.png"
+    "url": "src/assets/images/home/rightside/masina-4.png"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "vrijeme": "10 dan 6 sat 15 min 10 sek",
     "cijena1": "€135.00",
     "cijena2": " €90.00",
-    "url": "../../assets/images/home/rightside/masina-1.png"
+    "url": "src/assets/images/home/rightside/masina-1.png"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "vrijeme": "10 dan 6 sat 15 min 10 sek",
     "cijena1": "€135.00",
     "cijena2": " €90.00",
-    "url": "../../assets/images/home/rightside/masina-2.png"
+    "url": "src/assets/images/home/rightside/masina-2.png"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "vrijeme": "10 dan 6 sat 15 min 10 sek",
     "cijena1": "€135.00",
     "cijena2": " €90.00",
-    "url": "../../assets/images/home/rightside/masina-3.png"
+    "url": "src/assets/images/home/rightside/masina-3.png"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "vrijeme": "10 dan 6 sat 15 min 10 sek",
     "cijena1": "€135.00",
     "cijena2": " €90.00",
-    "url": "../../assets/images/home/rightside/masina-4.png"
+    "url": "src/assets/images/home/rightside/masina-4.png"
   },
   {
     "id": 9,
@@ -69,6 +69,6 @@
     "vrijeme": "10 dan 6 sat 15 min 10 sek",
     "cijena1": "€135.00",
     "cijena2": " €90.00",
-    "url": "../../assets/images/home/rightside/masina-1.png"
+    "url": "src/assets/images/home/rightside/masina-1.png"
   }
 ]

@@ -1,3 +1,113 @@
+angular.module('centrometalApp', ['ngRoute']);
+angular.module("centrometalApp").config(['$routeProvider', function($routeProvider){
+    $routeProvider
+        .when('/', {
+        templateUrl: './src/components/home/home.html',
+        controller: 'homeController',
+        controllerAs: 'vm'
+    })
+}]);
+angular.module("centrometalApp").config(['$routeProvider', function ($routeProvider) {
+    $routeProvider
+        .when("/openproduct/:productId", {
+            templateUrl: "./src/components/open-product/open-product.html",
+            controller: "openProductController",
+            controllerAs: "vm"
+        })
+        .otherwise({
+            redirectTo: "/"
+        })
+}]);
+
+angular.module('centrometalApp').service('homeService',['$http', function($http) {
+    this.getakcijaproizvodiData = function() {
+        return $http.get('http://localhost:3000/akcijaproizvodi');
+    };
+    this.getmainlistleftData = function() {
+        return $http.get('http://localhost:3000/mainlistleft');
+    };
+    this.getmainlistlefticonsData = function() {
+        return $http.get('http://localhost:3000/mainlistlefticons');
+    }
+    this.getnovoproizvodiData = function() {
+        return $http.get('http://localhost:3000/novoproizvodi');
+    };
+    this.getpreporucujemoproizvodiData = function() {
+        return $http.get('http://localhost:3000/preporucujemoproizvodi');
+    };
+    this.getrasprodajaproizvodiData = function() {
+        return $http.get('http://localhost:3000/rasprodajaproizvodi');
+    };
+    this.getvruciproizvodiData = function() {
+        return $http.get('http://localhost:3000/vruciproizvodi');
+    };
+    this.getreklamemainData = function() {
+        return $http.get('http://localhost:3000/reklamemain');
+    };
+    this.gettestereData = function() {
+        return $http.get('http://localhost:3000/testere');
+    };
+
+}]);
+
+angular.module('centrometalApp').service('openProductService', ['openProductService', function($http, $routeParams) {
+    let productId = $routeParams.productId;
+    this.getproductData = function() {
+        return $http.get('http://localhost:3000/' + productId);
+    };
+    this.getopenproductproizvodiData = function() {
+        return $http.get('http://localhost:3000/openproductproizvodi');
+    };
+    this.getvideosData = function() {
+        return $http.get('http:/localhost:3000/videos')
+    }
+}]);
+
+angular.module('centrometalApp').service('footerService',['$http', function($http) {
+    this.getfooterData = function() {
+        return $http.get('http://localhost:3000/footer');
+    };
+
+}]);
+
+angular.module('centrometalApp').service('headerService',['$http', function($http) {
+    this.getheaderData = function() {
+        return $http.get('http://localhost:3000/header');
+    };
+
+}]);
+
+angular.module('centrometalApp').controller('homeController',['homeService', function(homeService) {
+    var vm = this;
+    homeService.getakcijaproizvodiData().then(function(response){
+        vm.akcijaproizvodiData = response.data;
+    });
+    homeService.getmainlistleftData().then(function(response){
+        vm.mainlistleftData = response.data;
+    });
+    homeService.getmainlistlefticonsData().then(function(response) {
+        vm.mainlistlefticonsData = response.data;
+    });
+    homeService.getnovoproizvodiData().then(function(response){
+        vm.novoproizvodiData = response.data;
+    });
+    homeService.getpreporucujemoproizvodiData().then(function(response){
+        vm.preporucujemoproizvodiData = response.data;
+    });
+    homeService.getrasprodajaproizvodiData().then(function(response){
+        vm.rasprodajaproizvodiData = response.data;
+    });
+    homeService.getvruciproizvodiData().then(function(response){
+        vm.vruciproizvodiData = response.data;
+    });
+    homeService.getreklamemainData().then(function(response){
+        vm.reklamemainData = response.data;
+    });
+    homeService.gettestereData().then(function(response){
+        vm.testereData = response.data;
+    });
+
+}]);
 angular.module("centrometalApp").controller("openProductController",['openProductService', function (openProductService) {
     var vm = this;
     openProductService.getproductData().then(function(response){
@@ -147,3 +257,28 @@ angular.module("centrometalApp").controller("openProductController",['openProduc
     // }
 
 }]);
+
+angular.module('centrometalApp').controller('footerController',['footerService', '$interval', function(footerService, $interval) {
+    var vm = this;
+    footerService.getfooterData().then(function(response){
+        vm.footerData = response.data;
+    });
+
+}]);
+angular.module('centrometalApp').controller('headerController',['headerService', function(headerService) {
+    var vm = this;
+    headerService.getheaderData().then(function(response){
+        //console.log(response.data.nav1[0].naziv + "xd");
+        vm.headerData = response.data;
+    });
+
+}]);
+angular.module('centrometalApp').filter('chunk', function() {
+    return function(arr, size) {
+        var newArr = [];
+        for (var i = 0; i < arr.length; i += size) {
+            newArr.push(arr.slice(i, i + size));
+        }
+        return newArr;
+    };
+});
