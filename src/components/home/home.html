@@ -2,10 +2,20 @@
   <div class="leftside_mainflex-home">
     <div class="leftside_nav-home">
       <ul class="leftside_nav_list">
-        <li class="leftside_nav_listitem"><img ng-src="{{vm.mainlistlefticonsData[0].url}}"/>Kupuj po kategoriji</li>
-        <li ng-repeat="listitem in vm.mainlistleftData" class="leftside_nav_listitem"><a>{{listitem.naziv}}</a><button ng-if="$index < 7 && $index != 2"><img ng-src="{{vm.mainlistlefticonsData[1].url}}"></button></li>
+        <li class="leftside_nav_listitem leftside_nav_listheader"><img ng-src="{{vm.mainlistlefticonsData[0].url}}"/>Kupuj po kategoriji</li>
+        <li ng-repeat="listitem in vm.mainlistleftData" class="leftside_nav_listitem"><div><a>{{listitem.naziv}}</a><button ng-if="listitem.children" class="buttonplus" ng-click="listitem.expanded = !listitem.expanded"><img ng-src="{{vm.mainlistlefticonsData[1].url}}"></button></div>
+          <ul ng-if="listitem.children && listitem.expanded" class="leftside_nav_sublist">
+            <li ng-repeat="child in listitem.children" class="leftside_nav_listitem" ng-include="'recursiveTemplate.html'"></li>
+          </ul>
+        </li>
       </ul>
     </div>
+    <script type="text/ng-template" id="recursiveTemplate.html">
+      <div><a>{{child.naziv}}</a><button ng-if="child.children" class="buttonplus" ng-click="child.expanded = !child.expanded"><img ng-src="{{vm.mainlistlefticonsData[1].url}}"></button></div>
+      <ul ng-if="child.children && child.expanded" class="leftside_nav_sublist">
+        <li ng-repeat="child in child.children" ng-include="'recursiveTemplate.html'"></li>
+      </ul>
+    </script>
     <div class="leftside_search-home">
       <div class="leftside_search_naslov">
         <img src="src/assets/images/home/leftside/search/email-square.png"/>
@@ -89,8 +99,16 @@
         <h4>VRUĆA PONUDA</h4>
         <div class="bijeli_right"></div>
       </div>
-      <div class="proizvodi_flex-home">
-        <div class="proizvod-home" ng-repeat="proizvod in vm.vruciproizvodiData">
+      <div class="proizvodi_flex-home" ng-if="!vm.aktiviranoVruci">
+        <div class="proizvod-home" ng-repeat="proizvod in vm.vruciproizvodiDataFirstFour">
+          <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
+          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+          <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+        </div>
+      </div>
+      <div class="proizvodi_flex-home" ng-if="vm.aktiviranoVruci" ng-repeat="proizvodi in vm.vruciproizvodiDataChunked">
+        <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
           <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
@@ -98,7 +116,7 @@
         </div>
       </div>
       <div class="mainflex_proizvodi_dugme-home">
-        <button>POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+        <button ng-click="vm.aktiviranoVruci=true" ng-show="vm.vruciMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
       </div>
     </div>
 
@@ -109,16 +127,16 @@
         <h4>AKCIJA - POPUSTI</h4>
         <div class="bijeli_right"></div>
       </div>
-      <div class="proizvodi_flex-home">
-        <div class="proizvod-home" ng-repeat="proizvod in vm.akcijaproizvodiData">
+      <div class="proizvodi_flex-home" ng-if="!vm.aktiviranoAkcija">
+        <div class="proizvod-home" ng-repeat="proizvod in vm.akcijaproizvodiDataFirstFour">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
           <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
       </div>
-      <div class="proizvodi_flex-home">
-        <div class="proizvod-home" ng-repeat="proizvod in vm.akcijaproizvodiData">
+      <div class="proizvodi_flex-home" ng-if="vm.aktiviranoAkcija" ng-repeat="proizvodi in vm.akcijaproizvodiDataChunked">
+        <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
           <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
@@ -126,7 +144,7 @@
         </div>
       </div>
       <div class="mainflex_proizvodi_dugme-home">
-        <button>POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+        <button ng-click="vm.aktiviranoAkcija=true" ng-show="vm.akcijaMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
       </div>
     </div>
 
@@ -137,8 +155,16 @@
         <h4>PREPORUČUJEMO</h4>
         <div class="bijeli_right"></div>
       </div>
-      <div class="proizvodi_flex-home">
-        <div class="proizvod-home" ng-repeat="proizvod in vm.preporucujemoproizvodiData">
+      <div class="proizvodi_flex-home" ng-if="!vm.aktiviranoPreporucujemo">
+        <div class="proizvod-home" ng-repeat="proizvod in vm.preporucujemoproizvodiDataFirstFour">
+          <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
+          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+          <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+        </div>
+      </div>
+      <div class="proizvodi_flex-home" ng-if="vm.aktiviranoPreporucujemo" ng-repeat="proizvodi in vm.preporucujemoproizvodiDataChunked">
+        <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
           <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
@@ -146,7 +172,7 @@
         </div>
       </div>
       <div class="mainflex_proizvodi_dugme-home">
-        <button>POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+        <button ng-click="vm.aktiviranoPreporucujemo=true" ng-show="vm.preporucujemoMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
       </div>
     </div>
 
@@ -157,8 +183,16 @@
         <h4>NOVO U PONUDI</h4>
         <div class="bijeli_right"></div>
       </div>
-      <div class="proizvodi_flex-home">
-        <div class="proizvod-home" ng-repeat="proizvod in vm.novoproizvodiData">
+      <div class="proizvodi_flex-home" ng-if="!vm.aktiviranoNovo">
+        <div class="proizvod-home" ng-repeat="proizvod in vm.novoproizvodiDataFirstFour">
+          <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
+          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+          <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+        </div>
+      </div>
+      <div class="proizvodi_flex-home" ng-if="vm.aktiviranoNovo" ng-repeat="proizvodi in vm.novoproizvodiDataChunked">
+        <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
           <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
@@ -166,7 +200,7 @@
         </div>
       </div>
       <div class="mainflex_proizvodi_dugme-home">
-        <button>POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+        <button ng-click="vm.aktiviranoNovo=true" ng-show="vm.novoMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
       </div>
     </div>
     <div class="mainflex_proizvodi-home" id="mainflex_proizvod5">
@@ -176,8 +210,16 @@
         <h4>RASPRODAJA</h4>
         <div class="bijeli_right"></div>
       </div>
-      <div class="proizvodi_flex-home">
-        <div class="proizvod-home" ng-repeat="proizvod in vm.rasprodajaproizvodiData">
+      <div class="proizvodi_flex-home" ng-if="!vm.aktiviranoRasprodaja">
+        <div class="proizvod-home" ng-repeat="proizvod in vm.rasprodajaproizvodiDataFirstFour">
+          <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
+          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+          <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+        </div>
+      </div>
+      <div class="proizvodi_flex-home" ng-if="vm.aktiviranoRasprodaja" ng-repeat="proizvodi in vm.rasprodajaproizvodiDataChunked">
+        <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
           <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
@@ -185,7 +227,7 @@
         </div>
       </div>
       <div id="mainflex_proizvodi_dugme_orange-home">
-        <button>POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+        <button ng-click="vm.aktiviranoRasprodaja=true" ng-show="vm.rasprodajaMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
       </div>
     </div>
   </div>

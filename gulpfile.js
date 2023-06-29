@@ -15,8 +15,12 @@ const paths = {
     angjs: [
         "./src/scripts/angular/angular.min.js",
         "./src/scripts/angular/angular-route.min.js",
-        "./src/scripts/other/*.js"
         //"./src/scripts/custom/*.js"
+    ],
+    otherjs: [
+        // "./src/scripts/other/jquery.min.js",
+        // "./src/scripts/other/slick.min.js",
+        //"./src/scripts/other/*.min.js"
     ],
     js: [
         "./src/app.js",
@@ -84,6 +88,14 @@ function angScriptsTask() {
         .pipe(connect.reload());
 }
 
+// function otherScriptsTask() {
+//     return gulp.src(paths.otherjs)
+//         .pipe(concat("libraries.min.js"))
+//         //.pipe(rename({suffix: ".min"}))
+//         .pipe(gulp.dest(paths.distjs))
+//         .pipe(connect.reload());
+// }
+
 function scriptsTask() {
     return gulp.src(paths.js)
         .pipe(concat("scripts.js"))
@@ -95,7 +107,7 @@ function scriptsTask() {
 
 function injectScripts() {
     const target = gulp.src(paths.target);
-    const sources = gulp.src([paths.distjs + "/ang.min.js", paths.distjs + "/scripts-min.js", paths.css + "/**/*.css"], {read: false});
+    const sources = gulp.src([paths.distjs + "/ang.min.js", paths.distjs + "/libraries.min.js", paths.distjs + "/scripts-min.js", paths.css + "/**/*.css"], {read: false});
     return target
         .pipe(inject(sources))
         .pipe(gulp.dest("./"))
@@ -110,10 +122,10 @@ function server() {
 
 function watch () {
     gulp.watch(paths.sass, sassTask);
-    gulp.watch(paths.js, gulp.series(angScriptsTask, scriptsTask, injectScripts));
+    gulp.watch(paths.js, gulp.series(angScriptsTask, /*otherScriptsTask,*/ scriptsTask, injectScripts));
     gulp.watch(paths.templates, injectScripts);
     // gulp.watch(paths.jsonhome, jsonHomeTask);
     // gulp.watch(paths.jsonopenproduct, jsonOpenProductTask);
 }
 
-exports.default = gulp.series(gulp.parallel(sassTask, angScriptsTask, scriptsTask), injectScripts, gulp.parallel(watch, server));
+exports.default = gulp.series(gulp.parallel(sassTask, angScriptsTask, /*otherScriptsTask,*/ scriptsTask), injectScripts, gulp.parallel(watch, server));

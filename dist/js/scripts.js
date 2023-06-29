@@ -1,12 +1,4 @@
 angular.module('centrometalApp', ['ngRoute']);
-angular.module("centrometalApp").config(['$routeProvider', function($routeProvider){
-    $routeProvider
-        .when('/', {
-        templateUrl: './src/components/home/home.html',
-        controller: 'homeController',
-        controllerAs: 'vm'
-    })
-}]);
 angular.module("centrometalApp").config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when("/openproduct/:productId", {
@@ -17,6 +9,41 @@ angular.module("centrometalApp").config(['$routeProvider', function ($routeProvi
         .otherwise({
             redirectTo: "/"
         })
+}]);
+
+angular.module("centrometalApp").config(['$routeProvider', function($routeProvider){
+    $routeProvider
+        .when('/', {
+        templateUrl: './src/components/home/home.html',
+        controller: 'homeController',
+        controllerAs: 'vm'
+    })
+}]);
+angular.module('centrometalApp').service('footerService',['$http', function($http) {
+    this.getfooterData = function() {
+        return $http.get('http://localhost:3000/footer');
+    };
+
+}]);
+
+angular.module('centrometalApp').service('headerService',['$http', function($http) {
+    this.getheaderData = function() {
+        return $http.get('http://localhost:3000/header');
+    };
+
+}]);
+
+angular.module('centrometalApp').service('openProductService', ['openProductService', function($http, $routeParams) {
+    let productId = $routeParams.productId;
+    this.getproductData = function() {
+        return $http.get('http://localhost:3000/' + productId);
+    };
+    this.getopenproductproizvodiData = function() {
+        return $http.get('http://localhost:3000/openproductproizvodi');
+    };
+    this.getvideosData = function() {
+        return $http.get('http:/localhost:3000/videos')
+    }
 }]);
 
 angular.module('centrometalApp').service('homeService',['$http', function($http) {
@@ -50,61 +77,18 @@ angular.module('centrometalApp').service('homeService',['$http', function($http)
 
 }]);
 
-angular.module('centrometalApp').service('openProductService', ['openProductService', function($http, $routeParams) {
-    let productId = $routeParams.productId;
-    this.getproductData = function() {
-        return $http.get('http://localhost:3000/' + productId);
-    };
-    this.getopenproductproizvodiData = function() {
-        return $http.get('http://localhost:3000/openproductproizvodi');
-    };
-    this.getvideosData = function() {
-        return $http.get('http:/localhost:3000/videos')
-    }
-}]);
-
-angular.module('centrometalApp').service('footerService',['$http', function($http) {
-    this.getfooterData = function() {
-        return $http.get('http://localhost:3000/footer');
-    };
-
-}]);
-
-angular.module('centrometalApp').service('headerService',['$http', function($http) {
-    this.getheaderData = function() {
-        return $http.get('http://localhost:3000/header');
-    };
-
-}]);
-
-angular.module('centrometalApp').controller('homeController',['homeService', function(homeService) {
+angular.module('centrometalApp').controller('footerController',['footerService', '$interval', function(footerService, $interval) {
     var vm = this;
-    homeService.getakcijaproizvodiData().then(function(response){
-        vm.akcijaproizvodiData = response.data;
+    footerService.getfooterData().then(function(response){
+        vm.footerData = response.data;
     });
-    homeService.getmainlistleftData().then(function(response){
-        vm.mainlistleftData = response.data;
-    });
-    homeService.getmainlistlefticonsData().then(function(response) {
-        vm.mainlistlefticonsData = response.data;
-    });
-    homeService.getnovoproizvodiData().then(function(response){
-        vm.novoproizvodiData = response.data;
-    });
-    homeService.getpreporucujemoproizvodiData().then(function(response){
-        vm.preporucujemoproizvodiData = response.data;
-    });
-    homeService.getrasprodajaproizvodiData().then(function(response){
-        vm.rasprodajaproizvodiData = response.data;
-    });
-    homeService.getvruciproizvodiData().then(function(response){
-        vm.vruciproizvodiData = response.data;
-    });
-    homeService.getreklamemainData().then(function(response){
-        vm.reklamemainData = response.data;
-    });
-    homeService.gettestereData().then(function(response){
-        vm.testereData = response.data;
+
+}]);
+angular.module('centrometalApp').controller('headerController',['headerService', function(headerService) {
+    var vm = this;
+    headerService.getheaderData().then(function(response){
+        //console.log(response.data.nav1[0].naziv + "xd");
+        vm.headerData = response.data;
     });
 
 }]);
@@ -258,26 +242,73 @@ angular.module("centrometalApp").controller("openProductController",['openProduc
 
 }]);
 
-angular.module('centrometalApp').controller('footerController',['footerService', '$interval', function(footerService, $interval) {
+angular.module('centrometalApp').controller('homeController',['homeService', 'chunkFilter', function(homeService, chunkFilter) {
     var vm = this;
-    footerService.getfooterData().then(function(response){
-        vm.footerData = response.data;
+    homeService.getakcijaproizvodiData().then(function(response){
+        vm.akcijaproizvodiData = response.data;
+        vm.akcijaproizvodiDataChunked = chunkFilter(vm.akcijaproizvodiData, 4);
+        vm.temp = angular.copy(vm.akcijaproizvodiData);
+        vm.akcijaproizvodiDataFirstFour = vm.temp.slice(0,4);
+        if (vm.akcijaproizvodiData.length > 4)
+        vm.akcijaMoreThanFour = true;
+        else vm.akcijaMoreThanFour = false;
     });
-
-}]);
-angular.module('centrometalApp').controller('headerController',['headerService', function(headerService) {
-    var vm = this;
-    headerService.getheaderData().then(function(response){
-        //console.log(response.data.nav1[0].naziv + "xd");
-        vm.headerData = response.data;
+    homeService.getmainlistleftData().then(function(response){
+        vm.mainlistleftData = response.data;
+    });
+    homeService.getmainlistlefticonsData().then(function(response) {
+        vm.mainlistlefticonsData = response.data;
+    });
+    homeService.getnovoproizvodiData().then(function(response){
+        vm.novoproizvodiData = response.data;
+        vm.novoproizvodiDataChunked = chunkFilter(vm.novoproizvodiData, 4);
+        vm.temp = angular.copy(vm.novoproizvodiData);
+        vm.novoproizvodiDataFirstFour = vm.temp.slice(0,4);
+        if (vm.novoproizvodiData.length > 4)
+            vm.novoMoreThanFour = true;
+        else vm.novoMoreThanFour = false;
+    });
+    homeService.getpreporucujemoproizvodiData().then(function(response){
+        vm.preporucujemoproizvodiData = response.data;
+        vm.preporucujemoproizvodiDataChunked = chunkFilter(vm.preporucujemoproizvodiData, 4);
+        vm.temp = angular.copy(vm.preporucujemoproizvodiData);
+        vm.preporucujemoproizvodiDataFirstFour = vm.temp.slice(0,4);
+        if (vm.preporucujemoproizvodiData.length > 4)
+            vm.preporucujemoMoreThanFour = true;
+        else vm.preporucujemoMoreThanFour = false;
+    });
+    homeService.getrasprodajaproizvodiData().then(function(response){
+        vm.rasprodajaproizvodiData = response.data;
+        vm.rasprodajaproizvodiDataChunked = chunkFilter(vm.rasprodajaproizvodiData, 4);
+        vm.temp = angular.copy(vm.rasprodajaproizvodiData);
+        vm.rasprodajaproizvodiDataFirstFour = vm.temp.slice(0,4);
+        if (vm.rasprodajaproizvodiData.length > 4)
+            vm.rasprodajaMoreThanFour = true;
+        else vm.rasprodajaMoreThanFour = false;
+    });
+    homeService.getvruciproizvodiData().then(function(response){
+        vm.vruciproizvodiData = response.data;
+        vm.vruciproizvodiDataChunked = chunkFilter(vm.vruciproizvodiData, 4);
+        vm.temp = angular.copy(vm.vruciproizvodiData);
+        vm.vruciproizvodiDataFirstFour = vm.temp.slice(0,4);
+        if (vm.vruciproizvodiData.length > 4)
+            vm.vruciMoreThanFour = true;
+        else vm.vruciMoreThanFour = false;
+    });
+    homeService.getreklamemainData().then(function(response){
+        vm.reklamemainData = response.data;
+    });
+    homeService.gettestereData().then(function(response){
+        vm.testereData = response.data;
     });
 
 }]);
 angular.module('centrometalApp').filter('chunk', function() {
-    return function(arr, size) {
+    return function(arrJson, chunkSize) {
         var newArr = [];
-        for (var i = 0; i < arr.length; i += size) {
-            newArr.push(arr.slice(i, i + size));
+        var arr = arrJson;
+        for (var i = 0; i < arr.length; i += chunkSize) {
+            newArr.push(arr.slice(i, i + chunkSize));
         }
         return newArr;
     };
