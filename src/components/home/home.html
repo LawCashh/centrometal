@@ -110,7 +110,7 @@
       <div class="proizvodi_flex-home" ng-if="vm.aktiviranoVruci" ng-repeat="proizvodi in vm.vruciproizvodiDataChunked">
         <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
-          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a href ng-click="vm.goToProduct('_' + proizvod.id)">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -130,7 +130,7 @@
       <div class="proizvodi_flex-home" ng-if="!vm.aktiviranoAkcija">
         <div class="proizvod-home" ng-repeat="proizvod in vm.akcijaproizvodiDataFirstFour">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
-          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a href ng-click="vm.goToProduct('_' + proizvod.id)">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -138,7 +138,7 @@
       <div class="proizvodi_flex-home" ng-if="vm.aktiviranoAkcija" ng-repeat="proizvodi in vm.akcijaproizvodiDataChunked">
         <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
-          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a href ng-click="vm.goToProduct('_' + proizvod.id)">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -158,7 +158,7 @@
       <div class="proizvodi_flex-home" ng-if="!vm.aktiviranoPreporucujemo">
         <div class="proizvod-home" ng-repeat="proizvod in vm.preporucujemoproizvodiDataFirstFour">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
-          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a href ng-click="vm.goToProduct('_' + proizvod.id)">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -166,7 +166,7 @@
       <div class="proizvodi_flex-home" ng-if="vm.aktiviranoPreporucujemo" ng-repeat="proizvodi in vm.preporucujemoproizvodiDataChunked">
         <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
-          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a href ng-click="vm.goToProduct('_' + proizvod.id)">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -186,7 +186,7 @@
       <div class="proizvodi_flex-home" ng-if="!vm.aktiviranoNovo">
         <div class="proizvod-home" ng-repeat="proizvod in vm.novoproizvodiDataFirstFour">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
-          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a href ng-click="vm.goToProduct('_' + proizvod.id)">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -194,7 +194,7 @@
       <div class="proizvodi_flex-home" ng-if="vm.aktiviranoNovo" ng-repeat="proizvodi in vm.novoproizvodiDataChunked">
         <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
-          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a href ng-click="vm.goToProduct('_' + proizvod.id)">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -213,7 +213,7 @@
       <div class="proizvodi_flex-home" ng-if="!vm.aktiviranoRasprodaja">
         <div class="proizvod-home" ng-repeat="proizvod in vm.rasprodajaproizvodiDataFirstFour">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
-          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a href ng-click="vm.goToProduct('_' + proizvod.id)">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -221,7 +221,7 @@
       <div class="proizvodi_flex-home" ng-if="vm.aktiviranoRasprodaja" ng-repeat="proizvodi in vm.rasprodajaproizvodiDataChunked">
         <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
-          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a href ng-click="vm.goToProduct('_' + proizvod.id)">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>

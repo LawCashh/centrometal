@@ -22,22 +22,64 @@ footer{
   margin: 0 auto;
   padding-top: 45px;
   overflow: hidden;
+  position: relative;
 }
 .footer_slide_item{
   display: inline-block;
-  width: 150px;
+  float: left;
+  width: 25%;
   height: 100px;
   text-align: center;
   padding: 10px;
     img{
-      height: 50px;
-      width: 80%;
+      max-width: 100%;
+      display: block;
     }
 }
 
+.container{
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.logo-slider-container {
+  width: 65%;
+  height: 70%;
+  overflow: hidden;
+  display: flex;
+  margin: 0 auto;
+}
 
+.logo-slider {
+  display: flex;
+  width: 100%; /* Adjust the width based on the number of logos */
+}
 
+.logo-slider img {
+  width: 18.5%; /* Adjust the width based on the number of logos */
+  flex-shrink: 0;
+  text-align: center;
+  padding: 10px;
+}
 
+.buttonleft, .buttonright {
+  position: absolute;
+  margin: 0 5px;
+  padding: 5px 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-style: none;
+}
+
+.buttonleft{
+  left: 14%;
+}
+
+.buttonright{
+  right: 14%;
+}
 //.slick-arrow{
 //  height: 56px !important;
 //  width: 56px !important;

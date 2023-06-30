@@ -4,5 +4,4 @@ angular.module('centrometalApp').controller('footerController',['footerService',
         vm.footerData = response.data;
         vm.logos = response.data.foot1;
     });
-
 }]);

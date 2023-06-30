@@ -20,6 +20,20 @@ angular.module("centrometalApp").config(['$routeProvider', function ($routeProvi
         })
 }]);
 
+angular.module('centrometalApp').service('footerService',['$http', function($http) {
+    this.getfooterData = function() {
+        return $http.get('http://localhost:3000/footer');
+    };
+
+}]);
+
+angular.module('centrometalApp').service('headerService',['$http', function($http) {
+    this.getheaderData = function() {
+        return $http.get('http://localhost:3000/header');
+    };
+
+}]);
+
 angular.module('centrometalApp').service('homeService',['$http', function($http) {
     this.getakcijaproizvodiData = function() {
         return $http.get('http://localhost:3000/akcijaproizvodi');
@@ -64,20 +78,21 @@ angular.module('centrometalApp').service('openProductService', ['$http', '$route
     }
 }]);
 
-angular.module('centrometalApp').service('headerService',['$http', function($http) {
-    this.getheaderData = function() {
-        return $http.get('http://localhost:3000/header');
-    };
+angular.module('centrometalApp').controller('footerController',['footerService', '$interval', function(footerService, $interval) {
+    var vm = this;
+    footerService.getfooterData().then(function(response){
+        vm.footerData = response.data;
+        vm.logos = response.data.foot1;
+    });
+}]);
+angular.module('centrometalApp').controller('headerController',['headerService', function(headerService) {
+    var vm = this;
+    headerService.getheaderData().then(function(response){
+        //console.log(response.data.nav1[0].naziv + "xd");
+        vm.headerData = response.data;
+    });
 
 }]);
-
-angular.module('centrometalApp').service('footerService',['$http', function($http) {
-    this.getfooterData = function() {
-        return $http.get('http://localhost:3000/footer');
-    };
-
-}]);
-
 angular.module('centrometalApp').controller('homeController',['homeService', 'chunkFilter', '$interval', '$location', function(homeService, chunkFilter, $interval, $location) {
     var vm = this;
     vm.myInterval = 2000;
@@ -311,22 +326,6 @@ angular.module("centrometalApp").controller("openProductController",['openProduc
 
 }]);
 
-angular.module('centrometalApp').controller('headerController',['headerService', function(headerService) {
-    var vm = this;
-    headerService.getheaderData().then(function(response){
-        //console.log(response.data.nav1[0].naziv + "xd");
-        vm.headerData = response.data;
-    });
-
-}]);
-angular.module('centrometalApp').controller('footerController',['footerService', '$interval', function(footerService, $interval) {
-    var vm = this;
-    footerService.getfooterData().then(function(response){
-        vm.footerData = response.data;
-        vm.logos = response.data.foot1;
-    });
-
-}]);
 angular.module('centrometalApp').filter('chunk', function() {
     return function(arrJson, chunkSize) {
         var newArr = [];
