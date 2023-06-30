@@ -5,4 +5,5 @@ angular.module("centrometalApp").config(['$routeProvider', function($routeProvid
         controller: 'homeController',
         controllerAs: 'vm'
     })
+
 }]);

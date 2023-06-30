@@ -21,15 +21,22 @@ footer{
   width: 65%;
   margin: 0 auto;
   padding-top: 45px;
-  .footer_slide_item{
-    a {
-      img{
-        height: 50px;
-        width: 80%;
-      }
-    }
-  }
+  overflow: hidden;
 }
+.footer_slide_item{
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  text-align: center;
+  padding: 10px;
+    img{
+      height: 50px;
+      width: 80%;
+    }
+}
+
+
+
 
 //.slick-arrow{
 //  height: 56px !important;

@@ -6,7 +6,7 @@
 <div class="nav2big" ng-controller="headerController as vm">
     <div class="nav2">
         <div class="centro">
-            <a><span id="centroplava">{{vm.headerData.nav2[0].naziv}}</span>{{vm.headerData.nav2[1].naziv}}</a>
+            <a href="/"><span id="centroplava">{{vm.headerData.nav2[0].naziv}}</span>{{vm.headerData.nav2[1].naziv}}</a>
         </div>
         <div class="searchdiv">
             <input id="searchform" type="text" placeholder="Unesite šifru ili pojam pretraživanja"/>
@@ -23,7 +23,7 @@
 <nav class="nav3" ng-controller="headerController as vm">
     <ul class="nav3_itemi">
         <div class="left_trap"></div>
-        <li class="nav3_item"><a id="ahome"><img id="homeicon" ng-src="{{vm.headerData.nav3[0].url}}"/></a></li>
+        <li class="nav3_item"><a id="ahome" href="/"><img id="homeicon" ng-src="{{vm.headerData.nav3[0].url}}"/></a></li>
         <li class="nav3_item" ng-repeat="nav3item in vm.headerData.nav3.slice(1,9)"><a>{{nav3item.naziv}}</a></li>
         <li class="nav3_item"><a><span id="nav3lastblue">{{vm.headerData.nav3[9].naziv}}</span><span>{{vm.headerData.nav3[10].naziv}}</span></a></li>
         <div class="right_trap"></div>

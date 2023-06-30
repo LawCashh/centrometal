@@ -20,8 +20,17 @@ footer {
   width: 65%;
   margin: 0 auto;
   padding-top: 45px;
+  overflow: hidden;
 }
-.topfooter .footer_slide_item a img {
+
+.footer_slide_item {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  text-align: center;
+  padding: 10px;
+}
+.footer_slide_item img {
   height: 50px;
   width: 80%;
 }

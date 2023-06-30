@@ -64,7 +64,7 @@
         <input type="radio" name="slide-radio-btn" id="slide-radio-3">
         <input type="radio" name="slide-radio-btn" id="slide-radio-4">
 
-        <div ng-repeat="testera in vm.testereData" class="slide" ng-class="{'slide':$first}">
+        <div ng-repeat="testera in vm.testereData" class="slide" ng-class="{'first':$first}">
           <img ng-src="{{testera.url}}">
         </div>
 
@@ -102,7 +102,7 @@
       <div class="proizvodi_flex-home" ng-if="!vm.aktiviranoVruci">
         <div class="proizvod-home" ng-repeat="proizvod in vm.vruciproizvodiDataFirstFour">
           <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
-          <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a href ng-click="vm.goToProduct('_' + proizvod.id)">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>

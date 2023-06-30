@@ -1,0 +1,50 @@
+[
+  {
+    "id": 3,
+    "naziv": "Treca masina Gorenje",
+    "sifra1": "123 476 889",
+    "sifra2": "7248",
+    "cijena": "554€",
+    "url": "src/assets/images/open-product/leftside/main-machine.png",
+    "slideurls": [
+      "src/assets/images/open-product/leftside/small-machine-1.png",
+      "src/assets/images/open-product/leftside/small-machine-2.png",
+      "src/assets/images/open-product/leftside/small-machine-3.png"
+    ],
+    "opis": [
+      "Broj okretaja centrifuge: 1400,00 okr/min",
+      "Elektronsko upravljanje: DA",
+      "Samostojeci: DA",
+      "Punjenje sprijeda: DA",
+      "Kapacitet pranja: 9 kg",
+      "Kapacitet susenja: 7kg",
+      "Kapacitet neceg: 7kg"
+    ],
+    "opis2left": [
+      "Samostojeci: DA",
+      "Punjenje sprijeda: DA",
+      "Elektronsko upravljanje: DA",
+      "Kapacitet pranja: 9kg",
+      "Kapacitet susenja: 7kg",
+      "Broj okretaja centrifuge: 1400,00 okr/min",
+      "Podesavanje centrifuge: DA",
+      "Iskljucivanje centrifugiranja: DA",
+      "Fuzzy logic: DA",
+      "Automatsko prilagod. potrosnje vode: DA",
+      "Senzorsko susenje: DA"
+    ],
+    "opis2right": [
+      "Odgoda pocetka rada: DA",
+      "Rucni program: DA",
+      "Brzi program: DA",
+      "Energetski razred: A",
+      "Ucinkovitost pranja: A",
+      "Ucinkovitost centrifugiranja: A",
+      "Potrosnja vode za susenje i pranje: 148,00 l",
+      "Razina buke: 41,00 db(re 1pW)",
+      "Razina buke centrifuge: 64,00dB(re 1pW)",
+      "Visina: 85,00cm",
+      "Sirina: 60,00cm"
+    ]
+  }
+]

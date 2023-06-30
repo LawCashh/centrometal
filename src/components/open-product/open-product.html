@@ -1,6 +1,6 @@
  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>-->
-    <div class="mainflex-op">
+ <div class="mainflex-op">
         <div class="leftside_mainflex-op">
             <div class="leftside_naslovna-op">
                 <h5>NASLOVNA / PROIZVODI / <span>GRUPA ROBE</span></h5>
@@ -11,7 +11,7 @@
                         <img ng-src="{{vm.productData[0].url}}">
                     </div>
                     <div class="leftside_mainflex_part1_footer">
-                        <div ng-repeat="slideurl in vm.productData[0].slideurls" class="footer_slide_item"><a><img src="{{slideurl}}"></a></div>
+                        <div ng-repeat="slideurl in vm.productData[0].slideurls" class="footer_slide_item"><a><img ng-src="{{slideurl}}"></a></div>
                     </div>
                 </div>
                 <div class="leftside_mainflex_part1_right">
@@ -36,50 +36,50 @@
                             <button class="btnplus" id="btnplus1">+</button>
                             <button class="btnplus" id="btnplus2">+</button>
                             <p id="kolicina_p2">Share : </p>
-                            <img src="../../assets/images/open-product/leftside/fb-square.png"/>
-                            <img src="../../assets/images/open-product/leftside/twitter-square.png"/>
-                            <img src="../../assets/images/open-product/leftside/email-square.png"/>
-                            <img src="../../assets/images/open-product/leftside/googleplus-square.png"/>
+                            <img src="src/assets/images/open-product/leftside/fb-square.png"/>
+                            <img src="src/assets/images/open-product/leftside/twitter-square.png"/>
+                            <img src="src/assets/images/open-product/leftside/email-square.png"/>
+                            <img src="src/assets/images/open-product/leftside/googleplus-square.png"/>
                         </div>
                         <div class="dodajukorpu_dugmad">
-                            <button class="btnkorpa" id="btnkorpa1"><img src="../../assets/images/open-product/leftside/cart-square.png">Dodaj u korpu</button>
+                            <button class="btnkorpa" id="btnkorpa1"><img src="src/assets/images/open-product/leftside/cart-square.png">Dodaj u korpu</button>
                             <button class="btnkorpa" id="btnkorpa2">provjeri korpu</button>
                         </div>
                 </div>
             </div>
             <div class="leftside_content_change">
                 <div class="leftside_content_change_dugmad">
-                    <button class="leftside_content_change_button" id="leftside_content_change_button1" >PROIZVODNA LISTA</button>
-                    <button class="leftside_content_change_button" id="leftside_content_change_button2" >UPUTSTVO ZA RUKOVANJE</button>
-                    <button class="leftside_content_change_button" id="leftside_content_change_button3" >OCJENA</button>
-                    <button class="leftside_content_change_button" id="leftside_content_change_button4" >E-MAIL</button>
+                    <button class="leftside_content_change_button" id="leftside_content_change_button1" ng-click="vm.leftsideButtonContentChange1()">PROIZVODNA LISTA</button>
+                    <button class="leftside_content_change_button" id="leftside_content_change_button2" ng-click="vm.leftsideButtonContentChange2()">UPUTSTVO ZA RUKOVANJE</button>
+                    <button class="leftside_content_change_button" id="leftside_content_change_button3" ng-click="vm.leftsideButtonContentChange3()">OCJENA</button>
+                    <button class="leftside_content_change_button" id="leftside_content_change_button4" ng-click="vm.leftsideButtonContentChange4()">E-MAIL</button>
                 </div>
                 <div class="leftside_content_change_p">
                     <p id="leftside_content_change_p1">
-                        {{vm.productData[0].opis2-left[0]}}<br>
-                        {{vm.productData[0].opis2-left[1]}}<br>
-                        {{vm.productData[0].opis2-left[2]}}<br>
-                        {{vm.productData[0].opis2-left[3]}}<br>
-                        {{vm.productData[0].opis2-left[4]}}<br>
-                        {{vm.productData[0].opis2-left[5]}}<br>
-                        {{vm.productData[0].opis2-left[6]}}<br>
-                        {{vm.productData[0].opis2-left[7]}}<br>
-                        {{vm.productData[0].opis2-left[8]}}<br>
-                        {{vm.productData[0].opis2-left[9]}}<br>
-                        {{vm.productData[0].opis2-left[10]}}<br>
+                        {{vm.productData[0].opis2left[0]}}<br>
+                        {{vm.productData[0].opis2left[1]}}<br>
+                        {{vm.productData[0].opis2left[2]}}<br>
+                        {{vm.productData[0].opis2left[3]}}<br>
+                        {{vm.productData[0].opis2left[4]}}<br>
+                        {{vm.productData[0].opis2left[5]}}<br>
+                        {{vm.productData[0].opis2left[6]}}<br>
+                        {{vm.productData[0].opis2left[7]}}<br>
+                        {{vm.productData[0].opis2left[8]}}<br>
+                        {{vm.productData[0].opis2left[9]}}<br>
+                        {{vm.productData[0].opis2left[10]}}<br>
                     </p>
                     <p id="leftside_content_change_p2">
-                        {{vm.productData[0].opis2-right[0]}}<br>
-                        {{vm.productData[0].opis2-right[1]}}<br>
-                        {{vm.productData[0].opis2-right[2]}}<br>
-                        {{vm.productData[0].opis2-right[3]}}<br>
-                        {{vm.productData[0].opis2-right[4]}}<br>
-                        {{vm.productData[0].opis2-right[5]}}<br>
-                        {{vm.productData[0].opis2-right[6]}}<br>
-                        {{vm.productData[0].opis2-right[7]}}<br>
-                        {{vm.productData[0].opis2-right[8]}}<br>
-                        {{vm.productData[0].opis2-right[9]}}<br>
-                        {{vm.productData[0].opis2-right[10]}}<br>
+                        {{vm.productData[0].opis2right[0]}}<br>
+                        {{vm.productData[0].opis2right[1]}}<br>
+                        {{vm.productData[0].opis2right[2]}}<br>
+                        {{vm.productData[0].opis2right[3]}}<br>
+                        {{vm.productData[0].opis2right[4]}}<br>
+                        {{vm.productData[0].opis2right[5]}}<br>
+                        {{vm.productData[0].opis2right[6]}}<br>
+                        {{vm.productData[0].opis2right[7]}}<br>
+                        {{vm.productData[0].opis2right[8]}}<br>
+                        {{vm.productData[0].opis2right[9]}}<br>
+                        {{vm.productData[0].opis2right[10]}}<br>
                     </p>
                 </div>
             </div>
@@ -87,34 +87,45 @@
                 <h4>SLIČNI PROIZVODI</h4>
                 <div></div>
             </div>
-            <div class="proizvodi_flex-op">
-                <div class="proizvod-home" ng-repeat="proizvod in vm.openproductproizvodiData">
-                    <img class="proizvod_img" ng-src="proizvod.url"/>
+            <div class="proizvodi_flex-op" ng-if="!vm.aktiviranoOpenProduct">
+                <div class="proizvod-home" ng-repeat="proizvod in vm.openproductproizvodiDataFirstFour">
+                    <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
+                    <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+                    <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+                    <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+                </div>
+            </div>
+            <div class="proizvodi_flex-op" ng-if="vm.aktiviranoOpenProduct" ng-repeat="proizvodi in vm.openproductproizvodiDataChunked">
+                <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
+                    <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
                     <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
                     <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
                     <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
                 </div>
             </div>
+            <div class="mainflex_proizvodi_dugme-home">
+                <button ng-click="vm.aktiviranoOpenProduct=true" ng-show="vm.openProductMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+            </div>
         </div>
         <div class="rightside_mainflex-op">
             <div class="rightside_videi">
                 <div class="rightside_video1">
-                    <video controls="" muted="" id="video1" onclick="">
-                        <source src="{{vm.videosData[0].url}}" type="video/mp4">
+                    <video controls="" muted="" id="video1" ng-click="vm.playpause1()">
+                        <source ng-src="{{vm.videosData[0].url}}" type="video/mp4">
                     </video>
-                    <img id="playpause1_img" ng-src="{{vm.videosData[0].imgurl}}">
+                    <img ng-click="vm.playpause1_img()" id="playpause1_img" ng-src="{{vm.videosData[0].imgurl}}">
                 </div>
                 <div class="rightside_video2">
-                    <video controls="" muted="" id="video2" onclick="">
-                        <source src="/src/mp4/washing-machine.mp4" type="video/mp4">
+                    <video controls="" muted="" id="video2" ng-click="vm.playpause2()">
+                        <source ng-src="{{vm.videosData[0].url}}" type="video/mp4">
                     </video>
-                    <img id="playpause2_img" ng-src="{{vm.videosData[0].imgurl}}">
+                    <img ng-click="vm.playpause2_img()" id="playpause2_img" ng-src="{{vm.videosData[0].imgurl}}">
                 </div>
             </div>
 
             <div class="rightside_newsletter-op">
                 <div class="rightside_newsletter_naslov">
-                    <img src="../../assets/images/home/leftside/search/email-square.png"/>
+                    <img src="src/assets/images/home/leftside/search/email-square.png"/>
                     <h3>PRIJAVI SE NA NEWSLETTER</h3>
                 </div>
                 <div class="rightside_newsletter_input">

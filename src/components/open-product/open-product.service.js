@@ -1,5 +1,5 @@
-angular.module('centrometalApp').service('openProductService', ['openProductService', function($http, $routeParams) {
-    let productId = $routeParams.productId;
+angular.module('centrometalApp').service('openProductService', ['$http', '$routeParams', function($http, $routeParams) {
+    var productId = $routeParams.productId;
     this.getproductData = function() {
         return $http.get('http://localhost:3000/' + productId);
     };
@@ -7,6 +7,6 @@ angular.module('centrometalApp').service('openProductService', ['openProductServ
         return $http.get('http://localhost:3000/openproductproizvodi');
     };
     this.getvideosData = function() {
-        return $http.get('http:/localhost:3000/videos')
+        return $http.get('http://localhost:3000/videos');
     }
 }]);

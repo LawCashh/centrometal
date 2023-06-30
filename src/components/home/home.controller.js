@@ -1,5 +1,9 @@
-angular.module('centrometalApp').controller('homeController',['homeService', 'chunkFilter', function(homeService, chunkFilter) {
+angular.module('centrometalApp').controller('homeController',['homeService', 'chunkFilter', '$interval', '$location', function(homeService, chunkFilter, $interval, $location) {
     var vm = this;
+    vm.myInterval = 2000;
+    vm.goToProduct = function (productId) {
+        $location.path('/openproduct/' + productId);
+    };
     homeService.getakcijaproizvodiData().then(function(response){
         vm.akcijaproizvodiData = response.data;
         vm.akcijaproizvodiDataChunked = chunkFilter(vm.akcijaproizvodiData, 4);
@@ -57,5 +61,15 @@ angular.module('centrometalApp').controller('homeController',['homeService', 'ch
     homeService.gettestereData().then(function(response){
         vm.testereData = response.data;
     });
+
+    var counter = 1;
+    $interval(function(){
+        document.getElementById('slide-radio-' + counter).checked = true;
+        document.getElementById('sega_h2').innerText = "Šega " + counter;
+        counter++;
+        if (counter > 4){
+            counter = 1;
+        }
+    }, 3000);
 
 }]);

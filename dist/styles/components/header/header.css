@@ -95,6 +95,11 @@
   font-family: "Times New Roman", Times, serif;
   letter-spacing: 0.001em;
 }
+.nav2 .centro a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
 .nav2 #centroplava {
   color: #01adf0;
 }
@@ -123,7 +128,7 @@
 .nav2 .searchdiv #fbicon {
   width: 7.5%;
   max-height: 100%;
-  padding-left: 10px;
+  padding-left: 7px;
 }
 .nav2 .korpadiv {
   display: flex;
@@ -135,7 +140,7 @@
   position: relative;
 }
 .nav2 .korpadiv a {
-  padding-right: 10px;
+  padding-right: 3px;
   color: #3cadef;
 }
 .nav2 .korpadiv span {
@@ -143,7 +148,7 @@
 }
 .nav2 .korpadiv #korpaicon {
   max-height: 100%;
-  width: 24%;
+  width: 22%;
   position: absolute;
   right: 0;
 }
@@ -176,6 +181,9 @@
 .nav3_itemi #ahome {
   width: 50px;
   height: 53px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
 .nav3_itemi a {
   text-decoration: none;

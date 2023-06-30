@@ -1,1 +1,1 @@
-angular.module('centrometalApp', ['ngRoute']);
+angular.module('centrometalApp', ['ngRoute', 'ui.bootstrap']);
