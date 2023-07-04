@@ -1,12 +1,13 @@
-<div ng-controller="footerController as vm" class="container">
-    <div class="logo-slider-container">
-        <div class="logo-slider">
-            <img ng-repeat="logo in vm.logos" ng-src="{{logo.url}}" alt="Logo {{$index + 1}}">
+<div ng-controller="footerController as vm" class="topfooter">
+    <div class="container">
+        <div class="logo-area" data="vm.logos" slick-slider="{dots: false, arrows: true, draggable: false, autoplay: true, autoplaySpeed: 2000, slidesToShow: 5, infinite: false}">
+            <div class="my-slide" ng-repeat="logo in vm.logos" >
+            <img ng-src="{{logo.url}}" alt="Logo {{$index + 1}}">
+            </div>
         </div>
     </div>
-    <button class="buttonleft" ng-click="vm.prevSlide()">&#8592;</button>
-    <button class="buttonright" ng-click="vm.nextSlide()">&#8594;</button>
 </div>
+
 <div class="midfooter" ng-controller="footerController as vm">
     <div class="midfooter_item" ng-repeat="foot2block in vm.footerData.foot2">
         <h3>{{foot2block.naziv}}</h3>

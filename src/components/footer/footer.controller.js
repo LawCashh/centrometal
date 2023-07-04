@@ -1,4 +1,4 @@
-angular.module('centrometalApp').controller('footerController',['footerService', '$interval', function(footerService, $interval) {
+angular.module('centrometalApp').controller('footerController',['footerService', function(footerService) {
     var vm = this;
     footerService.getfooterData().then(function(response){
         vm.footerData = response.data;

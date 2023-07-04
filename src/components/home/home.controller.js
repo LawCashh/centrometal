@@ -62,13 +62,18 @@ angular.module('centrometalApp').controller('homeController',['homeService', 'ch
         vm.testereData = response.data;
     });
 
-    var counter = 1;
+    vm.counter = 1;
     $interval(function(){
-        document.getElementById('slide-radio-' + counter).checked = true;
-        document.getElementById('sega_h2').innerText = "Šega " + counter;
-        counter++;
-        if (counter > 4){
-            counter = 1;
+        // angular.element( document.querySelector( 'slide-radio-'+ counter ) ).checked = true;
+        vm.segaButton = document.getElementById('slide-radio-' + vm.counter);
+        if (vm.segaButton) vm.segaButton.checked = true;
+        // document.getElementById('slide-radio-' + vm.counter).checked = true;
+        vm.segaText = document.getElementById('sega_h2');
+        if (vm.segaText) vm.segaText.innerText = "Šega " + vm.counter;
+        // document.getElementById('sega_h2').innerText = "Šega " + vm.counter;
+        vm.counter++;
+        if (vm.counter > 4){
+            vm.counter = 1;
         }
     }, 3000);
 

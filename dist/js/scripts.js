@@ -1,13 +1,4 @@
-angular.module('centrometalApp', ['ngRoute', 'ui.bootstrap']);
-angular.module("centrometalApp").config(['$routeProvider', function($routeProvider){
-    $routeProvider
-        .when('/', {
-        templateUrl: './src/components/home/home.html',
-        controller: 'homeController',
-        controllerAs: 'vm'
-    })
-
-}]);
+angular.module('centrometalApp', ['ngRoute']);
 angular.module("centrometalApp").config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when("/openproduct/:productId", {
@@ -20,6 +11,15 @@ angular.module("centrometalApp").config(['$routeProvider', function ($routeProvi
         })
 }]);
 
+angular.module("centrometalApp").config(['$routeProvider', function($routeProvider){
+    $routeProvider
+        .when('/', {
+        templateUrl: './src/components/home/home.html',
+        controller: 'homeController',
+        controllerAs: 'vm'
+    })
+
+}]);
 angular.module('centrometalApp').service('footerService',['$http', function($http) {
     this.getfooterData = function() {
         return $http.get('http://localhost:3000/footer');
@@ -32,6 +32,19 @@ angular.module('centrometalApp').service('headerService',['$http', function($htt
         return $http.get('http://localhost:3000/header');
     };
 
+}]);
+
+angular.module('centrometalApp').service('openProductService', ['$http', '$routeParams', function($http, $routeParams) {
+    var productId = $routeParams.productId;
+    this.getproductData = function() {
+        return $http.get('http://localhost:3000/' + productId);
+    };
+    this.getopenproductproizvodiData = function() {
+        return $http.get('http://localhost:3000/openproductproizvodi');
+    };
+    this.getvideosData = function() {
+        return $http.get('http://localhost:3000/videos');
+    }
 }]);
 
 angular.module('centrometalApp').service('homeService',['$http', function($http) {
@@ -65,20 +78,7 @@ angular.module('centrometalApp').service('homeService',['$http', function($http)
 
 }]);
 
-angular.module('centrometalApp').service('openProductService', ['$http', '$routeParams', function($http, $routeParams) {
-    var productId = $routeParams.productId;
-    this.getproductData = function() {
-        return $http.get('http://localhost:3000/' + productId);
-    };
-    this.getopenproductproizvodiData = function() {
-        return $http.get('http://localhost:3000/openproductproizvodi');
-    };
-    this.getvideosData = function() {
-        return $http.get('http://localhost:3000/videos');
-    }
-}]);
-
-angular.module('centrometalApp').controller('footerController',['footerService', '$interval', function(footerService, $interval) {
+angular.module('centrometalApp').controller('footerController',['footerService', function(footerService) {
     var vm = this;
     footerService.getfooterData().then(function(response){
         vm.footerData = response.data;
@@ -91,81 +91,6 @@ angular.module('centrometalApp').controller('headerController',['headerService',
         //console.log(response.data.nav1[0].naziv + "xd");
         vm.headerData = response.data;
     });
-
-}]);
-angular.module('centrometalApp').controller('homeController',['homeService', 'chunkFilter', '$interval', '$location', function(homeService, chunkFilter, $interval, $location) {
-    var vm = this;
-    vm.myInterval = 2000;
-    vm.goToProduct = function (productId) {
-        $location.path('/openproduct/' + productId);
-    };
-    homeService.getakcijaproizvodiData().then(function(response){
-        vm.akcijaproizvodiData = response.data;
-        vm.akcijaproizvodiDataChunked = chunkFilter(vm.akcijaproizvodiData, 4);
-        vm.temp = angular.copy(vm.akcijaproizvodiData);
-        vm.akcijaproizvodiDataFirstFour = vm.temp.slice(0,4);
-        if (vm.akcijaproizvodiData.length > 4)
-        vm.akcijaMoreThanFour = true;
-        else vm.akcijaMoreThanFour = false;
-    });
-    homeService.getmainlistleftData().then(function(response){
-        vm.mainlistleftData = response.data;
-    });
-    homeService.getmainlistlefticonsData().then(function(response) {
-        vm.mainlistlefticonsData = response.data;
-    });
-    homeService.getnovoproizvodiData().then(function(response){
-        vm.novoproizvodiData = response.data;
-        vm.novoproizvodiDataChunked = chunkFilter(vm.novoproizvodiData, 4);
-        vm.temp = angular.copy(vm.novoproizvodiData);
-        vm.novoproizvodiDataFirstFour = vm.temp.slice(0,4);
-        if (vm.novoproizvodiData.length > 4)
-            vm.novoMoreThanFour = true;
-        else vm.novoMoreThanFour = false;
-    });
-    homeService.getpreporucujemoproizvodiData().then(function(response){
-        vm.preporucujemoproizvodiData = response.data;
-        vm.preporucujemoproizvodiDataChunked = chunkFilter(vm.preporucujemoproizvodiData, 4);
-        vm.temp = angular.copy(vm.preporucujemoproizvodiData);
-        vm.preporucujemoproizvodiDataFirstFour = vm.temp.slice(0,4);
-        if (vm.preporucujemoproizvodiData.length > 4)
-            vm.preporucujemoMoreThanFour = true;
-        else vm.preporucujemoMoreThanFour = false;
-    });
-    homeService.getrasprodajaproizvodiData().then(function(response){
-        vm.rasprodajaproizvodiData = response.data;
-        vm.rasprodajaproizvodiDataChunked = chunkFilter(vm.rasprodajaproizvodiData, 4);
-        vm.temp = angular.copy(vm.rasprodajaproizvodiData);
-        vm.rasprodajaproizvodiDataFirstFour = vm.temp.slice(0,4);
-        if (vm.rasprodajaproizvodiData.length > 4)
-            vm.rasprodajaMoreThanFour = true;
-        else vm.rasprodajaMoreThanFour = false;
-    });
-    homeService.getvruciproizvodiData().then(function(response){
-        vm.vruciproizvodiData = response.data;
-        vm.vruciproizvodiDataChunked = chunkFilter(vm.vruciproizvodiData, 4);
-        vm.temp = angular.copy(vm.vruciproizvodiData);
-        vm.vruciproizvodiDataFirstFour = vm.temp.slice(0,4);
-        if (vm.vruciproizvodiData.length > 4)
-            vm.vruciMoreThanFour = true;
-        else vm.vruciMoreThanFour = false;
-    });
-    homeService.getreklamemainData().then(function(response){
-        vm.reklamemainData = response.data;
-    });
-    homeService.gettestereData().then(function(response){
-        vm.testereData = response.data;
-    });
-
-    var counter = 1;
-    $interval(function(){
-        document.getElementById('slide-radio-' + counter).checked = true;
-        document.getElementById('sega_h2').innerText = "Šega " + counter;
-        counter++;
-        if (counter > 4){
-            counter = 1;
-        }
-    }, 3000);
 
 }]);
 angular.module("centrometalApp").controller("openProductController",['openProductService', 'chunkFilter', function (openProductService, chunkFilter) {
@@ -326,6 +251,86 @@ angular.module("centrometalApp").controller("openProductController",['openProduc
 
 }]);
 
+angular.module('centrometalApp').controller('homeController',['homeService', 'chunkFilter', '$interval', '$location', function(homeService, chunkFilter, $interval, $location) {
+    var vm = this;
+    vm.myInterval = 2000;
+    vm.goToProduct = function (productId) {
+        $location.path('/openproduct/' + productId);
+    };
+    homeService.getakcijaproizvodiData().then(function(response){
+        vm.akcijaproizvodiData = response.data;
+        vm.akcijaproizvodiDataChunked = chunkFilter(vm.akcijaproizvodiData, 4);
+        vm.temp = angular.copy(vm.akcijaproizvodiData);
+        vm.akcijaproizvodiDataFirstFour = vm.temp.slice(0,4);
+        if (vm.akcijaproizvodiData.length > 4)
+        vm.akcijaMoreThanFour = true;
+        else vm.akcijaMoreThanFour = false;
+    });
+    homeService.getmainlistleftData().then(function(response){
+        vm.mainlistleftData = response.data;
+    });
+    homeService.getmainlistlefticonsData().then(function(response) {
+        vm.mainlistlefticonsData = response.data;
+    });
+    homeService.getnovoproizvodiData().then(function(response){
+        vm.novoproizvodiData = response.data;
+        vm.novoproizvodiDataChunked = chunkFilter(vm.novoproizvodiData, 4);
+        vm.temp = angular.copy(vm.novoproizvodiData);
+        vm.novoproizvodiDataFirstFour = vm.temp.slice(0,4);
+        if (vm.novoproizvodiData.length > 4)
+            vm.novoMoreThanFour = true;
+        else vm.novoMoreThanFour = false;
+    });
+    homeService.getpreporucujemoproizvodiData().then(function(response){
+        vm.preporucujemoproizvodiData = response.data;
+        vm.preporucujemoproizvodiDataChunked = chunkFilter(vm.preporucujemoproizvodiData, 4);
+        vm.temp = angular.copy(vm.preporucujemoproizvodiData);
+        vm.preporucujemoproizvodiDataFirstFour = vm.temp.slice(0,4);
+        if (vm.preporucujemoproizvodiData.length > 4)
+            vm.preporucujemoMoreThanFour = true;
+        else vm.preporucujemoMoreThanFour = false;
+    });
+    homeService.getrasprodajaproizvodiData().then(function(response){
+        vm.rasprodajaproizvodiData = response.data;
+        vm.rasprodajaproizvodiDataChunked = chunkFilter(vm.rasprodajaproizvodiData, 4);
+        vm.temp = angular.copy(vm.rasprodajaproizvodiData);
+        vm.rasprodajaproizvodiDataFirstFour = vm.temp.slice(0,4);
+        if (vm.rasprodajaproizvodiData.length > 4)
+            vm.rasprodajaMoreThanFour = true;
+        else vm.rasprodajaMoreThanFour = false;
+    });
+    homeService.getvruciproizvodiData().then(function(response){
+        vm.vruciproizvodiData = response.data;
+        vm.vruciproizvodiDataChunked = chunkFilter(vm.vruciproizvodiData, 4);
+        vm.temp = angular.copy(vm.vruciproizvodiData);
+        vm.vruciproizvodiDataFirstFour = vm.temp.slice(0,4);
+        if (vm.vruciproizvodiData.length > 4)
+            vm.vruciMoreThanFour = true;
+        else vm.vruciMoreThanFour = false;
+    });
+    homeService.getreklamemainData().then(function(response){
+        vm.reklamemainData = response.data;
+    });
+    homeService.gettestereData().then(function(response){
+        vm.testereData = response.data;
+    });
+
+    vm.counter = 1;
+    $interval(function(){
+        // angular.element( document.querySelector( 'slide-radio-'+ counter ) ).checked = true;
+        vm.segaButton = document.getElementById('slide-radio-' + vm.counter);
+        if (vm.segaButton) vm.segaButton.checked = true;
+        // document.getElementById('slide-radio-' + vm.counter).checked = true;
+        vm.segaText = document.getElementById('sega_h2');
+        if (vm.segaText) vm.segaText.innerText = "Šega " + vm.counter;
+        // document.getElementById('sega_h2').innerText = "Šega " + vm.counter;
+        vm.counter++;
+        if (vm.counter > 4){
+            vm.counter = 1;
+        }
+    }, 3000);
+
+}]);
 angular.module('centrometalApp').filter('chunk', function() {
     return function(arrJson, chunkSize) {
         var newArr = [];
@@ -334,5 +339,21 @@ angular.module('centrometalApp').filter('chunk', function() {
             newArr.push(arr.slice(i, i + chunkSize));
         }
         return newArr;
+    };
+});
+angular.module('centrometalApp').directive('slickSlider', function() {
+    return {
+        restrict: 'A',
+        scope: {'data': '='},
+        link: function(scope, element, attrs) {
+            var isInitialized = false;
+            scope.$watch('data', function(newVal, oldVal){
+                if(newVal)
+                if(newVal.length > 0 && !isInitialized){
+                    $(element).slick(scope.$eval(attrs.slickSlider));
+                    isInitialized = true;
+                }
+            })
+        }
     };
 });

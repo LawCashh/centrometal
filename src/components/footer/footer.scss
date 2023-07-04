@@ -15,71 +15,75 @@ footer{
   background-color: #3cadef;
   border-top: 1px solid lightgray;
 }
-.topfooter{
-  display: flex;
+
+.topfooter {
   height: 40%;
   width: 65%;
-  margin: 0 auto;
-  padding-top: 45px;
-  overflow: hidden;
-  position: relative;
-}
-.footer_slide_item{
-  display: inline-block;
-  float: left;
-  width: 25%;
-  height: 100px;
-  text-align: center;
-  padding: 10px;
-    img{
-      max-width: 100%;
-      display: block;
-    }
+  display: flex;
+  align-items: center;
 }
 
-.container{
-  height: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.logo-slider-container {
-  width: 65%;
-  height: 70%;
-  overflow: hidden;
-  display: flex;
+.container {
+  width: 100%;
   margin: 0 auto;
 }
 
-.logo-slider {
+.logo-area {
   display: flex;
-  width: 100%; /* Adjust the width based on the number of logos */
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo-slider img {
-  width: 18.5%; /* Adjust the width based on the number of logos */
-  flex-shrink: 0;
-  text-align: center;
-  padding: 10px;
+.my-slide img {
+  max-width: 100px;
+  height: auto;
+  margin: 0 auto;
 }
-
-.buttonleft, .buttonright {
+.slick-prev, .slick-next {
+  height: 56px;
+  width: 56px;
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
-  margin: 0 5px;
-  padding: 5px 10px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border-style: none;
+  z-index: 10;
+  border: none;
+  bottom: 0;
+  text-indent: -9999px;
+  cursor: pointer;
 }
 
-.buttonleft{
-  left: 14%;
+.slick-prev {
+  background-image: url('../../../../src/assets/images/footer/left-arrow.png');
+  left: -40px;
+  top: -16px;
+}
+.slick-next {
+  background-image: url('../../../../src/assets/images/footer/right-arrow.png');
+  right: -40px;
+  top: -16px;
 }
 
-.buttonright{
-  right: 14%;
-}
+//.topfooter{
+//  display: flex;
+//  height: 40%;
+//  width: 65%;
+//  margin: 0 auto;
+//  padding-top: 45px;
+//  overflow: hidden;
+//  position: relative;
+//}
+//.footer_slide_item{
+//  display: inline-block;
+//  float: left;
+//  width: 25%;
+//  height: 100px;
+//  text-align: center;
+//  padding: 10px;
+//    img{
+//      max-width: 100%;
+//      display: block;
+//    }
+//}
 //.slick-arrow{
 //  height: 56px !important;
 //  width: 56px !important;

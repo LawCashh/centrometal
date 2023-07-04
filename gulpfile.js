@@ -13,22 +13,22 @@ const paths = {
     sass: "./src/**/*.scss",
     css: "./dist/styles",
     angjs: [
+        "./src/scripts/other/jquery.min.js",
         "./src/scripts/angular/angular.min.js",
         "./src/scripts/angular/angular-route.min.js",
         //"./src/scripts/custom/*.js"
     ],
     otherjs: [
-        // "./src/scripts/other/jquery.min.js",
-        // "./src/scripts/other/slick.min.js",
-        "./src/scripts/other/*.min.js"
+        "./src/scripts/other/slick.min.js",
+        //"./src/scripts/other/*.min.js"
     ],
     js: [
         "./src/app.js",
         "./src/components/**/*.module.js",
         "./src/components/**/*.service.js",
         "./src/components/**/*.controller.js",
-        "./src/components/**/*.filter.js"
-
+        "./src/components/**/*.filter.js",
+        "./src/components/**/*.directive.js"
     ],
     distjs: [
         "./dist/js"
