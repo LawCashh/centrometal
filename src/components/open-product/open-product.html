@@ -11,7 +11,7 @@
                         <img ng-src="{{vm.productData[0].url}}">
                     </div>
                     <div class="leftside_mainflex_part1_footer">
-                        <div ng-repeat="slideurl in vm.productData[0].slideurls" class="footer_slide_item"><a><img ng-src="{{slideurl}}"></a></div>
+                        <div ng-repeat="slideurl in vm.productData[0].slideurls.slice(0,3)" class="footer_slide_item"><a><img ng-src="{{slideurl}}"></a></div>
                     </div>
                 </div>
                 <div class="leftside_mainflex_part1_right">

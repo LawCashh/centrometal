@@ -1,8 +1,13 @@
 <div ng-controller="footerController as vm" class="topfooter">
     <div class="container">
-        <div class="logo-area" data="vm.logos" slick-slider="{dots: false, arrows: true, draggable: false, autoplay: true, autoplaySpeed: 2000, slidesToShow: 5, infinite: false}">
-            <div class="my-slide" ng-repeat="logo in vm.logos" >
-            <img ng-src="{{logo.url}}" alt="Logo {{$index + 1}}">
+        <div
+                class="logo-area"
+                data="vm.logos"
+                slick-slider="{dots: false, arrows: true, draggable: false, autoplay: true, autoplaySpeed: 2000, slidesToShow: 5, infinite: false}">
+            <div
+                    class="my-slide"
+                    ng-repeat="logo in vm.logos" >
+                <img ng-src="{{logo.url}}" alt="Logo {{$index + 1}}">
             </div>
         </div>
     </div>

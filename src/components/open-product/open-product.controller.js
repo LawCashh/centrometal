@@ -1,11 +1,30 @@
-angular.module("centrometalApp").controller("openProductController",['openProductService', 'chunkFilter', function (openProductService, chunkFilter) {
+angular.module("centrometalApp").controller("openProductController",['openProductService', 'chunkFilter','$routeParams',
+    function (openProductService, chunkFilter, $routeParams) {
     var vm = this;
-    openProductService.getproductData().then(function(response){
-        vm.productData = response.data;
-    });
+
+    function init(){
+        getData();
+    }
+
+    init();
+
+
+    function getData() {
+
+        var productId = $routeParams.productId;
+
+        openProductService.getproductData(productId)
+            .then(function(response){
+                vm.productData = response.data;
+            },function(){
+
+            });
+    }
+
     openProductService.getvideosData().then(function(response){
         vm.videosData = response.data;
     });
+
     openProductService.getopenproductproizvodiData().then(function(response){
         vm.openproductproizvodiData = response.data;
         vm.openproductproizvodiDataChunked = chunkFilter(vm.openproductproizvodiData, 4);
