@@ -4,6 +4,8 @@ angular.module("centrometalApp").controller("openProductController",['openProduc
 
     function init(){
         getData();
+        getvideosData();
+        getopenproductproizvodiData();
     }
 
     init();
@@ -20,20 +22,24 @@ angular.module("centrometalApp").controller("openProductController",['openProduc
 
             });
     }
+    function getvideosData () {
+        openProductService.getvideosData().then(function(response){
+            vm.videosData = response.data;
+        });
+    }
 
-    openProductService.getvideosData().then(function(response){
-        vm.videosData = response.data;
-    });
+    function getopenproductproizvodiData () {
+        openProductService.getopenproductproizvodiData().then(function(response){
+            vm.openproductproizvodiData = response.data;
+            vm.openproductproizvodiDataChunked = chunkFilter(vm.openproductproizvodiData, 4);
+            vm.temp = angular.copy(vm.openproductproizvodiData);
+            vm.openproductproizvodiDataFirstFour = vm.temp.slice(0,4);
+            if (vm.openproductproizvodiData.length > 4)
+                vm.openProductMoreThanFour = true;
+            else vm.openProductMoreThanFour = false;
+        });
+    }
 
-    openProductService.getopenproductproizvodiData().then(function(response){
-        vm.openproductproizvodiData = response.data;
-        vm.openproductproizvodiDataChunked = chunkFilter(vm.openproductproizvodiData, 4);
-        vm.temp = angular.copy(vm.openproductproizvodiData);
-        vm.openproductproizvodiDataFirstFour = vm.temp.slice(0,4);
-        if (vm.openproductproizvodiData.length > 4)
-            vm.openProductMoreThanFour = true;
-        else vm.openProductMoreThanFour = false;
-    });
 
     vm.leftsideButtonContentChange1 = function () {
         document.getElementById("leftside_content_change_button1").style.backgroundColor = "#00adef";
