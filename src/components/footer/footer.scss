@@ -195,7 +195,7 @@ footer{
   }
   .topfooter{
     height: 18%;
-    width: 65%;
+    width:75%;
     margin: 0 auto;
     padding-top: 45px;
     .footer_slide_item{
@@ -209,6 +209,14 @@ footer{
         }
       }
     }
+  }
+  .slick-prev {
+    left: -80px;
+    top: -16px;
+  }
+  .slick-next {
+    right: -80px;
+    top: -16px;
   }
 
   //.slick-arrow{

@@ -146,7 +146,7 @@ footer {
   }
   .topfooter {
     height: 18%;
-    width: 65%;
+    width: 75%;
     margin: 0 auto;
     padding-top: 45px;
   }
@@ -158,6 +158,14 @@ footer {
   .topfooter .footer_slide_item a img {
     height: 50px;
     width: 80%;
+  }
+  .slick-prev {
+    left: -80px;
+    top: -16px;
+  }
+  .slick-next {
+    right: -80px;
+    top: -16px;
   }
   .midfooter {
     margin: 0 auto;

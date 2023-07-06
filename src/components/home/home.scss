@@ -781,6 +781,13 @@
 }
 
 @media (orientation: portrait) {
+  .proizvod_h4 {
+    font-size: 3vw !important;
+  }
+  .proizvod_p2 {
+    font-size: 2vw !important;
+  }
+
   .mainflex-home{
     display: flex;
     flex-direction: column;

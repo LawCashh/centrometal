@@ -11,8 +11,22 @@
                         <img ng-src="{{vm.productData[0].url}}">
                     </div>
                     <div class="leftside_mainflex_part1_footer">
-                        <div ng-repeat="slideurl in vm.productData[0].slideurls.slice(0,3)" class="footer_slide_item"><a><img ng-src="{{slideurl}}"></a></div>
+                        <button class="prevop"></button>
+                        <div class="logo-area"
+                                data="vm.machines"
+                                slick-slider="{dots: false, arrows: true, draggable: false,
+                                autoplay: true, autoplaySpeed: 2000,
+                                slidesToShow: 3, infinite: false, prevArrow: '.prevop', nextArrow: '.nextop'}">
+                            <div class="footer_slide_item"
+                                    ng-repeat="machine in vm.machines track by $index" >
+                                <img ng-src="{{machine}}" alt="Masina {{$index + 1}}">
+                            </div>
+                        </div>
+                        <button class="nextop"></button>
                     </div>
+<!--                    <div class="leftside_mainflex_part1_footer">-->
+<!--                        <div ng-repeat="slideurl in vm.productData[0].slideurls.slice(0,3)" class="footer_slide_item"><a><img ng-src="{{slideurl}}"></a></div>-->
+<!--                    </div>-->
                 </div>
                 <div class="leftside_mainflex_part1_right">
                         <h1>{{vm.productData[0].naziv}}</h1>
@@ -88,7 +102,7 @@
                 <div></div>
             </div>
             <div class="proizvodi_flex-op" ng-if="!vm.aktiviranoOpenProduct">
-                <div class="proizvod-home" ng-repeat="proizvod in vm.openproductproizvodiDataFirstFour">
+                <div class="proizvod" ng-repeat="proizvod in vm.openproductproizvodiDataFirstFour">
                     <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
                     <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
                     <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
@@ -96,7 +110,7 @@
                 </div>
             </div>
             <div class="proizvodi_flex-op" ng-if="vm.aktiviranoOpenProduct" ng-repeat="proizvodi in vm.openproductproizvodiDataChunked">
-                <div class="proizvod-home" ng-repeat="proizvod in proizvodi">
+                <div class="proizvod" ng-repeat="proizvod in proizvodi">
                     <img class="proizvod_img" ng-src="{{proizvod.url}}"/>
                     <h4 class="proizvod_h4"><a ng-href="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
                     <p class="proizvod_p1">{{proizvod.vrijeme}}</p>

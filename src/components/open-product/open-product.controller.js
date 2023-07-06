@@ -14,10 +14,12 @@ angular.module("centrometalApp").controller("openProductController",['openProduc
     function getData() {
 
         var productId = $routeParams.productId;
-
         openProductService.getproductData(productId)
             .then(function(response){
                 vm.productData = response.data;
+                vm.machines = vm.productData[0].slideurls;
+                vm.prevArrow = "<img class='prevop' src='src/assets/images/open-product/leftside/left-arrow.png'>"
+                vm.nextArrow = "<img class='nextop' src='src/assets/images/open-product/leftside/right-arrow.png'>"
             },function(){
 
             });
