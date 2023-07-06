@@ -3,7 +3,12 @@
     <div class="leftside_nav-home">
       <ul class="leftside_nav_list">
         <li class="leftside_nav_listitem leftside_nav_listheader"><img ng-src="{{vm.mainlistlefticonsData[0].url}}"/>Kupuj po kategoriji</li>
-        <li ng-repeat="listitem in vm.mainlistleftData" class="leftside_nav_listitem"><div><a>{{listitem.naziv}}</a><button ng-if="listitem.children" class="buttonexpand" ng-click="listitem.expanded = !listitem.expanded"><img ng-if="!listitem.expanded" ng-src="{{vm.mainlistlefticonsData[1].url}}"><img ng-if="listitem.expanded" ng-src="{{vm.mainlistlefticonsData[2].url}}"></button></div>
+        <li ng-repeat="listitem in vm.mainlistleftData" class="leftside_nav_listitem">
+          <div><a>{{listitem.naziv}}</a>
+          <button ng-if="listitem.children" class="buttonexpand" ng-click="listitem.expanded = !listitem.expanded">
+            <img ng-if="!listitem.expanded" ng-src="{{vm.mainlistlefticonsData[1].url}}">
+            <img ng-if="listitem.expanded" ng-src="{{vm.mainlistlefticonsData[2].url}}">
+          </button></div>
           <ul ng-if="listitem.children && listitem.expanded" class="leftside_nav_sublist">
             <li ng-repeat="child in listitem.children" class="leftside_nav_listitem" ng-include="'recursiveTemplate.html'"></li>
           </ul>
@@ -11,7 +16,11 @@
       </ul>
     </div>
     <script type="text/ng-template" id="recursiveTemplate.html">
-      <div><a>{{child.naziv}}</a><button ng-if="child.children" class="buttonexpand" ng-click="child.expanded = !child.expanded"><img ng-if="!child.expanded" ng-src="{{vm.mainlistlefticonsData[1].url}}"><img ng-if="child.expanded" ng-src="{{vm.mainlistlefticonsData[2].url}}"></button></div>
+      <div><a>{{child.naziv}}</a>
+        <button ng-if="child.children" class="buttonexpand" ng-click="child.expanded = !child.expanded">
+          <img ng-if="!child.expanded" ng-src="{{vm.mainlistlefticonsData[1].url}}">
+          <img ng-if="child.expanded" ng-src="{{vm.mainlistlefticonsData[2].url}}">
+        </button></div>
       <ul ng-if="child.children && child.expanded" class="leftside_nav_sublist">
         <li ng-repeat="child in child.children" ng-include="'recursiveTemplate.html'"></li>
       </ul>
