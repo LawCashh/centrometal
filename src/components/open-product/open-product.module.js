@@ -6,6 +6,6 @@ angular.module("centrometalApp").config(['$routeProvider', function ($routeProvi
             controllerAs: "vm"
         })
         .otherwise({
-            redirectTo: "/"
-        })
+            redirectTo: '/404'
+        });
 }]);

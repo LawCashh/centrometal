@@ -5,5 +5,12 @@ angular.module("centrometalApp").config(['$routeProvider', function($routeProvid
         controller: 'homeController',
         controllerAs: 'vm'
     })
+        .when('/404', {
+        templateUrl: './src/components/404/404.html'
+    })
+        .otherwise({
+            redirectTo: '/404'
+        });
+
 
 }]);

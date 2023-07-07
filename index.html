@@ -5,8 +5,8 @@
     <title>Example app</title>
     <!-- inject:css -->
     <link rel="stylesheet" href="/dist/styles/slick.css">
-    <link rel="stylesheet" href="/dist/styles/components/header/header.css">
     <link rel="stylesheet" href="/dist/styles/components/footer/footer.css">
+    <link rel="stylesheet" href="/dist/styles/components/header/header.css">
     <link rel="stylesheet" href="/dist/styles/components/home/home.css">
     <link rel="stylesheet" href="/dist/styles/components/open-product/open-product.css">
     <!-- endinject -->
@@ -17,10 +17,12 @@
     <!-- endinject -->
 </head>
 <body ng-app="centrometalApp">
-    <header ng-controller="headerController" ng-include="'src/components/header/header.html'"></header>
+<!--opcija  ng-show="!vm.is404Page" na header i footer-->
+    <header ng-controller="headerController as vm" ng-include="'src/components/header/header.html'"></header>
 
     <div ng-view></div>
-    <footer ng-controller="footerController" ng-include="'src/components/footer/footer.html'"></footer>
+    <footer ng-controller="footerController as vm" ng-include="'src/components/footer/footer.html'"
+            ng-style="vm.is404Page && {'position':'absolute', 'bottom': '0'}"></footer>
 
 </body>
 </html>

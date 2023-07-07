@@ -17,10 +17,10 @@ const vruciproizvodi = require('../../src/data/vruciproizvodi.json');
 const mainlistlefticons = require('../../src/data/mainlistlefticons.json');
 
 module.exports = () => ({
-    _1: _1,
-    _2: _2,
-    _3: _3,
-    _4: _4,
+    1: _1,
+    2: _2,
+    3: _3,
+    4: _4,
     akcijaproizvodi: akcijaproizvodi,
     footer: footer,
     header: header,
