@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "url": "assets/images/home/leftside/ad1.png"
+    },
+    {
+        "id": 2,
+        "artikli": [
+            {
+                "id": 21,
+                "h3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "p": "Etiam dolor tortor, facilisis id ante id, blandit convallis quam. Maecenas vehicula efficitur magna eget tempus. Vivamus tempus",
+                "b": "OPSIRNIJE",
+                "url": "assets/images/home/leftside/article1.png"
+            },
+            {
+                "id": 22,
+                "h3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "p": "Etiam dolor tortor, facilisis id ante id, blandit convallis quam. Maecenas vehicula efficitur magna eget tempus. Vivamus tempus",
+                "b": "OPSIRNIJE",
+                "url": "assets/images/home/leftside/article1.png"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "url": "assets/images/home/leftside/testreklama.png"
+    }
+]

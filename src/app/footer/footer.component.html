@@ -1,0 +1,36 @@
+<!--<div class="topfooter">-->
+<!--  <div class="container">-->
+<!--    <div-->
+<!--      class="logo-area">-->
+<!--      <div-->
+<!--        class="my-slide"-->
+<!--        >-->
+<!--        <img src="" alt="">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="topfooter">
+  <div class="container">
+    <ngx-slick-carousel class="logo-area"
+    #slickModal="slick-carousel"
+    [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let image of foot1; index as i" class="my-slide">
+        <img src="{{image.url}}" alt="+ {{i}}">
+      </div>
+    </ngx-slick-carousel>
+  </div>
+</div>
+
+<div class="midfooter">
+  <div class="midfooter_item" *ngFor="let group of foot2">
+    <h3>{{group.naziv}}</h3>
+    <ul>
+      <li *ngFor="let elem of group.elementi"><a>{{elem}}</a></li>
+    </ul>
+  </div>
+</div>
+<div class="botfooter" *ngIf="foot3.length>0">
+  <p>&copy; {{foot3[0].naziv}} <a>{{foot3[1].naziv}}</a> {{foot3[2].naziv}}</p>
+</div>
