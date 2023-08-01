@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  getData (path: string) {
-    return this.http.get("http://localhost:3000/" + path);
+  getData<T> (path: string): Observable<T> {
+    return this.http.get<T>("http://localhost:3000/" + path);
   }
 }

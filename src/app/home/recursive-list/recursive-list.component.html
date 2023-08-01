@@ -1,0 +1,10 @@
+<div><a>{{child.naziv}}</a>
+  <button *ngIf="child.children" class="buttonexpand" (click)="child.expanded = !child.expanded">
+    <img *ngIf="!child.expanded" src="{{mainListLeftIcons[1].url}}">
+    <img *ngIf="child.expanded" src="{{mainListLeftIcons[2].url}}">
+  </button></div>
+<ul *ngIf="child.children && child.expanded" class="leftside_nav_sublist">
+  <li *ngFor="let child of child.children" class="leftside_nav_listitem">
+    <app-recursive-list [child]="child" [mainListLeftIcons]="mainListLeftIcons"></app-recursive-list>
+  </li>
+</ul>

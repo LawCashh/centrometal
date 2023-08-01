@@ -8,11 +8,11 @@ interface HeaderElement {
   url?: string;
 }
 
-// interface HeaderAll {
-//   nav1: any;
-//   nav2: any;
-//   nav3: any;
-// }
+interface HeaderAll {
+  nav1: HeaderElement[];
+  nav2: HeaderElement[];
+  nav3: HeaderElement[];
+}
 
 @Component({
   selector: 'app-header',
@@ -20,21 +20,15 @@ interface HeaderElement {
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy{
-  data: any;
-  nav1: HeaderElement[] = [];
-  nav2: HeaderElement[] = [];
-  nav3: HeaderElement[] = [];
+  data: HeaderAll = {nav1: [], nav2: [], nav3: []};
   httpSubscription = new Subscription();
 
   constructor(private http: DataService) {
   }
 
   ngOnInit(): void {
-    this.httpSubscription = this.http.getData("header").subscribe((res) => {
+    this.httpSubscription = this.http.getData<HeaderAll>("header").subscribe((res) => {
         this.data = res;
-        this.nav1 = this.data.nav1;
-        this.nav2 = this.data.nav2;
-        this.nav3 = this.data.nav3;
     }, (err) => {
       console.log("header data error: " + err);
     });

@@ -9,11 +9,11 @@ interface FooterElement {
   elementi?: string[];
 }
 
-// interface FooterData {
-//   foot1: FooterElement[];
-//   foot2: FooterElement[];
-//   foot3: FooterElement[];
-// }
+interface FooterData {
+  foot1: FooterElement[];
+  foot2: FooterElement[];
+  foot3: FooterElement[];
+}
 
 @Component({
   selector: 'app-footer',
@@ -25,10 +25,7 @@ interface FooterElement {
   ],
 })
 export class FooterComponent implements OnInit, OnDestroy{
-  data: any;
-  foot1: FooterElement[] = [];
-  foot2: FooterElement[] = [];
-  foot3: FooterElement[] = [];
+  data: FooterData = {foot1: [], foot2: [], foot3: []};
 
   slideConfig = {
     "slidesToShow": 5,
@@ -65,11 +62,8 @@ export class FooterComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    this.httpSub = this.http.getData("footer").subscribe((res ) => {
+    this.httpSub = this.http.getData<FooterData>("footer").subscribe((res ) => {
       this.data = res;
-      this.foot1 = this.data.foot1;
-      this.foot2 = this.data.foot2;
-      this.foot3 = this.data.foot3;
     }, (err) => {
       console.log("footer get data greska: " + err);
     });

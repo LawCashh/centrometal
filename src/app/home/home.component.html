@@ -1,1 +1,278 @@
-<p>home works!</p>
+<div class="mainflex-home">
+  <div class="leftside_mainflex-home">
+    <div class="leftside_nav-home">
+      <ul class="leftside_nav_list" *ngIf="mainListLeft.length>0">
+        <li class="leftside_nav_listitem leftside_nav_listheader" *ngIf="mainListLeftIcons.length>0"><img [src]="mainListLeftIcons[0].url"/>Kupuj po kategoriji</li>
+        <li *ngFor="let listitem of mainListLeft" class="leftside_nav_listitem">
+          <div><a>{{listitem.naziv}}</a>
+            <button *ngIf="listitem.children" class="buttonexpand" (click)="listitem.expanded = !listitem.expanded">
+              <img *ngIf="!listitem.expanded && mainListLeftIcons.length>0" [src]="mainListLeftIcons[1].url">
+              <img *ngIf="listitem.expanded && mainListLeftIcons.length>0" [src]="mainListLeftIcons[2].url">
+            </button></div>
+          <ul *ngIf="listitem.children && listitem.expanded" class="leftside_nav_sublist">
+            <li *ngFor="let child of listitem.children" class="leftside_nav_listitem">
+              <app-recursive-list [child]="child" [mainListLeftIcons]="mainListLeftIcons"></app-recursive-list>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="leftside_search-home">
+      <div class="leftside_search_naslov">
+        <img src="../../assets/images/home/leftside/search/email-square.png"/>
+        <h3>PRETRAGA PO BRENDU</h3>
+      </div>
+      <div class="leftside_search_forma">
+        <input type="text" placeholder="Unesite naziv brenda"/>
+        <img src="../../assets/images/header/lupaico.png"/>
+      </div>
+    </div>
+    <div class="leftside_img-home" *ngIf="reklameMain.length>0">
+      <img [src]="reklameMain[0].url"/>
+    </div>
+    <div class="leftside_newsletter-home">
+      <div class="leftside_newsletter_naslov">
+        <img src="../../assets/images/home/leftside/search/email-square.png"/>
+        <h3>PRIJAVI SE NA NEWSLETTER</h3>
+      </div>
+      <div class="leftside_newsletter_input">
+        <input type="text" placeholder="E mail"/>
+      </div>
+      <div class="leftside_newsletter_input">
+        <input type="text" placeholder="Ime i prezime"/>
+      </div>
+      <div class="leftside_newsletter_button">
+        <button>PRIJAVI SE</button>
+      </div>
+    </div>
+    <div class="leftside_containeri-home" *ngIf="reklameMain.length>0">
+      <div *ngFor="let artikl of reklameMain[1].artikli" class="leftside_container-home">
+        <img [src]="artikl.url">
+        <h3>{{artikl.h3}}</h3>
+        <p>{{artikl.p}}</p>
+        <button>{{artikl.b}}</button>
+      </div>
+    </div>
+    <div class="leftside_img-home" id="testreklama" *ngIf="reklameMain.length>0">
+      <img [src]="reklameMain[2].url"/>
+    </div>
+  </div>
+
+  <div class="rightside_mainflex-home">
+    <div class="rightside_slider-home">
+      <div class="rightside_slides">
+        <input type="radio" name="slide-radio-btn" id="slide-radio-1" #radio1>
+        <input type="radio" name="slide-radio-btn" id="slide-radio-2" #radio2>
+        <input type="radio" name="slide-radio-btn" id="slide-radio-3" #radio3>
+        <input type="radio" name="slide-radio-btn" id="slide-radio-4" #radio4>
+
+        <div *ngFor="let testera of testere; index as i" class="slide" [class]="i == 0 ? 'first': ''">
+          <img [src]="testera.url">
+        </div>
+
+        <div class="navigation-auto">
+          <div class="auto-btn1"></div>
+          <div class="auto-btn2"></div>
+          <div class="auto-btn3"></div>
+          <div class="auto-btn4"></div>
+        </div>
+
+        <div class="navigation-manual">
+          <label for="slide-radio-1" class="manual-btn" id="btn1" (click)="counter = 1; resetTimer()">1</label>
+          <label for="slide-radio-2" class="manual-btn" id="btn2" (click)="counter = 2; resetTimer()">2</label>
+          <label for="slide-radio-3" class="manual-btn" id="btn3" (click)="counter = 3; resetTimer()">3</label>
+          <label for="slide-radio-4" class="manual-btn" id="btn4" (click)="counter = 4; resetTimer()">4</label>
+        </div>
+
+        <div class="slider_opis-home">
+          <h2>Motorna</h2>
+          <h2 id="sega_h2">Šega {{counter}}</h2>
+          <div>
+            <button>VIDI PROIZVOD</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mainflex_proizvodi-home" id="mainflex_proizvod1">
+      <div id="mainflex_proizvodi_naslov1">
+        <div class="bijeli_left"></div>
+        <img src="../../assets/images/home/rightside/vruca-icon.png"/>
+        <h4>VRUĆA PONUDA</h4>
+        <div class="bijeli_right"></div>
+      </div>
+      <!--      <div class="loader" *ngIf="isLoading" style="margin: 0 auto;">-->
+      <!--        <img src="../../assets/gifs/rolling-loader.gif" alt="Loading..">-->
+      <!--      </div>-->
+      <div class="proizvodi_flex-home" *ngIf="!aktiviranoVruci && vruciProizvodi.length > 0">
+        <div class="proizvod-home" *ngFor="let proizvod of vruciProizvodi.slice(0,4)">
+          <img class="proizvod_img" [src]="proizvod.url"/>
+          <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+          <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+          <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+        </div>
+      </div>
+      <ng-container *ngIf="aktiviranoVruci && vruciProizvodi.length > 0" >
+        <div class="proizvodi_flex-home" *ngFor="let proizvodi of vruciProizvodi | chunk: 4">
+          <div class="proizvod-home" *ngFor="let proizvod of proizvodi">
+            <img class="proizvod_img" [src]="proizvod.url"/>
+            <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+            <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+            <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+          </div>
+        </div>
+      </ng-container>
+      <div class="mainflex_proizvodi_dugme-home" *ngIf="vruciProizvodi.length > 0 && !aktiviranoVruci">
+        <button (click)="aktiviranoVruci=true" *ngIf="vruciMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+      </div>
+      <div class="mainflex_proizvodi_dugme-home" style="margin-top:15px;" *ngIf="vruciProizvodi.length === 0">
+        <h3>Nema vrucih proizvoda.</h3>
+      </div>
+    </div>
+
+    <div id="mainflex_proizvod2-home">
+      <div id="mainflex_proizvodi_naslov2">
+        <div class="bijeli_left"></div>
+        <img src="../../assets/images/home/rightside/akcija-icon.png"/>
+        <h4>AKCIJA - POPUSTI</h4>
+        <div class="bijeli_right"></div>
+      </div>
+      <!--      <div class="loader" *ngIf="isLoading" style="margin: 0 auto;">-->
+      <!--        <img src="../../assets/gifs/rolling-loader.gif" alt="Loading..">-->
+      <!--      </div>-->
+      <div class="proizvodi_flex-home" *ngIf="!aktiviranoAkcija && akcijaProizvodi.length > 0">
+        <div class="proizvod-home" *ngFor="let proizvod of akcijaProizvodi.slice(0,4)">
+          <img class="proizvod_img" [src]="proizvod.url"/>
+          <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+          <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+          <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+        </div>
+      </div>
+      <ng-container *ngIf="aktiviranoAkcija && akcijaProizvodi.length > 0" >
+        <div class="proizvodi_flex-home" *ngFor="let proizvodi of akcijaProizvodi | chunk: 4">
+          <div class="proizvod-home" *ngFor="let proizvod of proizvodi">
+            <img class="proizvod_img" [src]="proizvod.url"/>
+            <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+            <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+            <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+          </div>
+        </div>
+      </ng-container>
+      <div class="mainflex_proizvodi_dugme-home" *ngIf="akcijaProizvodi.length > 0 && !aktiviranoAkcija">
+        <button (click)="aktiviranoAkcija=true" *ngIf="akcijaMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+      </div>
+      <div class="mainflex_proizvodi_dugme-home" style="margin-top:15px;" *ngIf="akcijaProizvodi.length === 0">
+        <h3>Nema vrucih proizvoda.</h3>
+      </div>
+    </div>
+
+    <div class="mainflex_proizvodi-home" id="mainflex_proizvod3">
+      <div id="mainflex_proizvodi_naslov3">
+        <div class="bijeli_left"></div>
+        <img src="../../assets/images/home/rightside/preporucujemo-icon.png"/>
+        <h4>PREPORUČUJEMO</h4>
+        <div class="bijeli_right"></div>
+      </div>
+      <!--      <div class="loader" *ngIf="isLoading" style="margin: 0 auto;">-->
+      <!--        <img src="../../assets/gifs/rolling-loader.gif" alt="Loading..">-->
+      <!--      </div>-->
+      <div class="proizvodi_flex-home" *ngIf="!aktiviranoPreporucujemo && preporucujemoProizvodi.length > 0">
+        <div class="proizvod-home" *ngFor="let proizvod of preporucujemoProizvodi.slice(0,4)">
+          <img class="proizvod_img" [src]="proizvod.url"/>
+          <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+          <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+          <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+        </div>
+      </div>
+      <ng-container *ngIf="aktiviranoPreporucujemo && preporucujemoProizvodi.length > 0" >
+        <div class="proizvodi_flex-home" *ngFor="let proizvodi of preporucujemoProizvodi | chunk: 4">
+          <div class="proizvod-home" *ngFor="let proizvod of proizvodi">
+            <img class="proizvod_img" [src]="proizvod.url"/>
+            <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+            <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+            <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+          </div>
+        </div>
+      </ng-container>
+      <div class="mainflex_proizvodi_dugme-home" *ngIf="preporucujemoProizvodi.length > 0 && !aktiviranoPreporucujemo">
+        <button (click)="aktiviranoPreporucujemo=true" *ngIf="preporucujemoMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+      </div>
+      <div class="mainflex_proizvodi_dugme-home" style="margin-top:15px;" *ngIf="preporucujemoProizvodi.length === 0">
+        <h3>Nema vrucih proizvoda.</h3>
+      </div>
+    </div>
+
+    <div class="mainflex_proizvodi-home" id="mainflex_proizvod4">
+      <div id="mainflex_proizvodi_naslov4">
+        <div class="bijeli_left"></div>
+        <img src="../../assets/images/home/rightside/novo-icon.png"/>
+        <h4>NOVO U PONUDI</h4>
+        <div class="bijeli_right"></div>
+      </div>
+      <!--      <div class="loader" *ngIf="isLoading" style="margin: 0 auto;">-->
+      <!--        <img src="../../assets/gifs/rolling-loader.gif" alt="Loading..">-->
+      <!--      </div>-->
+      <div class="proizvodi_flex-home" *ngIf="!aktiviranoNovo && novoProizvodi.length > 0">
+        <div class="proizvod-home" *ngFor="let proizvod of novoProizvodi.slice(0,4)">
+          <img class="proizvod_img" [src]="proizvod.url"/>
+          <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+          <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+          <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+        </div>
+      </div>
+      <ng-container *ngIf="aktiviranoNovo && novoProizvodi.length > 0" >
+        <div class="proizvodi_flex-home" *ngFor="let proizvodi of novoProizvodi | chunk: 4">
+          <div class="proizvod-home" *ngFor="let proizvod of proizvodi">
+            <img class="proizvod_img" [src]="proizvod.url"/>
+            <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+            <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+            <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+          </div>
+        </div>
+      </ng-container>
+      <div class="mainflex_proizvodi_dugme-home" *ngIf="novoProizvodi.length > 0 && !aktiviranoNovo">
+        <button (click)="aktiviranoNovo=true" *ngIf="novoMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+      </div>
+      <div class="mainflex_proizvodi_dugme-home" style="margin-top:15px;" *ngIf="novoProizvodi.length === 0">
+        <h3>Nema vrucih proizvoda.</h3>
+      </div>
+    </div>
+
+    <div class="mainflex_proizvodi-home" id="mainflex_proizvod5">
+      <div id="mainflex_proizvodi_naslov5">
+        <div class="bijeli_left"></div>
+        <img src="../../assets/images/home/rightside/rasprodaja-icon.png"/>
+        <h4>RASPRODAJA</h4>
+        <div class="bijeli_right"></div>
+      </div>
+      <!--      <div class="loader" *ngIf="isLoading" style="margin: 0 auto;">-->
+      <!--        <img src="../../assets/gifs/rolling-loader.gif" alt="Loading..">-->
+      <!--      </div>-->
+      <div class="proizvodi_flex-home" *ngIf="!aktiviranoRasprodaja && rasprodajaProizvodi.length > 0">
+        <div class="proizvod-home" *ngFor="let proizvod of rasprodajaProizvodi.slice(0,4)">
+          <img class="proizvod_img" [src]="proizvod.url"/>
+          <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+          <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+          <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+        </div>
+      </div>
+      <ng-container *ngIf="aktiviranoRasprodaja && rasprodajaProizvodi.length > 0" >
+        <div class="proizvodi_flex-home" *ngFor="let proizvodi of rasprodajaProizvodi | chunk: 4">
+          <div class="proizvod-home" *ngFor="let proizvod of proizvodi">
+            <img class="proizvod_img" [src]="proizvod.url"/>
+            <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+            <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+            <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+          </div>
+        </div>
+      </ng-container>
+      <div class="mainflex_proizvodi_dugme-home" *ngIf="rasprodajaProizvodi.length > 0 && !aktiviranoRasprodaja">
+        <button (click)="aktiviranoRasprodaja=true" *ngIf="rasprodajaMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+      </div>
+      <div class="mainflex_proizvodi_dugme-home" style="margin-top:15px;" *ngIf="rasprodajaProizvodi.length === 0">
+        <h3>Nema vrucih proizvoda.</h3>
+      </div>
+    </div>
+
+  </div>
+</div>

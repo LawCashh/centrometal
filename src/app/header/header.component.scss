@@ -344,7 +344,6 @@
       }
     }
   }
-
   .nav3_itemi {
     width: 100%;
     height: 500px;
@@ -352,7 +351,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px;
+    padding: 10px 0 0 0;
     position: relative;
     .nav3_item{
       font-size: 4vw;

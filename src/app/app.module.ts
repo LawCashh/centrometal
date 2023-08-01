@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { OpenProductComponent } from './open-product/open-product.component';
 import { Error404Component } from './error404/error404.component';
 import {SlickCarouselModule} from "ngx-slick-carousel";
+import { RecursiveListComponent } from './home/recursive-list/recursive-list.component';
+import {FormsModule} from "@angular/forms";
+import { ChunkPipe } from './chunk.pipe';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import {SlickCarouselModule} from "ngx-slick-carousel";
     FooterComponent,
     HomeComponent,
     OpenProductComponent,
-    Error404Component
+    Error404Component,
+    RecursiveListComponent,
+    ChunkPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

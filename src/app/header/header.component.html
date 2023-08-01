@@ -1,31 +1,31 @@
 <nav class="nav1">
   <ul class="nav1_itemi">
-    <li class="nav1_item" *ngFor="let elem of nav1"><a>{{elem.naziv}}</a></li>
+    <li class="nav1_item" *ngFor="let elem of data.nav1"><a>{{elem.naziv}}</a></li>
   </ul>
 </nav>
-<div class="nav2big" *ngIf="nav2.length > 0">
+<div class="nav2big" *ngIf="data.nav2.length > 0">
   <div class="nav2">
     <div class="centro">
-      <a><span id="centroplava">{{nav2[0].naziv}}</span>{{nav2[1].naziv}}</a>
+      <a><span id="centroplava">{{data.nav2[0].naziv}}</span>{{data.nav2[1].naziv}}</a>
     </div>
     <div class="searchdiv">
       <input id="searchform" type="text" placeholder="Unesite šifru ili pojam pretraživanja"/>
-      <img id="lupaicon" [src]="nav2[3].url"/>
-      <img id="fbicon" [src]="nav2[2].url"/>
+      <img id="lupaicon" [src]="data.nav2[3].url"/>
+      <img id="fbicon" [src]="data.nav2[2].url"/>
     </div>
     <div class="korpadiv">
-      <a>{{nav2[4].naziv}}</a>
-      <span>{{nav2[5].naziv}}</span>
-      <img id="korpaicon" [src]="nav2[6].url"/>
+      <a>{{data.nav2[4].naziv}}</a>
+      <span>{{data.nav2[5].naziv}}</span>
+      <img id="korpaicon" [src]="data.nav2[6].url"/>
     </div>
   </div>
 </div>
-<nav class="nav3" *ngIf="nav3.length > 0">
+<nav class="nav3" *ngIf="data.nav3.length > 0">
   <ul class="nav3_itemi">
     <div class="left_trap"></div>
-    <li class="nav3_item"><a id="ahome"><img id="homeicon" [src]="nav3[0].url"/></a></li>
-    <li class="nav3_item" *ngFor="let elem of nav3.slice(1,9);index as i"><a>{{elem.naziv}}</a></li>
-    <li class="nav3_item"><a><span id="nav3lastblue">{{nav3[9].naziv}}</span><span>{{nav3[10].naziv}}</span></a></li>
+    <li class="nav3_item"><a id="ahome"><img id="homeicon" [src]="data.nav3[0].url"/></a></li>
+    <li class="nav3_item" *ngFor="let elem of data.nav3.slice(1,9);index as i"><a>{{elem.naziv}}</a></li>
+    <li class="nav3_item"><a><span id="nav3lastblue">{{data.nav3[9].naziv}}</span><span>{{data.nav3[10].naziv}}</span></a></li>
     <div class="right_trap"></div>
   </ul>
 </nav>
