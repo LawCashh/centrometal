@@ -6,7 +6,7 @@
     "cijena1": "€135.00",
     "cijena2": " €90.00",
     "url": "assets/images/home/rightside/masina-1.png",
-    "path": "#/openproduct/1"
+    "path": "open-product/1"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "cijena1": "€135.00",
     "cijena2": " €90.00",
     "url": "assets/images/home/rightside/masina-2.png",
-    "path": "#/openproduct/2"
+    "path": "open-product/2"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "cijena1": "€135.00",
     "cijena2": " €90.00",
     "url": "assets/images/home/rightside/masina-3.png",
-    "path": "#/openproduct/3"
+    "path": "open-product/3"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "cijena1": "€135.00",
     "cijena2": " €90.00",
     "url": "assets/images/home/rightside/masina-4.png",
-    "path": "#/openproduct/4"
+    "path": "open-product/4"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "cijena1": "€135.00",
     "cijena2": " €90.00",
     "url": "assets/images/home/rightside/masina-1.png",
-    "path": "#/openproduct/1"
+    "path": "open-product/1"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "cijena1": "€135.00",
     "cijena2": " €90.00",
     "url": "assets/images/home/rightside/masina-2.png",
-    "path": "#/openproduct/2"
+    "path": "open-product/2"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "cijena1": "€135.00",
     "cijena2": " €90.00",
     "url": "assets/images/home/rightside/masina-3.png",
-    "path": "#/openproduct/3"
+    "path": "open-product/3"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "cijena1": "€135.00",
     "cijena2": " €90.00",
     "url": "assets/images/home/rightside/masina-4.png",
-    "path": "#/openproduct/4"
+    "path": "open-product/4"
   },
   {
     "id": 9,
@@ -78,6 +78,6 @@
     "cijena1": "€135.00",
     "cijena2": " €90.00",
     "url": "assets/images/home/rightside/masina-1.png",
-    "path": "#/openproduct/1"
+    "path": "open-product/1"
   }
 ]

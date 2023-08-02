@@ -6,7 +6,7 @@
 <div class="nav2big" *ngIf="data.nav2.length > 0">
   <div class="nav2">
     <div class="centro">
-      <a><span id="centroplava">{{data.nav2[0].naziv}}</span>{{data.nav2[1].naziv}}</a>
+      <a routerLink=""><span id="centroplava">{{data.nav2[0].naziv}}</span>{{data.nav2[1].naziv}}</a>
     </div>
     <div class="searchdiv">
       <input id="searchform" type="text" placeholder="Unesite šifru ili pojam pretraživanja"/>
@@ -23,7 +23,7 @@
 <nav class="nav3" *ngIf="data.nav3.length > 0">
   <ul class="nav3_itemi">
     <div class="left_trap"></div>
-    <li class="nav3_item"><a id="ahome"><img id="homeicon" [src]="data.nav3[0].url"/></a></li>
+    <li class="nav3_item"><a id="ahome" routerLink=""><img id="homeicon" [src]="data.nav3[0].url"/></a></li>
     <li class="nav3_item" *ngFor="let elem of data.nav3.slice(1,9);index as i"><a>{{elem.naziv}}</a></li>
     <li class="nav3_item"><a><span id="nav3lastblue">{{data.nav3[9].naziv}}</span><span>{{data.nav3[10].naziv}}</span></a></li>
     <div class="right_trap"></div>

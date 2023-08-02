@@ -12,6 +12,7 @@ import {SlickCarouselModule} from "ngx-slick-carousel";
 import { RecursiveListComponent } from './home/recursive-list/recursive-list.component';
 import {FormsModule} from "@angular/forms";
 import { ChunkPipe } from './chunk.pipe';
+import { AppRoutesModule } from './app-routes.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ChunkPipe } from './chunk.pipe';
     BrowserModule,
     HttpClientModule,
     SlickCarouselModule,
-    FormsModule
+    FormsModule,
+    AppRoutesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

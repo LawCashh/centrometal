@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HomeComponent} from "./home.component";
-import { ListedProizvod, Proizvod, Artikl, Testera } from "./proizvodi.model";
+import { ListedProizvod, Artikl, Testera } from "./home.model";
 import { DataService } from "../data.service";
 import {Observable} from "rxjs";
 

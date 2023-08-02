@@ -107,7 +107,7 @@
       <div class="proizvodi_flex-home" *ngIf="!aktiviranoVruci && vruciProizvodi.length > 0">
         <div class="proizvod-home" *ngFor="let proizvod of vruciProizvodi.slice(0,4)">
           <img class="proizvod_img" [src]="proizvod.url"/>
-          <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a routerLink="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -116,7 +116,7 @@
         <div class="proizvodi_flex-home" *ngFor="let proizvodi of vruciProizvodi | chunk: 4">
           <div class="proizvod-home" *ngFor="let proizvod of proizvodi">
             <img class="proizvod_img" [src]="proizvod.url"/>
-            <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+            <h4 class="proizvod_h4"><a routerLink="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
             <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
             <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
           </div>
@@ -124,6 +124,9 @@
       </ng-container>
       <div class="mainflex_proizvodi_dugme-home" *ngIf="vruciProizvodi.length > 0 && !aktiviranoVruci">
         <button (click)="aktiviranoVruci=true" *ngIf="vruciMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+      </div>
+      <div class="mainflex_proizvodi_dugme-home" *ngIf="vruciProizvodi.length > 0 && aktiviranoVruci">
+        <button (click)="aktiviranoVruci=false" *ngIf="vruciMoreThanFour">SAKRIJTE PROIZVODE IZ VRUĆE PONUDE</button>
       </div>
       <div class="mainflex_proizvodi_dugme-home" style="margin-top:15px;" *ngIf="vruciProizvodi.length === 0">
         <h3>Nema vrucih proizvoda.</h3>
@@ -143,7 +146,7 @@
       <div class="proizvodi_flex-home" *ngIf="!aktiviranoAkcija && akcijaProizvodi.length > 0">
         <div class="proizvod-home" *ngFor="let proizvod of akcijaProizvodi.slice(0,4)">
           <img class="proizvod_img" [src]="proizvod.url"/>
-          <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a routerLink="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -152,14 +155,17 @@
         <div class="proizvodi_flex-home" *ngFor="let proizvodi of akcijaProizvodi | chunk: 4">
           <div class="proizvod-home" *ngFor="let proizvod of proizvodi">
             <img class="proizvod_img" [src]="proizvod.url"/>
-            <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+            <h4 class="proizvod_h4"><a routerLink="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
             <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
             <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
           </div>
         </div>
       </ng-container>
       <div class="mainflex_proizvodi_dugme-home" *ngIf="akcijaProizvodi.length > 0 && !aktiviranoAkcija">
-        <button (click)="aktiviranoAkcija=true" *ngIf="akcijaMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+        <button (click)="aktiviranoAkcija=true" *ngIf="akcijaMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ AKCIJSKE PONUDE</button>
+      </div>
+      <div class="mainflex_proizvodi_dugme-home" *ngIf="akcijaProizvodi.length > 0 && aktiviranoAkcija">
+        <button (click)="aktiviranoAkcija=false" *ngIf="akcijaMoreThanFour">SAKRIJTE PROIZVODE IZ AKCIJSKE PONUDE</button>
       </div>
       <div class="mainflex_proizvodi_dugme-home" style="margin-top:15px;" *ngIf="akcijaProizvodi.length === 0">
         <h3>Nema vrucih proizvoda.</h3>
@@ -179,7 +185,7 @@
       <div class="proizvodi_flex-home" *ngIf="!aktiviranoPreporucujemo && preporucujemoProizvodi.length > 0">
         <div class="proizvod-home" *ngFor="let proizvod of preporucujemoProizvodi.slice(0,4)">
           <img class="proizvod_img" [src]="proizvod.url"/>
-          <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a routerLink="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -188,14 +194,17 @@
         <div class="proizvodi_flex-home" *ngFor="let proizvodi of preporucujemoProizvodi | chunk: 4">
           <div class="proizvod-home" *ngFor="let proizvod of proizvodi">
             <img class="proizvod_img" [src]="proizvod.url"/>
-            <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+            <h4 class="proizvod_h4"><a routerLink="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
             <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
             <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
           </div>
         </div>
       </ng-container>
       <div class="mainflex_proizvodi_dugme-home" *ngIf="preporucujemoProizvodi.length > 0 && !aktiviranoPreporucujemo">
-        <button (click)="aktiviranoPreporucujemo=true" *ngIf="preporucujemoMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+        <button (click)="aktiviranoPreporucujemo=true" *ngIf="preporucujemoMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ PREPORUCENE PONUDE</button>
+      </div>
+      <div class="mainflex_proizvodi_dugme-home" *ngIf="preporucujemoProizvodi.length > 0 && aktiviranoPreporucujemo">
+        <button (click)="aktiviranoPreporucujemo=false" *ngIf="preporucujemoMoreThanFour">SAKRIJTE PROIZVODE IZ PREPORUCENE PONUDE</button>
       </div>
       <div class="mainflex_proizvodi_dugme-home" style="margin-top:15px;" *ngIf="preporucujemoProizvodi.length === 0">
         <h3>Nema vrucih proizvoda.</h3>
@@ -215,7 +224,7 @@
       <div class="proizvodi_flex-home" *ngIf="!aktiviranoNovo && novoProizvodi.length > 0">
         <div class="proizvod-home" *ngFor="let proizvod of novoProizvodi.slice(0,4)">
           <img class="proizvod_img" [src]="proizvod.url"/>
-          <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a routerLink="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -224,14 +233,17 @@
         <div class="proizvodi_flex-home" *ngFor="let proizvodi of novoProizvodi | chunk: 4">
           <div class="proizvod-home" *ngFor="let proizvod of proizvodi">
             <img class="proizvod_img" [src]="proizvod.url"/>
-            <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+            <h4 class="proizvod_h4"><a routerLink="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
             <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
             <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
           </div>
         </div>
       </ng-container>
       <div class="mainflex_proizvodi_dugme-home" *ngIf="novoProizvodi.length > 0 && !aktiviranoNovo">
-        <button (click)="aktiviranoNovo=true" *ngIf="novoMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+        <button (click)="aktiviranoNovo=true" *ngIf="novoMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ NOVE PONUDE</button>
+      </div>
+      <div class="mainflex_proizvodi_dugme-home" *ngIf="novoProizvodi.length > 0 && aktiviranoNovo">
+        <button (click)="aktiviranoNovo=false" *ngIf="novoMoreThanFour">SAKRIJTE PROIZVODE IZ NOVE PONUDE</button>
       </div>
       <div class="mainflex_proizvodi_dugme-home" style="margin-top:15px;" *ngIf="novoProizvodi.length === 0">
         <h3>Nema vrucih proizvoda.</h3>
@@ -251,7 +263,7 @@
       <div class="proizvodi_flex-home" *ngIf="!aktiviranoRasprodaja && rasprodajaProizvodi.length > 0">
         <div class="proizvod-home" *ngFor="let proizvod of rasprodajaProizvodi.slice(0,4)">
           <img class="proizvod_img" [src]="proizvod.url"/>
-          <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+          <h4 class="proizvod_h4"><a routerLink="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
           <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
           <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
         </div>
@@ -260,14 +272,17 @@
         <div class="proizvodi_flex-home" *ngFor="let proizvodi of rasprodajaProizvodi | chunk: 4">
           <div class="proizvod-home" *ngFor="let proizvod of proizvodi">
             <img class="proizvod_img" [src]="proizvod.url"/>
-            <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+            <h4 class="proizvod_h4"><a routerLink="{{proizvod.path}}">{{proizvod.naziv}}</a></h4>
             <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
             <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
           </div>
         </div>
       </ng-container>
-      <div class="mainflex_proizvodi_dugme-home" *ngIf="rasprodajaProizvodi.length > 0 && !aktiviranoRasprodaja">
-        <button (click)="aktiviranoRasprodaja=true" *ngIf="rasprodajaMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+      <div class="mainflex_proizvodi_dugme_orange-home" *ngIf="rasprodajaProizvodi.length > 0 && !aktiviranoRasprodaja">
+        <button (click)="aktiviranoRasprodaja=true" *ngIf="rasprodajaMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ RASPRODAJE</button>
+      </div>
+      <div class="mainflex_proizvodi_dugme_orange-home" *ngIf="rasprodajaProizvodi.length > 0 && aktiviranoRasprodaja">
+        <button (click)="aktiviranoRasprodaja=false" *ngIf="rasprodajaMoreThanFour">SAKRIJTE PROIZVODE IZ RASPRODAJE</button>
       </div>
       <div class="mainflex_proizvodi_dugme-home" style="margin-top:15px;" *ngIf="rasprodajaProizvodi.length === 0">
         <h3>Nema vrucih proizvoda.</h3>

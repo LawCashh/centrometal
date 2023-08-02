@@ -1,6 +1,8 @@
-import {Component, OnDestroy, OnInit, ElementRef} from '@angular/core';
+import {Component, OnDestroy, OnInit, ElementRef, HostBinding, Renderer2, AfterViewInit} from '@angular/core';
 import { DataService } from "../data.service";
 import { Subscription } from "rxjs";
+import {Location} from "@angular/common";
+import {Router, NavigationEnd} from "@angular/router";
 
 interface FooterElement {
   id: number;
@@ -24,8 +26,9 @@ interface FooterData {
     '../../../node_modules/slick-carousel/slick/slick-theme.scss'
   ],
 })
-export class FooterComponent implements OnInit, OnDestroy{
+export class FooterComponent implements OnInit, AfterViewInit, OnDestroy{
   data: FooterData = {foot1: [], foot2: [], foot3: []};
+  routeCheckSub : Subscription = new Subscription();
 
   slideConfig = {
     "slidesToShow": 5,
@@ -58,7 +61,9 @@ export class FooterComponent implements OnInit, OnDestroy{
 
   httpSub : Subscription = new Subscription();
 
-  constructor(private http: DataService, private elementRef: ElementRef) {
+  constructor(private http: DataService, private elementRef: ElementRef,
+              private renderer: Renderer2, private location: Location,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -69,8 +74,23 @@ export class FooterComponent implements OnInit, OnDestroy{
     });
   }
 
+
   ngOnDestroy(): void {
     this.httpSub.unsubscribe();
+    this.routeCheckSub.unsubscribe();
+  }
+
+  ngAfterViewInit(): void {
+    this.routeCheckSub = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const hostElement = this.elementRef.nativeElement;
+        if (this.router.url === '/404') {
+          this.renderer.setStyle(hostElement, 'position', 'absolute');
+        } else {
+          this.renderer.setStyle(hostElement, 'position', 'static');
+        }
+      }
+    });
   }
 
 

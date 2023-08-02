@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import { ListedProizvod, Proizvod, Testera, Artikl } from "./proizvodi.model";
+import { ListedProizvod, Testera, Artikl } from "./home.model";
 import { HomeDataService } from "./home-data.service";
 import {interval, Subscription} from "rxjs";
 

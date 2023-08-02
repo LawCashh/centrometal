@@ -1,1 +1,174 @@
-<p>open-product works!</p>
+<!--vidi valja li ovaj if ispod-->
+<div class="mainflex-op" *ngIf="proizvod !== undefined">
+  <div class="leftside_mainflex-op">
+    <div class="leftside_naslovna-op">
+      <h5>NASLOVNA / PROIZVODI / <span>GRUPA ROBE</span></h5>
+    </div>
+    <div class="leftside_mainflex_part1-op">
+      <div class="leftside_mainflex_part1_left">
+        <div class="leftside_mainflex_part1_left_imgdiv">
+          <img [src]="proizvod.url">
+        </div>
+<!--        <div class="leftside_mainflex_part1_footer">-->
+<!--          <button class="prevop"></button>-->
+<!--          <div class="logo-area"-->
+<!--               data="vm.machines"-->
+<!--               slick-slider="{dots: false, arrows: true, draggable: false,-->
+<!--                                autoplay: true, autoplaySpeed: 2000,-->
+<!--                                slidesToShow: 3, infinite: false, prevArrow: '.prevop', nextArrow: '.nextop'}">-->
+<!--            <div class="footer_slide_item"-->
+<!--                 ng-repeat="machine in vm.machines track by $index" >-->
+<!--              <img ng-src="{{machine}}" alt="Masina {{$index + 1}}">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <button class="nextop"></button>-->
+<!--        </div>-->
+        <div class="leftside_mainflex_part1_footer">
+            <button class="prevop"></button>
+            <ngx-slick-carousel class="logo-area"
+                                #slickModal="slick-carousel"
+                                [config]="slideConfig">
+              <div ngxSlickItem *ngFor="let image of proizvod.slideurls; index as i" class="footer_slide_item">
+                <img [src]="image" alt="+ {{i}}">
+              </div>
+            </ngx-slick-carousel>
+          <button class="nextop"></button>
+        </div>
+      </div>
+      <div class="leftside_mainflex_part1_right">
+        <h1>{{proizvod.naziv}}</h1>
+        <div class="cijena_i_sifra">
+          <h2>{{proizvod.cijena}}</h2>
+          <h2><span>{{proizvod.sifra1}}</span><span>Šifra artikla</span></h2>
+        </div>
+        <h5>Šifra artikla: {{proizvod.sifra2}}</h5>
+        <p>
+          {{proizvod.opis[0]}} <br>
+          {{proizvod.opis[1]}} <br>
+          {{proizvod.opis[2]}} <br>
+          {{proizvod.opis[3]}} <br>
+          {{proizvod.opis[4]}} <br>
+          {{proizvod.opis[5]}} <br>
+          {{proizvod.opis[6]}}
+        </p>
+        <div class="kolicina_i_share">
+          <p>Količina : </p>
+          <input type="text" placeholder="01"/>
+          <button class="btnplus" id="btnplus1">+</button>
+          <button class="btnplus" id="btnplus2">+</button>
+          <p id="kolicina_p2">Share : </p>
+          <img src="assets/images/open-product/leftside/fb-square.png"/>
+          <img src="assets/images/open-product/leftside/twitter-square.png"/>
+          <img src="assets/images/open-product/leftside/email-square.png"/>
+          <img src="assets/images/open-product/leftside/googleplus-square.png"/>
+        </div>
+        <div class="dodajukorpu_dugmad">
+          <button class="btnkorpa" id="btnkorpa1"><img src="assets/images/open-product/leftside/cart-square.png">Dodaj u korpu</button>
+          <button class="btnkorpa" id="btnkorpa2">provjeri korpu</button>
+        </div>
+      </div>
+    </div>
+    <div class="leftside_content_change">
+      <div class="leftside_content_change_dugmad">
+        <button class="leftside_content_change_button" id="leftside_content_change_button1" (click)="leftsideButtonContentChange(1)" #lefth1>PROIZVODNA LISTA</button>
+        <button class="leftside_content_change_button" id="leftside_content_change_button2" (click)="leftsideButtonContentChange(2)" #lefth2>UPUTSTVO ZA RUKOVANJE</button>
+        <button class="leftside_content_change_button" id="leftside_content_change_button3" (click)="leftsideButtonContentChange(3)" #lefth3>OCJENA</button>
+        <button class="leftside_content_change_button" id="leftside_content_change_button4" (click)="leftsideButtonContentChange(4)" #lefth4>E-MAIL</button>
+      </div>
+      <div class="leftside_content_change_p">
+        <p id="leftside_content_change_p1" #leftp1>
+          {{proizvod.opis2left[0]}}<br>
+          {{proizvod.opis2left[1]}}<br>
+          {{proizvod.opis2left[2]}}<br>
+          {{proizvod.opis2left[3]}}<br>
+          {{proizvod.opis2left[4]}}<br>
+          {{proizvod.opis2left[5]}}<br>
+          {{proizvod.opis2left[6]}}<br>
+          {{proizvod.opis2left[7]}}<br>
+          {{proizvod.opis2left[8]}}<br>
+          {{proizvod.opis2left[9]}}<br>
+          {{proizvod.opis2left[10]}}<br>
+        </p>
+        <p id="leftside_content_change_p2" #leftp2>
+          {{proizvod.opis2right[0]}}<br>
+          {{proizvod.opis2right[1]}}<br>
+          {{proizvod.opis2right[2]}}<br>
+          {{proizvod.opis2right[3]}}<br>
+          {{proizvod.opis2right[4]}}<br>
+          {{proizvod.opis2right[5]}}<br>
+          {{proizvod.opis2right[6]}}<br>
+          {{proizvod.opis2right[7]}}<br>
+          {{proizvod.opis2right[8]}}<br>
+          {{proizvod.opis2right[9]}}<br>
+          {{proizvod.opis2right[10]}}<br>
+        </p>
+      </div>
+    </div>
+
+    <div class="leftside_proizvodi_naslov-op">
+      <h4>SLIČNI PROIZVODI</h4>
+      <div></div>
+    </div>
+    <!--      <div class="loader" *ngIf="isLoading" style="margin: 0 auto;">-->
+    <!--        <img src="../../assets/gifs/rolling-loader.gif" alt="Loading..">-->
+    <!--      </div>-->
+    <div class="proizvodi_flex-op" *ngIf="!aktiviranoOP && opProizvodi.length > 0">
+      <div class="proizvod" *ngFor="let proizvod of opProizvodi.slice(0,4)">
+        <img class="proizvod_img" [src]="proizvod.url"/>
+        <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+        <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+        <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+      </div>
+    </div>
+    <ng-container *ngIf="aktiviranoOP && opProizvodi.length > 0" >
+      <div class="proizvodi_flex-op" *ngFor="let proizvodi of opProizvodi | chunk: 4">
+        <div class="proizvod" *ngFor="let proizvod of proizvodi">
+          <img class="proizvod_img" [src]="proizvod.url"/>
+          <h4 class="proizvod_h4"><a>{{proizvod.naziv}}</a></h4>
+          <p class="proizvod_p1">{{proizvod.vrijeme}}</p>
+          <p class="proizvod_p2"><span>{{proizvod.cijena1}}</span> {{proizvod.cijena2}}</p>
+        </div>
+      </div>
+    </ng-container>
+    <div class="mainflex_proizvodi_dugme-home" *ngIf="opProizvodi.length > 0 && !aktiviranoOP">
+      <button (click)="aktiviranoOP=true" *ngIf="opMoreThanFour">POGLEDAJTE SVE PROIZVODE IZ VRUĆE PONUDE</button>
+    </div>
+    <div class="mainflex_proizvodi_dugme-home" style="margin-top:15px;" *ngIf="opProizvodi.length === 0">
+      <h3>Nema vrucih proizvoda.</h3>
+    </div>
+  </div>
+
+  <div class="rightside_mainflex-op">
+    <div class="rightside_videi" *ngIf="videos.length>0">
+      <div class="rightside_video1">
+        <video controls="" muted="" id="video1" #video1Ref>
+          <source [src]="videos[0].url" type="video/mp4">
+        </video>
+        <img (click)="showHideImg($event)" id="playpause1_img" #playpause1_imgRef [src]="videos[0].imgurl">
+      </div>
+      <div class="rightside_video2">
+        <video controls="" muted="" id="video2" #video2Ref>
+          <source [src]="videos[0].url" type="video/mp4">
+        </video>
+        <img (click)="showHideImg($event)" id="playpause2_img" #playpause2_imgRef [src]="videos[0].imgurl">
+      </div>
+    </div>
+
+    <div class="rightside_newsletter-op">
+      <div class="rightside_newsletter_naslov">
+        <img src="assets/images/home/leftside/search/email-square.png"/>
+        <h3>PRIJAVI SE NA NEWSLETTER</h3>
+      </div>
+      <div class="rightside_newsletter_input">
+        <input type="text" placeholder="E mail"/>
+      </div>
+      <div class="rightside_newsletter_input">
+        <input type="text" placeholder="Ime i prezime"/>
+      </div>
+      <div class="rightside_newsletter_button">
+        <button>PRIJAVI SE</button>
+      </div>
+    </div>
+</div>
+
+
