@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
-import {OpenProductComponent} from "./open-product/open-product.component";
 import {Error404Component} from "./error404/error404.component";
 
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, pathMatch: "full"},
-  {path: 'open-product/:id', component: OpenProductComponent},
+  {path: 'open-product/:id', loadChildren: () => import("./open-product/open-product.module").then((m)=>m.OpenProductModule)},
   {path: '404', component: Error404Component},
   {path: '**', redirectTo: "404"}
 ]

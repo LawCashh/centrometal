@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { OpenProductComponent } from './open-product/open-product.component';
 import { Error404Component } from './error404/error404.component';
 import {SlickCarouselModule} from "ngx-slick-carousel";
 import { RecursiveListComponent } from './home/recursive-list/recursive-list.component';
@@ -20,7 +19,6 @@ import { AppRoutesModule } from './app-routes.module';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    OpenProductComponent,
     Error404Component,
     RecursiveListComponent,
     ChunkPipe

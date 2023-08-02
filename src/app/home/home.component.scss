@@ -33,6 +33,7 @@
   width: 100%;
   height: 100%;
   .leftside_nav_list{
+    width: 85%;
     height: 100%;
     padding: 0;
     margin: 0;
@@ -66,25 +67,15 @@
       ul {
         display: block;
         li{
-          ul{
-            li{
-              ul{
-                li{
-                }
-              }
-            }
-          }
           list-style: none;
-          padding-top: 5px;
-          padding-bottom: 5px;
-          padding-left: 0;
+          padding: 0;
         }
       }
       background-color:#f4f4f4;
       font-weight: 600;
       letter-spacing: 0.5px;
       list-style: none;
-      width: 85%;
+      width: 100%;
       font-size: 0.9vw;
       padding-left: 10%;
       padding-right: 5%;
@@ -106,55 +97,18 @@
         }
       }
     }
-    //  .leftside_nav_listitem{
-    //    background-color:#f4f4f4;
-    //    font-weight: 600;
-    //    letter-spacing: 0.5px;
-    //    list-style: none;
-    //    width: 85%;
-    //    font-size: 0.9vw;
-    //    padding-left: 10%;
-    //    padding-right: 5%;
-    //    padding-top: 4%;
-    //    padding-bottom: 4%;
-    //    border-bottom: 1px solid lightgray;
-    //    &:nth-child(2),&:nth-child(3),&:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8) {
-    //      display: flex;
-    //      justify-content: space-between;
-    //      align-items: center;
-    //      button{
-    //        border: none;
-    //        padding: 0;
-    //        margin: 0;
-    //        width: 25px;
-    //        height: 25px;
-    //        img{
-    //          width: 100%;
-    //          height: 100%;
-    //        }
-    //      }
-    //    }
-    //    &:first-child{
-    //      background-color: #015574;
-    //      color: white;
-    //      display: flex;
-    //      justify-content: flex-start;
-    //      align-items: center;
-    //      img{
-    //        width: 20px;
-    //        margin-left: -5px;
-    //        margin-right: 5px;
-    //      }
-    //    }
-    //  }
   }
 }
-
-
 .leftside_nav_sublist{
+  height: auto;
   width: 100%;
   padding: 0;
   margin: 0;
+  .leftside_nav_listitem{
+    app-recursive-list{
+      padding: 10px 0 10px 0;
+    }
+  }
 }
 
 
@@ -812,16 +766,21 @@
     width: 100%;
     height: auto;
     .leftside_nav_list{
+      width: 100%;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
+      .leftside_nav_listheader{
+        border: 2px solid black;
+        img{
+          padding-left: 10px;
+        }
+      }
       .leftside_nav_listitem{
         font-size: 3vw;
-        padding-left: 10%;
-        padding-right: 5%;
-        padding-top: 1%;
-        padding-bottom: 1%;
+        padding: 0;
         display: flex;
         justify-content: center;
         align-items: center;
