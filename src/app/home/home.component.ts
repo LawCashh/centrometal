@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit{
   rasprodajaMoreThanFour = false;
   aktiviranoVruci = false; aktiviranoAkcija = false; aktiviranoNovo = false;
   aktiviranoPreporucujemo = false; aktiviranoRasprodaja = false;
+  isLoadingProducts: boolean[] = [true,true,true,true,true];
 
   constructor(private homeDataService: HomeDataService) {
   }
@@ -41,32 +42,42 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit{
     this.homeDataService.getAkcijaProizvodiData().subscribe((res) => {
         this.akcijaProizvodi = res;
       if (this.akcijaProizvodi.length > 4) this.akcijaMoreThanFour = true;
+      this.isLoadingProducts[0]=false;
     }, (err) => {
       console.log("akcijaerror " + err);
+      this.isLoadingProducts[0]=false;
     });
     this.homeDataService.getNovoProizvodiData().subscribe((res) => {
       this.novoProizvodi = res;
       if (this.novoProizvodi.length > 4) this.novoMoreThanFour = true;
+      this.isLoadingProducts[1]=false;
     }, (err) => {
       console.log("novoerror " + err);
+      this.isLoadingProducts[1]=false;
     });
     this.homeDataService.getPreporucujemoProizvodiData().subscribe((res) => {
       this.preporucujemoProizvodi = res;
       if (this.preporucujemoProizvodi.length > 4) this.preporucujemoMoreThanFour = true;
+      this.isLoadingProducts[2]=false;
     }, (err) => {
       console.log("preporucujemoerror " + err);
+      this.isLoadingProducts[2]=false;
     });
     this.homeDataService.getRasprodajaProizvodiData().subscribe((res) => {
       this.rasprodajaProizvodi = res;
       if (this.rasprodajaProizvodi.length > 4) this.rasprodajaMoreThanFour = true;
+      this.isLoadingProducts[3]=false;
     }, (err) => {
       console.log("rasprodajaerror " + err);
+      this.isLoadingProducts[3]=false;
     });
     this.homeDataService.getVruciProizvodiData().subscribe((res) => {
       this.vruciProizvodi = res;
       if (this.vruciProizvodi.length > 4) this.vruciMoreThanFour = true;
+      this.isLoadingProducts[4]=false;
     }, (err) => {
       console.log("vrucierror " + err);
+      this.isLoadingProducts[4]=false;
     });
     this.homeDataService.getMainListLeftData().subscribe(res => {
       this.mainListLeft = res;
