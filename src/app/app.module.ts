@@ -10,8 +10,8 @@ import { Error404Component } from './error404/error404.component';
 import {SlickCarouselModule} from "ngx-slick-carousel";
 import { RecursiveListComponent } from './home/recursive-list/recursive-list.component';
 import {FormsModule} from "@angular/forms";
-import { ChunkPipe } from './chunk.pipe';
 import { AppRoutesModule } from './app-routes.module';
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -20,15 +20,15 @@ import { AppRoutesModule } from './app-routes.module';
     FooterComponent,
     HomeComponent,
     Error404Component,
-    RecursiveListComponent,
-    ChunkPipe
+    RecursiveListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     SlickCarouselModule,
     FormsModule,
-    AppRoutesModule
+    AppRoutesModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

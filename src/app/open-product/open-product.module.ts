@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {SlickCarouselModule} from "ngx-slick-carousel";
-import {ChunkPipe} from "../chunk.pipe";
 
 import { OpenProductRoutingModule } from './open-product-routing.module';
 import {OpenProductComponent} from "./open-product.component";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
   declarations: [
-    OpenProductComponent,
-    ChunkPipe
+    OpenProductComponent
   ],
   imports: [
     CommonModule,
     OpenProductRoutingModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    SharedModule
   ]
 })
 export class OpenProductModule { }
