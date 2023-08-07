@@ -39,66 +39,66 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit{
 
 
   ngOnInit(): void {
-    this.homeDataService.getAkcijaProizvodiData().subscribe((res) => {
+    this.homeDataService.getAkcijaProizvodiData().subscribe({ next: (res) => {
         this.akcijaProizvodi = res;
       if (this.akcijaProizvodi.length > 4) this.akcijaMoreThanFour = true;
       this.isLoadingProducts[0]=false;
-    }, (err) => {
+    }, error: (err) => {
       console.log("akcijaerror " + err);
       this.isLoadingProducts[0]=false;
-    });
-    this.homeDataService.getNovoProizvodiData().subscribe((res) => {
+    }});
+    this.homeDataService.getNovoProizvodiData().subscribe({ next: (res) => {
       this.novoProizvodi = res;
       if (this.novoProizvodi.length > 4) this.novoMoreThanFour = true;
       this.isLoadingProducts[1]=false;
-    }, (err) => {
+    }, error: (err) => {
       console.log("novoerror " + err);
       this.isLoadingProducts[1]=false;
-    });
-    this.homeDataService.getPreporucujemoProizvodiData().subscribe((res) => {
+    }});
+    this.homeDataService.getPreporucujemoProizvodiData().subscribe({next: (res) => {
       this.preporucujemoProizvodi = res;
       if (this.preporucujemoProizvodi.length > 4) this.preporucujemoMoreThanFour = true;
       this.isLoadingProducts[2]=false;
-    }, (err) => {
+    }, error: (err) => {
       console.log("preporucujemoerror " + err);
       this.isLoadingProducts[2]=false;
-    });
-    this.homeDataService.getRasprodajaProizvodiData().subscribe((res) => {
+    }});
+    this.homeDataService.getRasprodajaProizvodiData().subscribe({next: (res) => {
       this.rasprodajaProizvodi = res;
       if (this.rasprodajaProizvodi.length > 4) this.rasprodajaMoreThanFour = true;
       this.isLoadingProducts[3]=false;
-    }, (err) => {
+    }, error: (err) => {
       console.log("rasprodajaerror " + err);
       this.isLoadingProducts[3]=false;
-    });
-    this.homeDataService.getVruciProizvodiData().subscribe((res) => {
+    }});
+    this.homeDataService.getVruciProizvodiData().subscribe({ next: (res) => {
       this.vruciProizvodi = res;
       if (this.vruciProizvodi.length > 4) this.vruciMoreThanFour = true;
       this.isLoadingProducts[4]=false;
-    }, (err) => {
+    }, error: (err) => {
       console.log("vrucierror " + err);
       this.isLoadingProducts[4]=false;
-    });
-    this.homeDataService.getMainListLeftData().subscribe(res => {
+    }});
+    this.homeDataService.getMainListLeftData().subscribe({ next: res => {
       this.mainListLeft = res;
-    }, err => {
+    }, error: err => {
       console.log("mainlistlefterror " + err);
-    });
-    this.homeDataService.getMainListLeftIconsData().subscribe(res => {
+    }});
+    this.homeDataService.getMainListLeftIconsData().subscribe({ next: res => {
       this.mainListLeftIcons = res;
-    }, err => {
+    }, error: err => {
       console.log("mainlistlefticonserror " + err);
-    });
-    this.homeDataService.getReklameMainData().subscribe(res => {
+    }});
+    this.homeDataService.getReklameMainData().subscribe({ next: res => {
       this.reklameMain = res;
-    }, err => {
+    }, error: err => {
       console.log("reklamemainerror " + err);
-    });
-    this.homeDataService.getTestereData().subscribe(res => {
+    }});
+    this.homeDataService.getTestereData().subscribe({ next: res => {
       this.testere = res;
-    }, err => {
+    }, error: err => {
       console.log("testereerror " + err);
-    });
+    }});
   }
 
   ngOnDestroy(): void {
@@ -111,7 +111,7 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit{
 
   resetTimer() {
     this.intervalSub.unsubscribe();
-    this.intervalSub = this.interval.subscribe(() => {
+    this.intervalSub = this.interval.subscribe({ next: () => {
       if(this.counter === 4 && this.radio1Ref) this.radio1Ref.nativeElement.checked = true;
       else if(this.counter === 1 && this.radio2Ref) this.radio2Ref.nativeElement.checked = true;
       else if(this.counter === 2 && this.radio3Ref) this.radio3Ref.nativeElement.checked = true;
@@ -120,8 +120,8 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit{
       if (this.counter > 4){
         this.counter = 1;
       }
-    }, error => {
+    }, error: error => {
       console.log("interval error " + error)
-    })
+    }})
   }
 }

@@ -57,25 +57,25 @@ export class OpenProductComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get("id") as string;
     if (!this.ids.includes(this.id)) this.router.navigate(["/404"]);
     console.log("id otvorene stranice je " + this.id);
-    this.http.getData<Proizvod[]>(this.id).subscribe((res) => {
+    this.http.getData<Proizvod[]>(this.id).subscribe({ next: (res) => {
       this.proizvod = res[0];
       console.log(this.proizvod);
-    }, (error) => {
+    }, error: (error) => {
       console.log("getproizvoddata error " + error);
-    });
-    this.getOPProizvodiData().subscribe((res) => {
+    }});
+    this.getOPProizvodiData().subscribe({next: (res) => {
       this.opProizvodi = res;
       if (this.opProizvodi.length > 4) this.opMoreThanFour = true;
-    }, (error) => {
+    }, error: (error) => {
       console.log("opproizvodi error " + error);
-    })
+    }});
     this.getVideosData().subscribe({
       next: res => {
         this.videos = res;
       }, error: err => {
         console.log("get videos greska " + err);
       }
-    })
+    });
   }
   getOPProizvodiData(): Observable<ListedProizvod[]> {
     return this.http.getData<ListedProizvod[]>("openproductproizvodi");
